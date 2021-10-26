@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logique et langage mathématique &#8212; Mathématiques</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ensembles et fonctions" href="02_ensembles.html" />
+    <link rel="prev" title="Mathématiques" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/ulam.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathématiques</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Mathématiques
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Logique et langage mathématique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_ensembles.html">
+   Ensembles et fonctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_structures.html">
+   Structures algébriques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_N.html">
+   L’ensemble
+   <span class="math notranslate nohighlight">
+    \(\mathbb{N}\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_logique.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_logique.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/01_logique.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-connecteurs-logiques">
+   Les connecteurs logiques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quelques-equivalences-a-connaitre">
+     Quelques équivalences à connaître
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensemble-et-predicat">
+   Ensemble et prédicat
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantificateurs">
+     Quantificateurs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-raisonnements">
+   Les raisonnements
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="logique-et-langage-mathematique">
+<h1>Logique et langage mathématique<a class="headerlink" href="#logique-et-langage-mathematique" title="Permalink to this headline">¶</a></h1>
+<p>En mathématiques, nous nous attachons à démontrer la véracité d’une proposition, et la logique mathématique est le fondement des mathématiques.<br />
+Il n’y a pas dans les mathématiques d’ambiguïté, comme dans la langue et le mathématicien a horreur des contradictions, mais il adore les paradoxes.</p>
+<div class="proof definition admonition" id="tiers-exclu">
+<p class="admonition-title"><span class="caption-number">Definition 1 </span> (Proposition - Principe du tiers exclu)</p>
+<div class="definition-content section" id="proof-content">
+<p>Une <strong>proposition</strong> logique est soit <strong>vraie</strong>, soit <strong>fausse</strong> mais pas les deux en même temps.</p>
+</div>
+</div><div class="section" id="les-connecteurs-logiques">
+<h2>Les connecteurs logiques<a class="headerlink" href="#les-connecteurs-logiques" title="Permalink to this headline">¶</a></h2>
+<div class="proof definition admonition" id="negation">
+<p class="admonition-title"><span class="caption-number">Definition 2 </span> (Négation <span class="math notranslate nohighlight">\(\lnot\)</span> ‘non’)</p>
+<div class="definition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span> une proposition, alors <span class="math notranslate nohighlight">\(\lnot P\)</span> est une proposition.<br />
+<span class="math notranslate nohighlight">\(\lnot P\)</span> se lit <strong>non</strong> <span class="math notranslate nohighlight">\(P\)</span>.</p>
+</div>
+</div><p>Si <span class="math notranslate nohighlight">\(P\)</span> est vraie alors <span class="math notranslate nohighlight">\(\lnot P\)</span> est fausse et, si <span class="math notranslate nohighlight">\(P\)</span> est fausse alors <span class="math notranslate nohighlight">\(\lnot P\)</span> est vraie.</p>
+<p>On forme ce que l’on appelle une table de vérité afin de visualiser et calculer la valeur d’une proposition.</p>
+<p>Table de vérité de <span class="math notranslate nohighlight">\(\lnot P\)</span></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(P\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\lnot P\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>J’utilise des valeurs numériques, 1 pour vrai et 0 pour faux, mais souvent on voit V et F dans les tables de vérité.<br />
+La négation est le seul connecteur logique unaire, qui ne prend qu’une proposition.</p>
+<p>Nous allons voir maintenant les connecteurs binaires.</p>
+<div class="proof definition admonition" id="disjonction">
+<p class="admonition-title"><span class="caption-number">Definition 3 </span> (Disjonction <span class="math notranslate nohighlight">\(\lor\)</span> ‘ou’)</p>
+<div class="definition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> deux propositions, alors <span class="math notranslate nohighlight">\(P \lor Q\)</span> est une proposition.<br />
+<span class="math notranslate nohighlight">\(P \lor Q\)</span> se lit <span class="math notranslate nohighlight">\(P\)</span> <strong>ou</strong> <span class="math notranslate nohighlight">\(Q\)</span></p>
+</div>
+</div><p><span class="math notranslate nohighlight">\(P \lor Q\)</span> est vraie si l’une des propositions est vraie, ou si les deux sont vraies.<br />
+<span class="math notranslate nohighlight">\(P \lor Q\)</span> est fausse si les deux propositions sont fausses.</p>
+<p>Table de vérité de <span class="math notranslate nohighlight">\(P \lor Q\)</span></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(P\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(Q\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(P \lor Q\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>On peut contruire tous les autres connecteurs logiques à partir de ces deux connecteurs <span class="math notranslate nohighlight">\(\lnot\)</span> et <span class="math notranslate nohighlight">\(\lor\)</span>.</p>
+<p>En mathématiques, on commence avec des notations simples, qui lorsqu’on les combine, se compléxifient, alors on pose de nouvelles notations afin de tout simplifier.<br />
+On fera cela tout le temps en mathématiques…</p>
+<div class="proof definition admonition" id="conjonction">
+<p class="admonition-title"><span class="caption-number">Definition 4 </span> (Conjonction <span class="math notranslate nohighlight">\(\land\)</span> ‘et’)</p>
+<div class="definition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span>  et <span class="math notranslate nohighlight">\(Q\)</span> deux propositions, la proposition <span class="math notranslate nohighlight">\(\lnot (\lnot P \lor \lnot Q)\)</span> [non(non <span class="math notranslate nohighlight">\(P\)</span> ou non <span class="math notranslate nohighlight">\(Q\)</span>)] se note <span class="math notranslate nohighlight">\(P \land Q\)</span>.<br />
+<span class="math notranslate nohighlight">\(P \land Q\)</span> se lit <span class="math notranslate nohighlight">\(P\)</span> <strong>et</strong> <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+</div>
+</div><p>Comme combinaison de <span class="math notranslate nohighlight">\(\lnot\)</span> et de <span class="math notranslate nohighlight">\(\lor\)</span>, <span class="math notranslate nohighlight">\(P \land Q\)</span> est une proposition, qui est vraie seulement si les deux proposition <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> sont vraies à la fois.</p>
+<p>Table de vérité de <span class="math notranslate nohighlight">\(P \land Q\)</span></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(P\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(Q\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\lnot P\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\lnot Q\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\lnot P \lor \lnot Q\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\lnot (\lnot P \lor \lnot Q) \equiv P \land Q\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="proof definition admonition" id="implication">
+<p class="admonition-title"><span class="caption-number">Definition 5 </span> (Implication <span class="math notranslate nohighlight">\(\implies\)</span>)</p>
+<div class="definition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> deux propositions, la proposition <span class="math notranslate nohighlight">\(\lnot P \lor Q\)</span> se note <span class="math notranslate nohighlight">\(P \implies Q\)</span>.<br />
+<span class="math notranslate nohighlight">\(P \implies Q\)</span> se lit <span class="math notranslate nohighlight">\(P\)</span> <strong>implique</strong> <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+</div>
+</div><p><span class="math notranslate nohighlight">\(P \implies Q\)</span> est fausse si <span class="math notranslate nohighlight">\(P\)</span> est vraie et <span class="math notranslate nohighlight">\(Q\)</span> est fausse, elle est vraie autrement.</p>
+<p>Table de vérité de <span class="math notranslate nohighlight">\(P \implies Q\)</span></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(P\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(Q\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\lnot P\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\lnot P \lor Q \equiv P \implies Q\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Il est intéressant de remarquer que connaître la véracité de <span class="math notranslate nohighlight">\(P\)</span>, ne permet pas de déduire celle de <span class="math notranslate nohighlight">\(P \implies Q\)</span>, en revanche si <span class="math notranslate nohighlight">\(Q\)</span> est vraie alors <span class="math notranslate nohighlight">\(P \implies Q\)</span> l’est aussi et si <span class="math notranslate nohighlight">\(P\)</span> est fausse alors <span class="math notranslate nohighlight">\(P \implies Q\)</span> est vraie…<br />
+Si on a <span class="math notranslate nohighlight">\(P \implies Q\)</span> vraie, alors on dit que <span class="math notranslate nohighlight">\(P\)</span> est <strong>une condition suffisante</strong> de <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> est <strong>une condition nécessaire</strong> de <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<div class="proof definition admonition" id="equivalence">
+<p class="admonition-title"><span class="caption-number">Definition 6 </span> (Équivalence <span class="math notranslate nohighlight">\(\iff\)</span>)</p>
+<div class="definition-content section" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> deux propositions, la proposition <span class="math notranslate nohighlight">\((P \implies Q) \land (Q \implies P)\)</span> se note <span class="math notranslate nohighlight">\(P \iff Q\)</span>.<br />
+<span class="math notranslate nohighlight">\(P \iff Q\)</span> se lit P <strong>est équivalent à</strong> Q.</p>
+</div>
+</div><p><span class="math notranslate nohighlight">\(P \iff Q\)</span> est vraie lorsque les deux propositions <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> ont les mêmes valeurs logiques.</p>
+<p>Table de vérité de <span class="math notranslate nohighlight">\(P \iff Q\)</span></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(P\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(Q\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(P \implies Q\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(Q \implies P\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\((P \implies Q) \land (Q \implies P) \equiv P \iff Q\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Si deux propositions sont équivalentes alors elles ont la même table de vérité.</p>
+<div class="proof definition admonition" id="definition-6">
+<p class="admonition-title"><span class="caption-number">Definition 7 </span> (Tautologie - Contradiction)</p>
+<div class="definition-content section" id="proof-content">
+<p>Une <strong>tautologie</strong> est une proposition toujours vraie.<br />
+Une <strong>contradiction</strong> est une proposition toujours fausse.</p>
+</div>
+</div><div class="proof example admonition" id="example-7">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<div class="example-content section" id="proof-content">
+<p><span class="math notranslate nohighlight">\(P \lor \lnot P\)</span> est une tautologie<br />
+<span class="math notranslate nohighlight">\(P \land \lnot P\)</span> est une contradiction <a class="reference external" href="https://fr.wikipedia.org/wiki/Principe_du_tiers_exclu">(Principe du tiers exclus)</a></p>
+</div>
+</div><div class="section" id="quelques-equivalences-a-connaitre">
+<h3>Quelques équivalences à connaître<a class="headerlink" href="#quelques-equivalences-a-connaitre" title="Permalink to this headline">¶</a></h3>
+<div class="proof proposition admonition" id="proposition-8">
+<p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
+<div class="proposition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> et <span class="math notranslate nohighlight">\(R\)</span> des propositions</p>
+<p><strong>Double négation :</strong> <span class="math notranslate nohighlight">\(\quad \lnot (\lnot P) \iff P\)</span></p>
+<p><strong>Idempotence :</strong> <span class="math notranslate nohighlight">\(\quad P \lor P \iff P \:\)</span> et <span class="math notranslate nohighlight">\(\: P \land P \iff P\)</span></p>
+<p><strong>Commutativité :</strong> <span class="math notranslate nohighlight">\(\quad (P \lor Q) \iff (Q \lor P)\:\)</span> et <span class="math notranslate nohighlight">\(\:(P \land Q) \iff (Q \land P)\)</span></p>
+<p><strong>Associativité :</strong> <span class="math notranslate nohighlight">\(\quad ((P \lor Q) \lor R) \iff (P \lor (Q \lor R))\:\)</span> et <span class="math notranslate nohighlight">\(\:((P \land Q) \land R) \iff (P \land (Q \land R))\)</span></p>
+<p><strong>Dualité - <a class="reference external" href="https://fr.wikipedia.org/wiki/Lois_de_De_Morgan">Lois de Morgan</a>:</strong> <span class="math notranslate nohighlight">\(\quad \lnot (P \lor Q) \iff (\lnot P) \land (\lnot Q)\:\)</span> et <span class="math notranslate nohighlight">\(\: \lnot (P \land Q) \iff (\lnot P) \lor (\lnot Q)\)</span></p>
+<p><strong>Distributivité :</strong> <span class="math notranslate nohighlight">\(\quad (P \lor (Q \land R)) \iff (P \lor Q) \land (P \lor R)\:\)</span> et <span class="math notranslate nohighlight">\(\: (P \land (Q \lor R)) \iff (P \land Q) \lor (P \land R)\)</span></p>
+</div>
+</div><blockquote>
+<div><p>On peut, à titre d’exercices comme des sudokus, démontrer ces équivalences avec des tables de vérité.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="ensemble-et-predicat">
+<h2>Ensemble et prédicat<a class="headerlink" href="#ensemble-et-predicat" title="Permalink to this headline">¶</a></h2>
+<div class="proof definition admonition" id="ensemble">
+<p class="admonition-title"><span class="caption-number">Definition 8 </span> (Ensemble - Élément)</p>
+<div class="definition-content section" id="proof-content">
+<p>Un <strong>ensemble</strong> <span class="math notranslate nohighlight">\(E\)</span> est une collection d’objets, appelés <strong>élements</strong>.<br />
+Un élement <span class="math notranslate nohighlight">\(x\)</span> appartient à <span class="math notranslate nohighlight">\(E\)</span> se note <span class="math notranslate nohighlight">\(\: x \in E\)</span>.<br />
+Un élement <span class="math notranslate nohighlight">\(x\)</span> n’appartient pas à <span class="math notranslate nohighlight">\(E\)</span> se note <span class="math notranslate nohighlight">\(\: x \notin E\)</span>.<br />
+Il existe un ensemble, l’<em><strong>ensemble vide</strong></em>, noté <span class="math notranslate nohighlight">\(\: \varnothing\)</span>, qui ne contient aucun élément.</p>
+</div>
+</div><p>Deux ensembles <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> sont égaux s’ils ont les mêmes élements.</p>
+<div class="proof definition admonition" id="definition-10">
+<p class="admonition-title"><span class="caption-number">Definition 9 </span> (Prédicat)</p>
+<div class="definition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble.<br />
+Un <strong>prédicat</strong> <span class="math notranslate nohighlight">\(P(x)\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> est une proposition dont la valeur logique dépend d’une variable <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span>.</p>
+</div>
+</div><p><span class="math notranslate nohighlight">\(P(x)\)</span> est vrai, est souvent noté juste <span class="math notranslate nohighlight">\(P(x)\)</span>.</p>
+<div class="section" id="quantificateurs">
+<h3>Quantificateurs<a class="headerlink" href="#quantificateurs" title="Permalink to this headline">¶</a></h3>
+<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble, <span class="math notranslate nohighlight">\(P(x)\)</span> un prédicat dans <span class="math notranslate nohighlight">\(E\)</span></p>
+<div class="proof definition admonition" id="universel">
+<p class="admonition-title"><span class="caption-number">Definition 10 </span> (Le quantificateur universel <span class="math notranslate nohighlight">\(\forall\)</span> ‘pour tout’)</p>
+<div class="definition-content section" id="proof-content">
+<p>La proposition, <strong>pour tout</strong> élément <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(P(x)\)</span> est vrai se note <span class="math notranslate nohighlight">\(\: \forall x \in E, P(x)\)</span>.</p>
+</div>
+</div><p>Dire <span class="math notranslate nohighlight">\(\forall x \in E, P(x)\)</span>, c’est ne pas faire de supposition sur <span class="math notranslate nohighlight">\(x\)</span>, on le prend ‘au hasard’ et la proposition P est vraie, pour n’importe quel <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="proof definition admonition" id="existentiel">
+<p class="admonition-title"><span class="caption-number">Definition 11 </span> (Le quantificateur existentiel <span class="math notranslate nohighlight">\(\exists\)</span> ‘il existe’)</p>
+<div class="definition-content section" id="proof-content">
+<p>La proposition, <strong>il existe au moins</strong> un élément <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> tel que <span class="math notranslate nohighlight">\(P(x)\)</span> est vrai se note <span class="math notranslate nohighlight">\(\: \exists x \in E \mid P(x)\)</span>.<br />
+La proposition, <strong>il existe un et un seul</strong> élément <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> tel que <span class="math notranslate nohighlight">\(P(x)\)</span> est vrai se note <span class="math notranslate nohighlight">\(\: \exists ! x \in E \mid P(x)\)</span>.</p>
+</div>
+</div><p>La barre verticale (ou oblique parfois) <span class="math notranslate nohighlight">\(\mid\)</span> se lit ‘tel que’, et le point d’exclamation ! se lit ‘unique’.</p>
+<p>Dire <span class="math notranslate nohighlight">\(\exists x \in E \mid P(x)\)</span>, c’est exhiber, trouver un <span class="math notranslate nohighlight">\(x\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> tel que <span class="math notranslate nohighlight">\(P(x)\)</span> soit vrai.<br />
+Dire <span class="math notranslate nohighlight">\(\exists ! x \in E \mid P(x)\)</span>, c’est trouver un <span class="math notranslate nohighlight">\(x\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> tel que <span class="math notranslate nohighlight">\(P(x)\)</span> et montrer que si deux éléments <span class="math notranslate nohighlight">\(x\)</span> et <span class="math notranslate nohighlight">\(x'\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> tel que <span class="math notranslate nohighlight">\(P(x)\)</span> et <span class="math notranslate nohighlight">\(P(x')\)</span> alors <span class="math notranslate nohighlight">\(x = x'\)</span>.</p>
+<p>On a pour les propositions contenant des quantificateurs, l’équivalent des lois de Morgan.</p>
+<div class="proof proposition admonition" id="proposition-13">
+<p class="admonition-title"><span class="caption-number">Proposition 2 </span> (Lois de Morgan)</p>
+<div class="proposition-content section" id="proof-content">
+<p><span class="math notranslate nohighlight">\(\: \lnot (\forall x \in E, P(x)) \iff \exists x \in E \mid \lnot P(x)\:\)</span> et <span class="math notranslate nohighlight">\(\: \lnot (\exists x \in E \mid P(x)) \iff \forall x \in E, \lnot P(x)\)</span></p>
+</div>
+</div></div>
+</div>
+<div class="section" id="les-raisonnements">
+<h2>Les raisonnements<a class="headerlink" href="#les-raisonnements" title="Permalink to this headline">¶</a></h2>
+<div class="proof proposition admonition" id="modus-ponens">
+<p class="admonition-title"><span class="caption-number">Proposition 3 </span> (Modus ponens)</p>
+<div class="proposition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> deux propositions, alors on a  <span class="math notranslate nohighlight">\(\: (P \land (P \implies Q)) \implies Q\)</span></p>
+</div>
+</div><p>Si <span class="math notranslate nohighlight">\(P\)</span> est vraie et <span class="math notranslate nohighlight">\(P \implies Q\)</span> est vraie alors <span class="math notranslate nohighlight">\(Q\)</span> est vraie.<br />
+C’est le raisonnement déductif classique, on démontre un résultat en partant des hypothèses.</p>
+<div class="proof proposition admonition" id="contraposee">
+<p class="admonition-title"><span class="caption-number">Proposition 4 </span> (Contraposée)</p>
+<div class="proposition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> deux propositions, alors on a<br />
+<span class="math notranslate nohighlight">\(\: (P \implies Q) \iff (\lnot Q \implies \lnot P)\)</span></p>
+</div>
+</div><p>Si <span class="math notranslate nohighlight">\(P\)</span> implique <span class="math notranslate nohighlight">\(Q\)</span>, on peut, et il suffit de montrer que non <span class="math notranslate nohighlight">\(Q\)</span> implique non <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<div class="proof proposition admonition" id="absurde">
+<p class="admonition-title"><span class="caption-number">Proposition 5 </span> (Preuve par l’absurde)</p>
+<div class="proposition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> deux propositions, alors on a<br />
+<span class="math notranslate nohighlight">\(\:((\lnot P \implies Q) \land \lnot Q) \implies P\)</span></p>
+</div>
+</div><p>Pour montrer que <span class="math notranslate nohighlight">\(P\)</span> est vraie, on la suppose fausse et on montre que cela entraîne une proposition fausse, alors que l’on sait que celle-ci est vraie.</p>
+<div class="proof proposition admonition" id="syllogisme">
+<p class="admonition-title"><span class="caption-number">Proposition 6 </span> (Syllogisme)</p>
+<div class="proposition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> et <span class="math notranslate nohighlight">\(R\)</span> trois propositions, alors on a<br />
+<span class="math notranslate nohighlight">\(((P \implies Q) \land (Q \implies R)) \implies (P \implies R)\)</span></p>
+</div>
+</div><div class="proof proposition admonition" id="proposition-18">
+<p class="admonition-title"><span class="caption-number">Proposition 7 </span> (Disjonction des cas)</p>
+<div class="proposition-content section" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> et <span class="math notranslate nohighlight">\(R\)</span> trois propositions, alors on a<br />
+<span class="math notranslate nohighlight">\(((P \implies R) \land (Q \implies R)) \implies ((P \lor Q) \implies R)\)</span></p>
+</div>
+</div><p>Nous verrons le raisonnement par récurrence après avoir construit <span class="math notranslate nohighlight">\(\mathbb{N}\)</span>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Mathématiques</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="02_ensembles.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Ensembles et fonctions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Lôc Cosnier <loc.cosnier@pm.me><br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
