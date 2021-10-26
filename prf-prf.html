@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proof Index &#8212; Mathématiques</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/ulam.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathématiques</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Mathématiques
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_logique.html">
+   Logique et langage mathématique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_ensembles.html">
+   Ensembles et fonctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_structures.html">
+   Structures algébriques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_N.html">
+   L’ensemble
+   <span class="math notranslate nohighlight">
+    \(\mathbb{N}\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fprf-prf.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+
+   <h1>Proof Index</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-absurde"><strong>absurde</strong></a> | 
+   <a href="#cap-conjonction"><strong>conjonction</strong></a> | 
+   <a href="#cap-contraposee"><strong>contraposee</strong></a> | 
+   <a href="#cap-definition-0"><strong>definition-0</strong></a> | 
+   <a href="#cap-definition-1"><strong>definition-1</strong></a> | 
+   <a href="#cap-definition-10"><strong>definition-10</strong></a> | 
+   <a href="#cap-definition-12"><strong>definition-12</strong></a> | 
+   <a href="#cap-definition-13"><strong>definition-13</strong></a> | 
+   <a href="#cap-definition-14"><strong>definition-14</strong></a> | 
+   <a href="#cap-definition-15"><strong>definition-15</strong></a> | 
+   <a href="#cap-definition-17"><strong>definition-17</strong></a> | 
+   <a href="#cap-definition-18"><strong>definition-18</strong></a> | 
+   <a href="#cap-definition-19"><strong>definition-19</strong></a> | 
+   <a href="#cap-definition-2"><strong>definition-2</strong></a> | 
+   <a href="#cap-definition-20"><strong>definition-20</strong></a> | 
+   <a href="#cap-definition-21"><strong>definition-21</strong></a> | 
+   <a href="#cap-definition-22"><strong>definition-22</strong></a> | 
+   <a href="#cap-definition-23"><strong>definition-23</strong></a> | 
+   <a href="#cap-definition-24"><strong>definition-24</strong></a> | 
+   <a href="#cap-definition-25"><strong>definition-25</strong></a> | 
+   <a href="#cap-definition-26"><strong>definition-26</strong></a> | 
+   <a href="#cap-definition-27"><strong>definition-27</strong></a> | 
+   <a href="#cap-definition-28"><strong>definition-28</strong></a> | 
+   <a href="#cap-definition-29"><strong>definition-29</strong></a> | 
+   <a href="#cap-definition-3"><strong>definition-3</strong></a> | 
+   <a href="#cap-definition-30"><strong>definition-30</strong></a> | 
+   <a href="#cap-definition-32"><strong>definition-32</strong></a> | 
+   <a href="#cap-definition-33"><strong>definition-33</strong></a> | 
+   <a href="#cap-definition-4"><strong>definition-4</strong></a> | 
+   <a href="#cap-definition-5"><strong>definition-5</strong></a> | 
+   <a href="#cap-definition-6"><strong>definition-6</strong></a> | 
+   <a href="#cap-definition-7"><strong>definition-7</strong></a> | 
+   <a href="#cap-definition-8"><strong>definition-8</strong></a> | 
+   <a href="#cap-definition-9"><strong>definition-9</strong></a> | 
+   <a href="#cap-disjonction"><strong>disjonction</strong></a> | 
+   <a href="#cap-ensemble"><strong>ensemble</strong></a> | 
+   <a href="#cap-equivalence"><strong>equivalence</strong></a> | 
+   <a href="#cap-example-16"><strong>example-16</strong></a> | 
+   <a href="#cap-example-7"><strong>example-7</strong></a> | 
+   <a href="#cap-existentiel"><strong>existentiel</strong></a> | 
+   <a href="#cap-implication"><strong>implication</strong></a> | 
+   <a href="#cap-modus-ponens"><strong>modus-ponens</strong></a> | 
+   <a href="#cap-negation"><strong>negation</strong></a> | 
+   <a href="#cap-property-2"><strong>property-2</strong></a> | 
+   <a href="#cap-proposition-0"><strong>proposition-0</strong></a> | 
+   <a href="#cap-proposition-11"><strong>proposition-11</strong></a> | 
+   <a href="#cap-proposition-13"><strong>proposition-13</strong></a> | 
+   <a href="#cap-proposition-18"><strong>proposition-18</strong></a> | 
+   <a href="#cap-proposition-3"><strong>proposition-3</strong></a> | 
+   <a href="#cap-proposition-31"><strong>proposition-31</strong></a> | 
+   <a href="#cap-proposition-34"><strong>proposition-34</strong></a> | 
+   <a href="#cap-proposition-4"><strong>proposition-4</strong></a> | 
+   <a href="#cap-proposition-6"><strong>proposition-6</strong></a> | 
+   <a href="#cap-proposition-8"><strong>proposition-8</strong></a> | 
+   <a href="#cap-remark-1"><strong>remark-1</strong></a> | 
+   <a href="#cap-syllogisme"><strong>syllogisme</strong></a> | 
+   <a href="#cap-tiers-exclu"><strong>tiers-exclu</strong></a> | 
+   <a href="#cap-universel"><strong>universel</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-absurde"><td></td><td>
+       <strong>absurde</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#absurde"><code class="xref">absurde</code></a> <em>(01_logique)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-conjonction"><td></td><td>
+       <strong>conjonction</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#conjonction"><code class="xref">conjonction</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-contraposee"><td></td><td>
+       <strong>contraposee</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#contraposee"><code class="xref">contraposee</code></a> <em>(01_logique)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-0"><td></td><td>
+       <strong>definition-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-0"><code class="xref">definition-0</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-1"><td></td><td>
+       <strong>definition-1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-1"><code class="xref">definition-1</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-10"><td></td><td>
+       <strong>definition-10</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-10"><code class="xref">definition-10</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-12"><td></td><td>
+       <strong>definition-12</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-12"><code class="xref">definition-12</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-13"><td></td><td>
+       <strong>definition-13</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-13"><code class="xref">definition-13</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-14"><td></td><td>
+       <strong>definition-14</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-14"><code class="xref">definition-14</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-15"><td></td><td>
+       <strong>definition-15</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-15"><code class="xref">definition-15</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-17"><td></td><td>
+       <strong>definition-17</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-17"><code class="xref">definition-17</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-18"><td></td><td>
+       <strong>definition-18</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-18"><code class="xref">definition-18</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-19"><td></td><td>
+       <strong>definition-19</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-19"><code class="xref">definition-19</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-2"><td></td><td>
+       <strong>definition-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-2"><code class="xref">definition-2</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-20"><td></td><td>
+       <strong>definition-20</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-20"><code class="xref">definition-20</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-21"><td></td><td>
+       <strong>definition-21</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-21"><code class="xref">definition-21</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-22"><td></td><td>
+       <strong>definition-22</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-22"><code class="xref">definition-22</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-23"><td></td><td>
+       <strong>definition-23</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-23"><code class="xref">definition-23</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-24"><td></td><td>
+       <strong>definition-24</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-24"><code class="xref">definition-24</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-25"><td></td><td>
+       <strong>definition-25</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-25"><code class="xref">definition-25</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-26"><td></td><td>
+       <strong>definition-26</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-26"><code class="xref">definition-26</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-27"><td></td><td>
+       <strong>definition-27</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-27"><code class="xref">definition-27</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-28"><td></td><td>
+       <strong>definition-28</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-28"><code class="xref">definition-28</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-29"><td></td><td>
+       <strong>definition-29</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-29"><code class="xref">definition-29</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-3"><td></td><td>
+       <strong>definition-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-3"><code class="xref">definition-3</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-30"><td></td><td>
+       <strong>definition-30</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-30"><code class="xref">definition-30</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-32"><td></td><td>
+       <strong>definition-32</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-32"><code class="xref">definition-32</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-33"><td></td><td>
+       <strong>definition-33</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#definition-33"><code class="xref">definition-33</code></a> <em>(02_ensembles)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-4"><td></td><td>
+       <strong>definition-4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-4"><code class="xref">definition-4</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-5"><td></td><td>
+       <strong>definition-5</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-5"><code class="xref">definition-5</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-6"><td></td><td>
+       <strong>definition-6</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-6"><code class="xref">definition-6</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-7"><td></td><td>
+       <strong>definition-7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-7"><code class="xref">definition-7</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-8"><td></td><td>
+       <strong>definition-8</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-8"><code class="xref">definition-8</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-definition-9"><td></td><td>
+       <strong>definition-9</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="03_structures.html#definition-9"><code class="xref">definition-9</code></a> <em>(03_structures)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-disjonction"><td></td><td>
+       <strong>disjonction</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#disjonction"><code class="xref">disjonction</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ensemble"><td></td><td>
+       <strong>ensemble</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#ensemble"><code class="xref">ensemble</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-equivalence"><td></td><td>
+       <strong>equivalence</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#equivalence"><code class="xref">equivalence</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-16"><td></td><td>
+       <strong>example-16</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#example-16"><code class="xref">example-16</code></a> <em>(02_ensembles)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-7"><td></td><td>
+       <strong>example-7</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#example-7"><code class="xref">example-7</code></a> <em>(02_ensembles)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-existentiel"><td></td><td>
+       <strong>existentiel</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#existentiel"><code class="xref">existentiel</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-implication"><td></td><td>
+       <strong>implication</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#implication"><code class="xref">implication</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-modus-ponens"><td></td><td>
+       <strong>modus-ponens</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#modus-ponens"><code class="xref">modus-ponens</code></a> <em>(01_logique)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-negation"><td></td><td>
+       <strong>negation</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#negation"><code class="xref">negation</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-property-2"><td></td><td>
+       <strong>property-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="04_N.html#property-2"><code class="xref">property-2</code></a> <em>(04_N)</em></td><td>
+       <em>property</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-0"><td></td><td>
+       <strong>proposition-0</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="04_N.html#proposition-0"><code class="xref">proposition-0</code></a> <em>(04_N)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-11"><td></td><td>
+       <strong>proposition-11</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#proposition-11"><code class="xref">proposition-11</code></a> <em>(02_ensembles)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-13"><td></td><td>
+       <strong>proposition-13</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#proposition-13"><code class="xref">proposition-13</code></a> <em>(01_logique)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-18"><td></td><td>
+       <strong>proposition-18</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#proposition-18"><code class="xref">proposition-18</code></a> <em>(01_logique)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-3"><td></td><td>
+       <strong>proposition-3</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#proposition-3"><code class="xref">proposition-3</code></a> <em>(02_ensembles)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-31"><td></td><td>
+       <strong>proposition-31</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#proposition-31"><code class="xref">proposition-31</code></a> <em>(02_ensembles)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-34"><td></td><td>
+       <strong>proposition-34</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#proposition-34"><code class="xref">proposition-34</code></a> <em>(02_ensembles)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-4"><td></td><td>
+       <strong>proposition-4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#proposition-4"><code class="xref">proposition-4</code></a> <em>(02_ensembles)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-6"><td></td><td>
+       <strong>proposition-6</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#proposition-6"><code class="xref">proposition-6</code></a> <em>(02_ensembles)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-proposition-8"><td></td><td>
+       <strong>proposition-8</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#proposition-8"><code class="xref">proposition-8</code></a> <em>(01_logique)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-remark-1"><td></td><td>
+       <strong>remark-1</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="02_ensembles.html#remark-1"><code class="xref">remark-1</code></a> <em>(02_ensembles)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-syllogisme"><td></td><td>
+       <strong>syllogisme</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#syllogisme"><code class="xref">syllogisme</code></a> <em>(01_logique)</em></td><td>
+       <em>proposition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-tiers-exclu"><td></td><td>
+       <strong>tiers-exclu</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#tiers-exclu"><code class="xref">tiers-exclu</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-universel"><td></td><td>
+       <strong>universel</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="01_logique.html#universel"><code class="xref">universel</code></a> <em>(01_logique)</em></td><td>
+       <em>definition</em></td></tr>
+   </table>
+
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Lôc Cosnier <loc.cosnier@pm.me><br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
