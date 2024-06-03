@@ -1,530 +1,696 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Ensembles et fonctions &#8212; Mathématiques</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_ensembles';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Structures algébriques" href="03_structures.html" />
     <link rel="prev" title="Logique et langage mathématique" href="01_logique.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/ulam.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Mathématiques</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Mathématiques
-  </a>
- </li>
+    
+    
+    <img src="_static/ulam.png" class="logo__image only-light" alt="Mathématiques - Home"/>
+    <script>document.write(`<img src="_static/ulam.png" class="logo__image only-dark" alt="Mathématiques - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Mathématiques
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_logique.html">Logique et langage mathématique</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ensembles et fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_structures.html">Structures algébriques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_N.html">L’ensemble <span class="math notranslate nohighlight">\(\mathbb{N}\)</span></a></li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01_logique.html">
-   Logique et langage mathématique
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Ensembles et fonctions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_structures.html">
-   Structures algébriques
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_N.html">
-   L’ensemble
-   <span class="math notranslate nohighlight">
-    \(\mathbb{N}\)
-   </span>
-  </a>
- </li>
-</ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/02_ensembles.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_ensembles.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_ensembles.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/02_ensembles.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/02_ensembles.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ensembles et fonctions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ensembles">
-   Ensembles
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sous-ensemble">
-     Sous-ensemble
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ensemble-des-parties-d-un-ensemble">
-     Ensemble des parties d’un ensemble
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#operation-sur-les-ensembles">
-     Opération sur les ensembles
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#produit-cartesien">
-     Produit cartésien
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#famille-et-sous-famille-d-ensembles">
-     Famille et sous-famille d’ensembles
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relations">
-   Relations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fonctions-et-applications">
-   Fonctions et applications
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#composition-de-fonctions">
-     Composition de fonctions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#injection-surjection-bijection">
-     Injection, surjection, bijection
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fonction-reciproque">
-     Fonction réciproque
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#application">
-     Application
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fonction-caracteristique-d-un-sous-ensemble">
-   Fonction caractéristique d’un sous-ensemble
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensembles">Ensembles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sous-ensemble">Sous-ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-des-parties-d-un-ensemble">Ensemble des parties d’un ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-sur-les-ensembles">Opération sur les ensembles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#produit-cartesien">Produit cartésien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#famille-et-sous-famille-d-ensembles">Famille et sous-famille d’ensembles</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relations">Relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions-et-applications">Fonctions et applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composition-de-fonctions">Composition de fonctions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#injection-surjection-bijection">Injection, surjection, bijection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-reciproque">Fonction réciproque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application">Application</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ensembles-et-fonctions">
-<h1>Ensembles et fonctions<a class="headerlink" href="#ensembles-et-fonctions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="ensembles">
-<h2>Ensembles<a class="headerlink" href="#ensembles" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ensembles-et-fonctions">
+<h1>Ensembles et fonctions<a class="headerlink" href="#ensembles-et-fonctions" title="Link to this heading">#</a></h1>
+<section id="ensembles">
+<h2>Ensembles<a class="headerlink" href="#ensembles" title="Link to this heading">#</a></h2>
 <div class="proof definition admonition" id="definition-0">
 <p class="admonition-title"><span class="caption-number">Definition 12 </span> (Ensemble par extension ou par compréhension)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Un ensemble peut être défini par <strong>extension</strong>, en énumérant tous ses éléments.<br />
 Un ensemble peut être défini par <strong>compréhension</strong>, par une proposition caractérisant ses éléments.</p>
-</div>
+</section>
 </div><div class="proof remark admonition" id="remark-1">
 <p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
-<div class="remark-content section" id="proof-content">
+<section class="remark-content" id="proof-content">
 <p>Un ensemble n’est pas ordonné (<em>ex :</em> <span class="math notranslate nohighlight">\(\{x, y\} = \{y, x\}\)</span>).<br />
 Les éléments d’un ensemble ne sont pas dupliqués, ils sont tous distincts ( <em>ex :</em> <span class="math notranslate nohighlight">\(\{x, y, y, y, x\} = \{x, y\}\)</span>).<br />
 L’ensemble vide <span class="math notranslate nohighlight">\(\varnothing\)</span> ne contient aucun élément : <span class="math notranslate nohighlight">\(\: \forall x, x \notin \varnothing\)</span>, cet ensemble est unique.<br />
 Un ensemble à un élément est appelé un singleton.</p>
-</div>
-</div><div class="section" id="sous-ensemble">
-<h3>Sous-ensemble<a class="headerlink" href="#sous-ensemble" title="Permalink to this headline">¶</a></h3>
+</section>
+</div><section id="sous-ensemble">
+<h3>Sous-ensemble<a class="headerlink" href="#sous-ensemble" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-2">
 <p class="admonition-title"><span class="caption-number">Definition 13 </span> (Sous-ensemble - Inclusion)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(F\)</span> est un <strong>sous-ensemble</strong> de <span class="math notranslate nohighlight">\(E\)</span>, si <span class="math notranslate nohighlight">\(x \in F \implies x \in E\)</span><br />
-Le sous-ensemble <span class="math notranslate nohighlight">\(F\)</span> est <strong>inclus</strong> dans <span class="math notranslate nohighlight">\(E\)</span> et se note <span class="math notranslate nohighlight">\(F \subset E\)</span>.</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(F\)</span> est un <strong>sous-ensemble ou partie</strong> de <span class="math notranslate nohighlight">\(E\)</span>, si <span class="math notranslate nohighlight">\(x \in F \implies x \in E\)</span><br />
+Le sous-ensemble <span class="math notranslate nohighlight">\(F\)</span> est <strong>inclus</strong> dans <span class="math notranslate nohighlight">\(E\)</span> et se note <span class="math notranslate nohighlight">\(F \subseteq E\)</span>.</p>
+</section>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;F inclus E&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 </div>
-</div><p>On a alors une nouvelle caractérisation de l’égalité de deux ensembles, qui ont les mêmes éléments.</p>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/27983bef1d34a5e7b80a178f38a48e33527b2398f0edc6a88ab55295dcf4b31d.png" src="_images/27983bef1d34a5e7b80a178f38a48e33527b2398f0edc6a88ab55295dcf4b31d.png" />
+</div>
+</div>
+<p>Nous avons alors une nouvelle caractérisation de l’égalité de deux ensembles.</p>
 <div class="proof proposition admonition" id="proposition-3">
 <p class="admonition-title"><span class="caption-number">Proposition 8 </span> (Égalité de deux ensembles)</p>
-<div class="proposition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> sont égaux, si et seulement si<br />
-<span class="math notranslate nohighlight">\(E = F \iff (F \subset E) \land (E \subset F)\)</span> soit <span class="math notranslate nohighlight">\(x \in F \iff x \in E\)</span></p>
-</div>
+<section class="proposition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> sont égaux, si et seulement si<br />
+<span class="math notranslate nohighlight">\(E = F \iff (F \subseteq E) \land (E \subseteq F)\)</span> soit <span class="math notranslate nohighlight">\(x \in F \iff x \in E\)</span></p>
+</section>
 </div><div class="proof proposition admonition" id="proposition-4">
 <p class="admonition-title"><span class="caption-number">Proposition 9 </span> (Transitivité de l’inclusion)</p>
-<div class="proposition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles alors  <span class="math notranslate nohighlight">\((F \subset G \: \land \: G \subset E) \implies F \subset E\)</span></p>
-</div>
-</div></div>
-<div class="section" id="ensemble-des-parties-d-un-ensemble">
-<h3>Ensemble des parties d’un ensemble<a class="headerlink" href="#ensemble-des-parties-d-un-ensemble" title="Permalink to this headline">¶</a></h3>
+<section class="proposition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles alors  <span class="math notranslate nohighlight">\((F \subseteq G \: \land \: G \subseteq E) \implies F \subseteq E\)</span></p>
+</section>
+</div></section>
+<section id="ensemble-des-parties-d-un-ensemble">
+<h3>Ensemble des parties d’un ensemble<a class="headerlink" href="#ensemble-des-parties-d-un-ensemble" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span class="caption-number">Definition 14 </span> (Ensemble des parties d’un ensemble)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble.<br />
 L’<strong>ensemble des parties</strong> de <span class="math notranslate nohighlight">\(E\)</span> est l’ensemble de tous les sous-ensembles de <span class="math notranslate nohighlight">\(E\)</span>, il se note <span class="math notranslate nohighlight">\(\mathcal{P}(E)\)</span>.<br />
-<span class="math notranslate nohighlight">\(\mathcal{P}(E) = \{F \mid F \subset E\}\)</span></p>
-</div>
+<span class="math notranslate nohighlight">\(\mathcal{P}(E) = \{F | F \subseteq E\}\)</span></p>
+</section>
 </div><div class="proof proposition admonition" id="proposition-6">
 <p class="admonition-title"><span class="caption-number">Proposition 10 </span> (Caractéristiques de <span class="math notranslate nohighlight">\(\mathcal{P}(E)\)</span>)</p>
-<div class="proposition-content section" id="proof-content">
+<section class="proposition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble.<br />
 <span class="math notranslate nohighlight">\(\varnothing \in \mathcal{P}(E)\)</span> et <span class="math notranslate nohighlight">\(E \in \mathcal{P}(E)\)</span><br />
 <span class="math notranslate nohighlight">\(\mathcal{P}(E)\)</span> n’est jamais vide.</p>
-</div>
+</section>
 </div><div class="proof example admonition" id="example-7">
 <p class="admonition-title"><span class="caption-number">Example 2 </span></p>
-<div class="example-content section" id="proof-content">
+<section class="example-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(\mathcal{P}(\varnothing) = \{\varnothing\}\)</span>, c’est le singleton qui contient l’ensemble vide (lui-même ne contenant rien).<br />
 <span class="math notranslate nohighlight">\(\mathcal{P}(\{\varnothing\}) = \{\varnothing, \{\varnothing\}\}\)</span><br />
 <span class="math notranslate nohighlight">\(\mathcal{P}(\{0, 1\}) = \{\varnothing, \{0\}, \{1\}, \{0, 1\}\}\)</span></p>
-</div>
-</div></div>
-<div class="section" id="operation-sur-les-ensembles">
-<h3>Opération sur les ensembles<a class="headerlink" href="#operation-sur-les-ensembles" title="Permalink to this headline">¶</a></h3>
+</section>
+</div></section>
+<section id="operation-sur-les-ensembles">
+<h3>Opération sur les ensembles<a class="headerlink" href="#operation-sur-les-ensembles" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-8">
 <p class="admonition-title"><span class="caption-number">Definition 15 </span> (Complémentaire d’un ensemble)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble, <span class="math notranslate nohighlight">\(F\)</span> un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>.<br />
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> un ensemble, <span class="math notranslate nohighlight">\(F\)</span> un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>.<br />
 Le <strong>complémentaire</strong> de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> mais pas à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(\overline{F}\)</span>, parfois <span class="math notranslate nohighlight">\(\complement_E F\)</span> ou <span class="math notranslate nohighlight">\(F^c\)</span><br />
-<span class="math notranslate nohighlight">\(\overline{F} = \{x \mid x \in E \lor x \notin F\}\)</span></p>
-</div>
+<span class="math notranslate nohighlight">\(\overline{F} = \{x | x \in E \lor x \notin F\}\)</span></p>
+</section>
 </div><div class="proof definition admonition" id="definition-9">
 <p class="admonition-title"><span class="caption-number">Definition 16 </span> (Union d’ensembles)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
 L’<strong>union</strong> de <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> ou à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(E \cup F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> union <span class="math notranslate nohighlight">\(F\)</span>.<br />
-<span class="math notranslate nohighlight">\(E \cup F = \{x \mid x \in E \: \lor \: x \in F\}\)</span></p>
-</div>
+<span class="math notranslate nohighlight">\(E \cup F = \{x | x \in E \: \lor \: x \in F\}\)</span></p>
+</section>
 </div><div class="proof definition admonition" id="definition-10">
 <p class="admonition-title"><span class="caption-number">Definition 17 </span> (Intersection d’ensembles)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
 L’<strong>intersection</strong> de <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> et à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(E \cap F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> intersection <span class="math notranslate nohighlight">\(F\)</span> ou <span class="math notranslate nohighlight">\(E\)</span> inter <span class="math notranslate nohighlight">\(F\)</span>.<br />
-<span class="math notranslate nohighlight">\(E \cap F = \{x \mid x \in E \: \land \: x \in F\}\)</span></p>
-</div>
+<span class="math notranslate nohighlight">\(E \cap F = \{x | x \in E \: \land \: x \in F\}\)</span></p>
+</section>
 </div><div class="proof proposition admonition" id="proposition-11">
 <p class="admonition-title"><span class="caption-number">Proposition 11 </span> (Propriétés de l’union et de l’intersection)</p>
-<div class="proposition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles.</p>
+<section class="proposition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles.</p>
 <p>L’union de <span class="math notranslate nohighlight">\(E\)</span> et de <span class="math notranslate nohighlight">\(F\)</span> est le plus petit ensemble contenant à la fois <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span>, c’est à dire</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(E \subset (E \cup F)\)</span> et <span class="math notranslate nohighlight">\(F \subset (E \cup F)\)</span> et</p></li>
-<li><p><span class="math notranslate nohighlight">\((F \subset E) \land (G \subset E) \implies (F \cup G) \subset E\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E \subseteq (E \cup F)\)</span> et <span class="math notranslate nohighlight">\(F \subseteq (E \cup F)\)</span> et</p></li>
+<li><p><span class="math notranslate nohighlight">\((F \subseteq E) \land (G \subseteq E) \implies (F \cup G) \subseteq E\)</span></p></li>
 </ul>
 <p>L’intersection de <span class="math notranslate nohighlight">\(E\)</span> et de <span class="math notranslate nohighlight">\(F\)</span> est le plus grand ensemble contenu à la fois dans <span class="math notranslate nohighlight">\(E\)</span> et dans <span class="math notranslate nohighlight">\(F\)</span>, c’est à dire</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\((E \cap F) \subset E\)</span> et <span class="math notranslate nohighlight">\((E \cap F) \subset F\)</span> et</p></li>
-<li><p><span class="math notranslate nohighlight">\((G \subset E) \land (G \subset F) \implies G \subset (E \cap F)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((E \cap F) \subseteq E\)</span> et <span class="math notranslate nohighlight">\((E \cap F) \subseteq F\)</span> et</p></li>
+<li><p><span class="math notranslate nohighlight">\((G \subseteq E) \land (G \subseteq F) \implies G \subseteq (E \cap F)\)</span></p></li>
 </ul>
-<p>Si <span class="math notranslate nohighlight">\(F \subset E\)</span>, <span class="math notranslate nohighlight">\(E \cup F = E\)</span> et <span class="math notranslate nohighlight">\(E \cap F = F\)</span>.</p>
+<p>Si <span class="math notranslate nohighlight">\(F \subseteq E\)</span>, <span class="math notranslate nohighlight">\(E \cup F = E\)</span> et <span class="math notranslate nohighlight">\(E \cap F = F\)</span>.</p>
 <p><strong>commutativité :</strong> <span class="math notranslate nohighlight">\(\quad E \cup F = F \cup E\:\)</span> et <span class="math notranslate nohighlight">\(\: E \cap F = F \cap E\)</span></p>
 <p><strong>associativité :</strong> <span class="math notranslate nohighlight">\(\quad (E \cup F) \cup G = E \cup (F \cup G) \:\)</span> et <span class="math notranslate nohighlight">\(\: (E \cap F) \cap G = E \cap (F \cap G)\)</span></p>
 <p><strong>distributivité :</strong> L’union et l’intersection sont distributives l’une par rapport à l’autre.<br />
 <span class="math notranslate nohighlight">\((E \cup F) \cap G = (E \cap G) \cup (F \cap G)\)</span><br />
 <span class="math notranslate nohighlight">\((E \cap F) \cup G = (E \cup G) \cap (F \cup G)\)</span></p>
 <p><strong>lois de Morgan :</strong> <span class="math notranslate nohighlight">\(\quad \overline{E \cup F} = \overline{E} \cap \overline{F} \:\)</span> et <span class="math notranslate nohighlight">\(\: \overline{E \cap F} = \overline{E} \cup \overline{F}\)</span></p>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-12">
 <p class="admonition-title"><span class="caption-number">Definition 18 </span> (Ensembles disjoints)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
 <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> sont <strong>disjoints</strong> si <span class="math notranslate nohighlight">\(E \cap F = \varnothing\)</span><br />
 <span class="math notranslate nohighlight">\(E \cup F\)</span> est alors une <strong>union disjointe</strong> de <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> et se note <span class="math notranslate nohighlight">\(E \sqcup F\)</span>.</p>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-13">
 <p class="admonition-title"><span class="caption-number">Definition 19 </span> (Différence d’ensembles)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
 La <strong>différence</strong> de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> mais pas à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(E \backslash F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> moins <span class="math notranslate nohighlight">\(F\)</span>.<br />
-<span class="math notranslate nohighlight">\(E \backslash F = \{x \mid x \in E \: \land \: x \notin F\}\)</span></p>
+<span class="math notranslate nohighlight">\(E \backslash F = \{x | x \in E \: \land \: x \notin F\}\)</span></p>
 <p>Dans le cas où <span class="math notranslate nohighlight">\(F\)</span> est un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>, la différence de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> est le complémentaire de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span>.<br />
-<span class="math notranslate nohighlight">\(F \subset E \: \iff \: E \backslash F = \overline{F}\)</span></p>
-</div>
+<span class="math notranslate nohighlight">\(F \subseteq E \: \iff \: E \backslash F = \overline{F}\)</span></p>
+</section>
 </div><div class="proof definition admonition" id="definition-14">
 <p class="admonition-title"><span class="caption-number">Definition 20 </span> (Différence symétrique d’ensembles)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
 La <strong>différence symétrique</strong> de <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> ou à <span class="math notranslate nohighlight">\(F\)</span> mais pas à l’autre, il se note <span class="math notranslate nohighlight">\(E \Delta F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> delta <span class="math notranslate nohighlight">\(F\)</span>.<br />
 <span class="math notranslate nohighlight">\(\begin{split}
 E \Delta F &amp;= (E \cup F) \backslash (E \cap F) \\
 &amp;= (E \backslash F) \cup (F \backslash E) \\
-&amp;= \{x \mid (x \in E \backslash F) \lor (x \in F \backslash E))\}
+&amp;= \{x | (x \in E \backslash F) \lor (x \in F \backslash E))\}
 \end{split}\)</span></p>
-</div>
-</div></div>
-<div class="section" id="produit-cartesien">
-<h3>Produit cartésien<a class="headerlink" href="#produit-cartesien" title="Permalink to this headline">¶</a></h3>
+</section>
+</div></section>
+<section id="produit-cartesien">
+<h3>Produit cartésien<a class="headerlink" href="#produit-cartesien" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-15">
 <p class="admonition-title"><span class="caption-number">Definition 21 </span> (Produit cartésien de deux ensembles <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span>)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles non vides.<br />
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles non vides.<br />
 Le <strong>produit cartésien</strong> de <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> est l’ensemble des couples <span class="math notranslate nohighlight">\((x, y)\)</span> tels que <span class="math notranslate nohighlight">\(x\)</span> appartient à <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(y\)</span> appartient à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(E \times F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> croix <span class="math notranslate nohighlight">\(F\)</span> ou <span class="math notranslate nohighlight">\(E\)</span> par <span class="math notranslate nohighlight">\(F\)</span>.<br />
-<span class="math notranslate nohighlight">\(E \times F = \{x, y \mid x \in E \land y \in F\}\)</span></p>
-<p>Lorsque <span class="math notranslate nohighlight">\(E = F\)</span>, on note <span class="math notranslate nohighlight">\(E \times E = E^2\)</span>.</p>
-</div>
+<span class="math notranslate nohighlight">\(E \times F = \{x, y | x \in E \land y \in F\}\)</span><br />
+Lorsque <span class="math notranslate nohighlight">\(E = F\)</span>, <span class="math notranslate nohighlight">\(E \times E\)</span> se note <span class="math notranslate nohighlight">\(E^2\)</span>.</p>
+</section>
 </div><div class="proof example admonition" id="example-16">
 <p class="admonition-title"><span class="caption-number">Example 3 </span> (Jeu de cartes)</p>
-<div class="example-content section" id="proof-content">
-<p>On peut modéliser un jeu de cartes comme un ensemble <span class="math notranslate nohighlight">\(P\)</span> produit cartésien de l’ensemble couleurs <span class="math notranslate nohighlight">\(C =\{C{oe}ur, Tr\grave{e}fle, Carreau, Pique\}\)</span> avec l’ensemble valeurs <span class="math notranslate nohighlight">\(V = \{As, Roi, Dame, Valet, 10, 9, 8, 7, 6, 5, 4, 3, 2\}\)</span>.<br />
-On a alors <span class="math notranslate nohighlight">\(P = C \times V\)</span>.</p>
-</div>
-</div></div>
-<div class="section" id="famille-et-sous-famille-d-ensembles">
-<h3>Famille et sous-famille d’ensembles<a class="headerlink" href="#famille-et-sous-famille-d-ensembles" title="Permalink to this headline">¶</a></h3>
+<section class="example-content" id="proof-content">
+<p>Nous pouvons modéliser un jeu de cartes comme un ensemble <span class="math notranslate nohighlight">\(P\)</span> produit cartésien de l’ensemble couleurs <span class="math notranslate nohighlight">\(C =\{C{oe}ur, Trèfle, Carreau, Pique\}\)</span> avec l’ensemble valeurs <span class="math notranslate nohighlight">\(V = \{As, Roi, Dame, Valet, 10, 9, 8, 7, 6, 5, 4, 3, 2\}\)</span>.<br />
+Nous avons alors <span class="math notranslate nohighlight">\(P = C \times V\)</span>.</p>
+</section>
+</div></section>
+<section id="famille-et-sous-famille-d-ensembles">
+<h3>Famille et sous-famille d’ensembles<a class="headerlink" href="#famille-et-sous-famille-d-ensembles" title="Link to this heading">#</a></h3>
 <p>Nous généralisons les opérations binaires sur les ensembles à un nombre quelconque d’ensembles.</p>
 <div class="proof definition admonition" id="definition-17">
 <p class="admonition-title"><span class="caption-number">Definition 22 </span> (Famille et sous-famille d’ensembles)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(I\)</span> un ensemble, <span class="math notranslate nohighlight">\((E_i)_{i \in I}\)</span> est une <strong>famille</strong> d’ensembles indéxé par <span class="math notranslate nohighlight">\(I\)</span> si <span class="math notranslate nohighlight">\(\forall i \in I, E_i\)</span> est un ensemble.<br />
-Soit <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(I\)</span> des ensembles, <span class="math notranslate nohighlight">\((F_i)_{i \in I}\)</span> une famille d’ensembles.<br />
-<span class="math notranslate nohighlight">\((F_i)_{i \in I}\)</span> est une <strong>sous-famille</strong> de <span class="math notranslate nohighlight">\(E\)</span> si <span class="math notranslate nohighlight">\(\forall i \in I, F_i \subset E\)</span>.</p>
-</div>
-</div><p>On pose alors de nouvelles notations pour l’union, l’intersection et le produit cartésien d’une famille d’ensembles.</p>
+Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(I\)</span> des ensembles, <span class="math notranslate nohighlight">\((F_i)_{i \in I}\)</span> une famille d’ensembles.<br />
+<span class="math notranslate nohighlight">\((F_i)_{i \in I}\)</span> est une <strong>sous-famille</strong> de <span class="math notranslate nohighlight">\(E\)</span> si <span class="math notranslate nohighlight">\(\forall i \in I, F_i \subseteq E\)</span>.</p>
+</section>
+</div><p>Nous posons alors de nouvelles notations pour l’union, l’intersection et le produit cartésien d’une famille d’ensembles.</p>
 <div class="proof definition admonition" id="definition-18">
 <p class="admonition-title"><span class="caption-number">Definition 23 </span> (Réunion et intersection d’une famille d’ensembles)</p>
-<div class="definition-content section" id="proof-content">
+<section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(I\)</span> un ensemble, <span class="math notranslate nohighlight">\((E_i)_{i \in I}\)</span> une famille d’ensembles indéxé par <span class="math notranslate nohighlight">\(I\)</span><br />
-La réunion de la famille <span class="math notranslate nohighlight">\((E_i)_{i \in I}\)</span> est l’ensemble <span class="math notranslate nohighlight">\(\bigcup_{i \in I} E_i = \{x \mid \exists i \in I, x \in E_i\}\)</span><br />
-L’intersection de la famille <span class="math notranslate nohighlight">\((E_i)_{i \in I}\)</span> est l’ensemble <span class="math notranslate nohighlight">\(\bigcap_{i \in I} E_i = \{x \mid \forall i \in I, x \in E_i\}\)</span></p>
-</div>
+La réunion de la famille <span class="math notranslate nohighlight">\((E_i)_{i \in I}\)</span> est l’ensemble <span class="math notranslate nohighlight">\(\bigcup_{i \in I} E_i = \{x | \exists i \in I, x \in E_i\}\)</span><br />
+L’intersection de la famille <span class="math notranslate nohighlight">\((E_i)_{i \in I}\)</span> est l’ensemble <span class="math notranslate nohighlight">\(\bigcap_{i \in I} E_i = \{x | \forall i \in I, x \in E_i\}\)</span></p>
+</section>
 </div><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Le produit cartésien de la famille <span class="math notranslate nohighlight">\((E_i)_{i \in I}\)</span> est noté <span class="math notranslate nohighlight">\(\prod_{i \in I}E_i\)</span></p>
 </div>
-</div>
-</div>
-<div class="section" id="relations">
-<h2>Relations<a class="headerlink" href="#relations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="relations">
+<h2>Relations<a class="headerlink" href="#relations" title="Link to this heading">#</a></h2>
 <p>Comme avec les propositions et les connecteurs logiques, à partir d’ensembles et des opérateurs ensemblistes, nous créons de nouveaux ensembles.<br />
 Avec le produit cartésien aussi, à partir d’un élément d’un ensemble et d’un élément d’un autre ensemble (parfois le même), nous obtenons un couple d’éléments qui sont liés, en <code class="docutils literal notranslate"><span class="pre">relation</span></code>, pour ne former q’un unique élément, appartenant à un nouvel ensemble appelé graphe de cette relation.<br />
 Nous allons classer les relations en fonction de leurs propriétés, et enfin étudier un type particulier de relations, les <code class="docutils literal notranslate"><span class="pre">fonctions</span></code>.</p>
 <div class="proof definition admonition" id="definition-19">
 <p class="admonition-title"><span class="caption-number">Definition 24 </span> (Relation binaire)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
-Soit <span class="math notranslate nohighlight">\(G\)</span> un sous-ensemble du produit cartésien de <span class="math notranslate nohighlight">\(E\)</span> par <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(G \subset E \times F\)</span>.<br />
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
+Soit <span class="math notranslate nohighlight">\(G\)</span> un sous-ensemble du produit cartésien de <span class="math notranslate nohighlight">\(E\)</span> par <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(G \subseteq E \times F\)</span>.<br />
 Une <strong>relation binaire</strong> <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(F\)</span> est un triplet <span class="math notranslate nohighlight">\((E, F, G)\)</span>, où <span class="math notranslate nohighlight">\(G\)</span> est appelé <strong>graphe</strong> de la relation <span class="math notranslate nohighlight">\(\mathcal{R}\)</span><br />
-<span class="math notranslate nohighlight">\(\mathcal{R} = \{x, y \mid x \in E, y \in F, (x, y) \in G\}\)</span>, on note alors <span class="math notranslate nohighlight">\(x \mathcal{R} y\)</span> ou <span class="math notranslate nohighlight">\(\mathcal{R} (x, y)\)</span> et on lit <span class="math notranslate nohighlight">\(x\)</span> est en relation, ou en correspondance avec <span class="math notranslate nohighlight">\(y\)</span>.<br />
+<span class="math notranslate nohighlight">\(\mathcal{R} = \{x, y | x \in E, y \in F, (x, y) \in G\}\)</span>, on note alors <span class="math notranslate nohighlight">\(x \mathcal{R} y\)</span> ou <span class="math notranslate nohighlight">\(\mathcal{R} (x, y)\)</span> et on lit <span class="math notranslate nohighlight">\(x\)</span> est en relation, ou en correspondance avec <span class="math notranslate nohighlight">\(y\)</span>.<br />
 <span class="math notranslate nohighlight">\(x\)</span> est l’<strong>antécédent</strong> de <span class="math notranslate nohighlight">\(y\)</span> par <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> et <span class="math notranslate nohighlight">\(y\)</span> est l’<strong>image</strong> de <span class="math notranslate nohighlight">\(x\)</span> par <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.<br />
-Si <span class="math notranslate nohighlight">\(F = E\)</span>, <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>relation interne</strong> dans <span class="math notranslate nohighlight">\(E\)</span>.</p>
-</div>
+Si <span class="math notranslate nohighlight">\(F = E\)</span>, <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>relation interne</strong> dans <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(E\)</span> est muni de la relation <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.</p>
+</section>
 </div><div class="proof definition admonition" id="definition-20">
 <p class="admonition-title"><span class="caption-number">Definition 25 </span> (Réflexion, symétrie et transitive)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble, <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> une relation de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(E\)</span>.<br />
+<section class="definition-content" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.<br />
 <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est <strong>réflexive</strong>, si <span class="math notranslate nohighlight">\(\forall x \in E\)</span>, <span class="math notranslate nohighlight">\(x \mathcal{R} x\)</span>.<br />
 <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est <strong>symétrique</strong>, si <span class="math notranslate nohighlight">\(\forall (x, y) \in E^2\)</span>, <span class="math notranslate nohighlight">\(x \mathcal{R} y \implies y \mathcal{R} x\)</span>.<br />
 <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est <strong>anti-symétrique</strong>, si <span class="math notranslate nohighlight">\(\forall (x, y) \in E^2\)</span>, <span class="math notranslate nohighlight">\(x \mathcal{R} y \: \land \: y \mathcal{R} x \implies x = y\)</span>.<br />
 <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est <strong>transitive</strong>, si <span class="math notranslate nohighlight">\(\forall (x, y, z) \in E^3\)</span>, <span class="math notranslate nohighlight">\(x \mathcal{R} y \: \land \: y \mathcal{R} z \implies x \mathcal{R} z\)</span>.</p>
-</div>
+</section>
 </div><div class="proof definition admonition" id="definition-21">
 <p class="admonition-title"><span class="caption-number">Definition 26 </span> (Relation d’équivalence)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble, <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> une relation de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(E\)</span>.<br />
-<span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>relation d’équivalence</strong> si <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est réflexive, symétrique et transitive.</p>
-</div>
+<section class="definition-content" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.<br />
+<span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>relation d’équivalence</strong> si <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est réflexive, symétrique et transitive, <span class="math notranslate nohighlight">\(x \mathcal{R} y\)</span> se note <span class="math notranslate nohighlight">\(x \sim y\)</span>.</p>
+</section>
 </div><div class="proof definition admonition" id="definition-22">
-<p class="admonition-title"><span class="caption-number">Definition 27 </span> (Relation d’ordre)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble, <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> une relation de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(E\)</span>.<br />
-<span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>relation d’ordre</strong> si <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est réflexive, anti-symétrique et transitive.</p>
-</div>
-</div></div>
-<div class="section" id="fonctions-et-applications">
-<h2>Fonctions et applications<a class="headerlink" href="#fonctions-et-applications" title="Permalink to this headline">¶</a></h2>
-<div class="proof definition admonition" id="definition-23">
-<p class="admonition-title"><span class="caption-number">Definition 28 </span> (Fonction)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et G des ensembles.<br />
-Soit <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> une relation de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(G\)</span> le graphe de <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.<br />
+<p class="admonition-title"><span class="caption-number">Definition 27 </span> (Classe d’équivalence)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation d’équivalence <span class="math notranslate nohighlight">\(\sim\)</span>, <span class="math notranslate nohighlight">\(x\)</span> un élément de <span class="math notranslate nohighlight">\(E\)</span>.<br />
+La <strong>classe d’équivalence</strong> de <span class="math notranslate nohighlight">\(x\)</span> est l’ensemble des y dans <span class="math notranslate nohighlight">\(E\)</span> tel que <span class="math notranslate nohighlight">\(x \sim y\)</span>, et se note <span class="math notranslate nohighlight">\([x]\)</span><br />
+<span class="math notranslate nohighlight">\([x] = {y \in E | x \sim y}\)</span>, <span class="math notranslate nohighlight">\(y \in [x] \iff [x] = [y]\)</span></p>
+</section>
+</div><div class="proof definition admonition" id="definition-23">
+<p class="admonition-title"><span class="caption-number">Definition 28 </span> (Ensemble quotient)</p>
+<section class="definition-content" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation d’équivalence <span class="math notranslate nohighlight">\(\sim\)</span>.<br />
+L’<strong>ensemble quotient</strong> <span class="math notranslate nohighlight">\(E\)</span> par la relation <span class="math notranslate nohighlight">\(\sim\)</span> est le sous-ensemble de <span class="math notranslate nohighlight">\(\mathcal{P}(E) des classes d'équivalence, et se note \)</span>E/\sim<span class="math notranslate nohighlight">\(  
+\)</span>E/\sim = {[x] \in \mathcal{P}(E) | x \in E}</p>
+</section>
+</div><div class="proof definition admonition" id="definition-24">
+<p class="admonition-title"><span class="caption-number">Definition 29 </span> (Relation d’ordre - Ensemble ordonné)</p>
+<section class="definition-content" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.<br />
+<span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>relation d’ordre</strong> si <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est réflexive, anti-symétrique et transitive, <span class="math notranslate nohighlight">\(x \mathcal{R} y\)</span> se note <span class="math notranslate nohighlight">\(x \leq y\)</span>.<br />
+<span class="math notranslate nohighlight">\(E\)</span> est alors un <strong>ensemble ordonné</strong>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-25">
+<p class="admonition-title"><span class="caption-number">Definition 30 </span> (Ordre total)</p>
+<section class="definition-content" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble ordonné muni de <span class="math notranslate nohighlight">\(\leq\)</span>
+<span class="math notranslate nohighlight">\(\leq\)</span> est un <strong>ordre total</strong> si <span class="math notranslate nohighlight">\(\forall x, y \in E, x \leq y ou y \leq x\)</span>.
+<span class="math notranslate nohighlight">\(E\)</span> est alors un <strong>ensemble totalement ordonné</strong>.</p>
+</section>
+</div><div class="proof definition admonition" id="definition-26">
+<p class="admonition-title"><span class="caption-number">Definition 31 </span> (Maximum - Minimum)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> un ensemble ordonné, <span class="math notranslate nohighlight">\(F\)</span> un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>.</p>
+<ul class="simple">
+<li><p>Un élément <span class="math notranslate nohighlight">\(m\)</span> de <span class="math notranslate nohighlight">\(F\)</span> est le <strong>maximum ou plus grand élément</strong> de <span class="math notranslate nohighlight">\(F\)</span> si<br />
+<span class="math notranslate nohighlight">\(\forall x \in F, x \leq m\)</span>.</p></li>
+<li><p>Un élément <span class="math notranslate nohighlight">\(m\)</span> de <span class="math notranslate nohighlight">\(F\)</span> est le <strong>minimum ou plus petit élément</strong> de <span class="math notranslate nohighlight">\(F\)</span> si<br />
+<span class="math notranslate nohighlight">\(\forall x \in F, m \leq x\)</span>.<br />
+De tels éléments, s’ils existent sont uniques.</p></li>
+</ul>
+</section>
+</div><div class="proof definition admonition" id="definition-27">
+<p class="admonition-title"><span class="caption-number">Definition 32 </span> (Majorant - Minorant)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> un ensemble ordonné, <span class="math notranslate nohighlight">\(F\)</span> un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>.</p>
+<ul class="simple">
+<li><p>Un élément <span class="math notranslate nohighlight">\(m\)</span> de <span class="math notranslate nohighlight">\(E\)</span> est un <strong>majorant</strong> de <span class="math notranslate nohighlight">\(F\)</span> si<br />
+<span class="math notranslate nohighlight">\(\forall x \in F, x \leq m\)</span>.</p></li>
+<li><p>Un élément <span class="math notranslate nohighlight">\(m\)</span> de <span class="math notranslate nohighlight">\(E\)</span> est un <strong>minorant</strong> de <span class="math notranslate nohighlight">\(F\)</span> si<br />
+<span class="math notranslate nohighlight">\(\forall x \in F, m \leq x\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="proof definition admonition" id="definition-28">
+<p class="admonition-title"><span class="caption-number">Definition 33 </span> (Ensemble bien ordonné)</p>
+<section class="definition-content" id="proof-content">
+<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble.
+<span class="math notranslate nohighlight">\(E\)</span> est bien ordonné si toute partie non vide de <span class="math notranslate nohighlight">\(E\)</span> admet un minimum.<br />
+<span class="math notranslate nohighlight">\(E\)</span> bien ordonné <span class="math notranslate nohighlight">\(\implies \)</span>E$ totalement ordonné.</p>
+</section>
+</div></section>
+<section id="fonctions-et-applications">
+<h2>Fonctions et applications<a class="headerlink" href="#fonctions-et-applications" title="Link to this heading">#</a></h2>
+<div class="proof definition admonition" id="definition-29">
+<p class="admonition-title"><span class="caption-number">Definition 34 </span> (Fonction)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et G des ensembles.<br />
+Soient <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> une relation de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(G\)</span> le graphe de <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.<br />
 La relation <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>fonction</strong> de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(F\)</span> si, pour tout <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span>, il existe 0 ou un seul <span class="math notranslate nohighlight">\(y\)</span> appartenant à <span class="math notranslate nohighlight">\(F\)</span> tel que <span class="math notranslate nohighlight">\(x\)</span> soit en relation en <span class="math notranslate nohighlight">\(y\)</span>, c’est à dire<br />
 <span class="math notranslate nohighlight">\(\forall x \in E, \forall y \in F, \forall z \in F, (x \mathcal{R} y \: \land x \mathcal{R} z) \implies y= z\)</span><br />
 <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> se note <span class="math notranslate nohighlight">\(f : E \to F\)</span>, <span class="math notranslate nohighlight">\(x \mathcal{R} y\)</span> se note <span class="math notranslate nohighlight">\(f(x) = y\)</span>.<br />
@@ -534,21 +700,21 @@ f : E &amp;\to F \\
 x &amp;\mapsto y = f(x)
 \end{align*}\)</span><br />
 <span class="math notranslate nohighlight">\(E\)</span> est le <strong>domaine</strong> de <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(F\)</span> est le <strong>codomaine</strong> de <span class="math notranslate nohighlight">\(f\)</span>.</p>
-</div>
-</div><div class="proof definition admonition" id="definition-24">
-<p class="admonition-title"><span class="caption-number">Definition 29 </span> (Domaine de définition, image d’une fonction)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />
+</section>
+</div><div class="proof definition admonition" id="definition-30">
+<p class="admonition-title"><span class="caption-number">Definition 35 </span> (Domaine de définition, image d’une fonction)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />
 Le <strong>domaine de définition</strong> de <span class="math notranslate nohighlight">\(f\)</span> est l’ensemble des éléments de <span class="math notranslate nohighlight">\(E\)</span> qui ont une image par <span class="math notranslate nohighlight">\(f\)</span>, on le note <span class="math notranslate nohighlight">\(D_f\)</span>.<br />
-<span class="math notranslate nohighlight">\(D_f = \{x \in E \mid \exists y \in F \: \land \: y = f(x)\}\)</span>.<br />
+<span class="math notranslate nohighlight">\(D_f = \{x \in E | \exists y \in F \: \land \: y = f(x)\}\)</span>.<br />
 On a <span class="math notranslate nohighlight">\(D_f \subseteq E\)</span>.<br />
 L’<strong>image</strong> de <span class="math notranslate nohighlight">\(f\)</span> est l’ensemble des éléments de <span class="math notranslate nohighlight">\(F\)</span> qui ont un antécédent par <span class="math notranslate nohighlight">\(f\)</span>, on le note <span class="math notranslate nohighlight">\(Im(f)\)</span>.<br />
-<span class="math notranslate nohighlight">\(Im(f) = \{y \in F \mid y = f(x), x \in E\}\)</span>.<br />
+<span class="math notranslate nohighlight">\(Im(f) = \{y \in F | y = f(x), x \in E\}\)</span>.<br />
 On a <span class="math notranslate nohighlight">\(Im(f) \subseteq F\)</span>.</p>
-</div>
-</div><div class="proof definition admonition" id="definition-25">
-<p class="admonition-title"><span class="caption-number">Definition 30 </span> (Identité)</p>
-<div class="definition-content section" id="proof-content">
+</section>
+</div><div class="proof definition admonition" id="definition-31">
+<p class="admonition-title"><span class="caption-number">Definition 36 </span> (Identité)</p>
+<section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble.<br />
 On définit la <strong>fonction identité</strong> de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(E\)</span>, noté <span class="math notranslate nohighlight">\(Id_E\)</span> par<br />
 <span class="math notranslate nohighlight">\(\begin{align*}
@@ -557,13 +723,13 @@ x &amp;\mapsto x
 \end{align*}\)</span><br />
 <span class="math notranslate nohighlight">\(\forall x \in E, Id_E(x) = x\)</span><br />
 Le graphe de <span class="math notranslate nohighlight">\(Id_E\)</span> est appelé <strong>diagonale</strong> du produit cartésien <span class="math notranslate nohighlight">\(E \times E\)</span>.</p>
-</div>
-</div><div class="section" id="composition-de-fonctions">
-<h3>Composition de fonctions<a class="headerlink" href="#composition-de-fonctions" title="Permalink to this headline">¶</a></h3>
-<div class="proof definition admonition" id="definition-26">
-<p class="admonition-title"><span class="caption-number">Definition 31 </span> (Composition de fonctions)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span>, <span class="math notranslate nohighlight">\(g : F \to G\)</span> des fonctions.<br />
+</section>
+</div><section id="composition-de-fonctions">
+<h3>Composition de fonctions<a class="headerlink" href="#composition-de-fonctions" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-32">
+<p class="admonition-title"><span class="caption-number">Definition 37 </span> (Composition de fonctions)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span>, <span class="math notranslate nohighlight">\(g : F \to G\)</span> des fonctions.<br />
 La <strong>composée</strong> de <span class="math notranslate nohighlight">\(f\)</span> par <span class="math notranslate nohighlight">\(g\)</span> est la fonction <span class="math notranslate nohighlight">\(g \circ f\)</span><br />
 <span class="math notranslate nohighlight">\(\begin{align*}
 g \circ f : E &amp;\to G \\
@@ -571,93 +737,70 @@ x &amp;\mapsto g \circ f(x) = g(f(x))
 \end{align*}\)</span><br />
 <span class="math notranslate nohighlight">\(g \circ f\)</span> se lit <span class="math notranslate nohighlight">\(g\)</span> rond <span class="math notranslate nohighlight">\(f\)</span><br />
 Si <span class="math notranslate nohighlight">\(g =f\)</span> alors <span class="math notranslate nohighlight">\(f \circ f\)</span> se note <span class="math notranslate nohighlight">\(f^2\)</span> et se lit <span class="math notranslate nohighlight">\(f\)</span> carré.</p>
-</div>
-</div></div>
-<div class="section" id="injection-surjection-bijection">
-<h3>Injection, surjection, bijection<a class="headerlink" href="#injection-surjection-bijection" title="Permalink to this headline">¶</a></h3>
-<div class="proof definition admonition" id="definition-27">
-<p class="admonition-title"><span class="caption-number">Definition 32 </span> (Injection)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />
-<span class="math notranslate nohighlight">\(f\)</span> est <strong>injective</strong> si toute image par <span class="math notranslate nohighlight">\(f\)</span> admet un unique antécédent.<br />
-<span class="math notranslate nohighlight">\(f\)</span> injective <span class="math notranslate nohighlight">\(\iff (\forall x, y \in E, f(x) = f(y) \implies x = y)\)</span>.</p>
-</div>
-</div><div class="proof definition admonition" id="definition-28">
-<p class="admonition-title"><span class="caption-number">Definition 33 </span> (Surjection)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />
-<span class="math notranslate nohighlight">\(f\)</span> est <strong>surjective</strong> si pour tout <span class="math notranslate nohighlight">\(y\)</span> appartenant à <span class="math notranslate nohighlight">\(F\)</span>, il existe un antécédent <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> par <span class="math notranslate nohighlight">\(f\)</span>.<br />
-<span class="math notranslate nohighlight">\(f\)</span> surjective <span class="math notranslate nohighlight">\(\iff \forall y \in F, \exists x \in E \mid y = f(x)\)</span>.</p>
-</div>
-</div><div class="proof definition admonition" id="definition-29">
-<p class="admonition-title"><span class="caption-number">Definition 34 </span> (Bijection)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />
-<span class="math notranslate nohighlight">\(f\)</span> est <strong>bijective</strong> si, et seulement si <span class="math notranslate nohighlight">\(f\)</span> est injective et surjective.<br />
-<span class="math notranslate nohighlight">\(f\)</span> bijective <span class="math notranslate nohighlight">\(\iff \forall y \in F, \exists ! x \in E \mid y =f(x)\)</span>.</p>
-</div>
-</div></div>
-<div class="section" id="fonction-reciproque">
-<h3>Fonction réciproque<a class="headerlink" href="#fonction-reciproque" title="Permalink to this headline">¶</a></h3>
-<div class="proof definition admonition" id="definition-30">
-<p class="admonition-title"><span class="caption-number">Definition 35 </span> (Bijection réciproque d’une fonction)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction bijective, alors il existe une fonction <span class="math notranslate nohighlight">\(g : F \to E\)</span> telle que<br />
+</section>
+</div></section>
+<section id="injection-surjection-bijection">
+<h3>Injection, surjection, bijection<a class="headerlink" href="#injection-surjection-bijection" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-33">
+<p class="admonition-title"><span class="caption-number">Definition 38 </span> (Injection - Surjection - Bijection)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> est <strong>injective</strong> si toute image par <span class="math notranslate nohighlight">\(f\)</span> admet un unique antécédent.<br />
+<span class="math notranslate nohighlight">\(f\)</span> injective <span class="math notranslate nohighlight">\(\iff (\forall x, y \in E, f(x) = f(y) \implies x = y)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> est <strong>surjective</strong> si pour tout <span class="math notranslate nohighlight">\(y\)</span> appartenant à <span class="math notranslate nohighlight">\(F\)</span>, il existe un antécédent <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> par <span class="math notranslate nohighlight">\(f\)</span>.<br />
+<span class="math notranslate nohighlight">\(f\)</span> surjective <span class="math notranslate nohighlight">\(\iff \forall y \in F, \exists x \in E | y = f(x)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> est <strong>bijective</strong> si, et seulement si <span class="math notranslate nohighlight">\(f\)</span> est injective et surjective.<br />
+<span class="math notranslate nohighlight">\(f\)</span> bijective <span class="math notranslate nohighlight">\(\iff \forall y \in F, \exists ! x \in E | y =f(x)\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="proof definition admonition" id="definition-34">
+<p class="admonition-title"><span class="caption-number">Definition 39 </span> (Subpotence - Surpotence - Equipotence)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\)</span> est <strong>subpotent</strong> à <span class="math notranslate nohighlight">\(F\)</span> s’il existe une injection de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(F\)</span>, et se note <span class="math notranslate nohighlight">\(E \preceq F\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> est <strong>surpotent</strong> à <span class="math notranslate nohighlight">\(F\)</span> s’il existe une surjection de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(F\)</span>, et se note <span class="math notranslate nohighlight">\(E \succeq F\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\)</span> est <strong>équipotent</strong> à <span class="math notranslate nohighlight">\(F\)</span> s’il existe une bijection de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(F\)</span>, et se note <span class="math notranslate nohighlight">\(E \approx F\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="proof theorem admonition" id="theorem-35">
+<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Théorème de Cantor-Berstein)</p>
+<section class="theorem-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
+Si <span class="math notranslate nohighlight">\(E \preceq F\)</span> et <span class="math notranslate nohighlight">\(F \preceq E\)</span> alors <span class="math notranslate nohighlight">\(E \approx F\)</span></p>
+</section>
+</div></section>
+<section id="fonction-reciproque">
+<h3>Fonction réciproque<a class="headerlink" href="#fonction-reciproque" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-36">
+<p class="admonition-title"><span class="caption-number">Definition 40 </span> (Bijection réciproque d’une fonction)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction bijective, alors il existe une fonction <span class="math notranslate nohighlight">\(g : F \to E\)</span> telle que<br />
 <span class="math notranslate nohighlight">\(\forall x \in E, g \circ f(x) = x \: \land \: \forall y \in F, f \circ g(y) = y\)</span>.<br />
 <span class="math notranslate nohighlight">\(g\)</span> est la <strong>fonction réciproque</strong> de <span class="math notranslate nohighlight">\(f\)</span>, on note <span class="math notranslate nohighlight">\(g = f^{-1}\)</span>.<br />
 On a <span class="math notranslate nohighlight">\(f^{-1} \circ f = Id_E\)</span>, <span class="math notranslate nohighlight">\(f \circ f^{-1} = Id_F\)</span> et <span class="math notranslate nohighlight">\((f^{-1})^{-1} = f\)</span>.<br />
 <span class="math notranslate nohighlight">\(f\)</span> est une <strong>involution</strong> si <span class="math notranslate nohighlight">\(f^{-1} = f\)</span>.</p>
-</div>
-</div><div class="proof proposition admonition" id="proposition-31">
+</section>
+</div><div class="proof proposition admonition" id="proposition-37">
 <p class="admonition-title"><span class="caption-number">Proposition 12 </span> (Réciproque d’une composée)</p>
-<div class="proposition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span>, <span class="math notranslate nohighlight">\(g : F \to G\)</span> des fonctions.<br />
+<section class="proposition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span>, <span class="math notranslate nohighlight">\(g : F \to G\)</span> des fonctions.<br />
 Alors <span class="math notranslate nohighlight">\((g \circ f)^{-1} = f^{-1} \circ g^{-1}\)</span>.</p>
-</div>
-</div></div>
-<div class="section" id="application">
-<h3>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h3>
-<div class="proof definition admonition" id="definition-32">
-<p class="admonition-title"><span class="caption-number">Definition 36 </span> (Application)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />
+</section>
+</div></section>
+<section id="application">
+<h3>Application<a class="headerlink" href="#application" title="Link to this heading">#</a></h3>
+<div class="proof definition admonition" id="definition-38">
+<p class="admonition-title"><span class="caption-number">Definition 41 </span> (Application)</p>
+<section class="definition-content" id="proof-content">
+<p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />
 <span class="math notranslate nohighlight">\(f\)</span> est une <strong>application</strong> si <span class="math notranslate nohighlight">\(D_f = E\)</span>.<br />
-<span class="math notranslate nohighlight">\(f\)</span> est une application <span class="math notranslate nohighlight">\(\iff \forall x \in E, \exists ! y \in F \mid y = f(x)\)</span>.</p>
-</div>
-</div></div>
-</div>
-<div class="section" id="fonction-caracteristique-d-un-sous-ensemble">
-<h2>Fonction caractéristique d’un sous-ensemble<a class="headerlink" href="#fonction-caracteristique-d-un-sous-ensemble" title="Permalink to this headline">¶</a></h2>
-<div class="proof definition admonition" id="definition-33">
-<p class="admonition-title"><span class="caption-number">Definition 37 </span> (Fonction caractéristique d’un sous-ensemble)</p>
-<div class="definition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble, <span class="math notranslate nohighlight">\(F\)</span> un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>.<br />
-La <strong>fonction caractéristique</strong> de <span class="math notranslate nohighlight">\(F\)</span> est la fonction <span class="math notranslate nohighlight">\(\chi_{F}\)</span> définie par<br />
-<span class="math notranslate nohighlight">\(\begin{align*}
-\chi_{F} : E &amp;\to \{0, 1\}\\
-x &amp;\mapsto \left\{
-\begin{matrix}
-1 \: si \: x \in \ F\\
-0 \: si \: x \notin \ F
-\end{matrix}\right.
-\end{align*}\)</span><br />
-La fonction caractéristique de <span class="math notranslate nohighlight">\(F\)</span> permet de définir si un élément de <span class="math notranslate nohighlight">\(E\)</span> appartient à un sous-ensemble <span class="math notranslate nohighlight">\(F\)</span> de <span class="math notranslate nohighlight">\(E\)</span>.</p>
-</div>
-</div><div class="proof proposition admonition" id="proposition-34">
-<p class="admonition-title"><span class="caption-number">Proposition 13 </span> (Propriétés de la fonction caractéristique)</p>
-<div class="proposition-content section" id="proof-content">
-<p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des sous-ensembles de <span class="math notranslate nohighlight">\(E\)</span>.<br />
-<span class="math notranslate nohighlight">\(\begin{align*}
-\chi_{\overline{F}} &amp;= 1 - \chi_{F}\\
-\chi_{F \cap G} &amp;= \chi_{F} \chi_{G}\\
-\chi_{F \cup G} &amp;= \chi_{F} + \chi_{G} - \chi_{F \cap G}\\
-&amp;= \chi_{F} + \chi_{G} - \chi_{F} \chi_{G}\\
-\chi_{F \Delta G} &amp;= \chi_{F \cup G} - \chi_{F \cap G}\\
-&amp;= \chi_{F} + \chi_{G} - 2\chi_{F} \chi_{G}
-\end{align*}\)</span></p>
-</div>
-</div></div>
-</div>
+<span class="math notranslate nohighlight">\(f\)</span> est une application <span class="math notranslate nohighlight">\(\iff \forall x \in E, \exists ! y \in F | y = f(x)\)</span>.</p>
+</section>
+</div></section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -671,7 +814,7 @@ La fonction caractéristique de <span class="math notranslate nohighlight">\(F\)
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -679,56 +822,116 @@ La fonction caractéristique de <span class="math notranslate nohighlight">\(F\)
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="01_logique.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Logique et langage mathématique</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="03_structures.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Structures algébriques</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Lôc Cosnier <loc.cosnier@pm.me><br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_logique.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Logique et langage mathématique</p>
       </div>
-    </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="03_structures.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Structures algébriques</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensembles">Ensembles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sous-ensemble">Sous-ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-des-parties-d-un-ensemble">Ensemble des parties d’un ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-sur-les-ensembles">Opération sur les ensembles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#produit-cartesien">Produit cartésien</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#famille-et-sous-famille-d-ensembles">Famille et sous-famille d’ensembles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relations">Relations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fonctions-et-applications">Fonctions et applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composition-de-fonctions">Composition de fonctions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#injection-surjection-bijection">Injection, surjection, bijection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-reciproque">Fonction réciproque</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application">Application</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lôc Cosnier <loc.cosnier@pm.me>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
