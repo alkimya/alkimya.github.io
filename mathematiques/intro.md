@@ -1,9 +1,9 @@
 # Mathématiques
 
-- [Logique et langage mathématique](01_logique.ipynb)
-- [Ensembles et fonctions](02_ensembles.ipynb)
-- [Structures algébriques](03_structures.ipynb)
-- [L'ensemble $\mathbb{N}$](04_N.ipynb)
+- [Logique et langage mathématique](01_logique.md)
+- [Ensembles et fonctions](02_ensembles.md)
+- [Structures algébriques](03_structures.md)
+- [L'ensemble $\mathbb{N}$](04_N.md)
 - L'ensemble $\mathbb{Z}$
 - L'ensemble $\mathbb{Q}$
 - L'ensemble $\mathbb{R}$
