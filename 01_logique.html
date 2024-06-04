@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -700,13 +700,17 @@ C’est le raisonnement déductif classique, nous démontrons un résultat en pa
 <span class="math notranslate nohighlight">\(\: (P \implies Q) \iff (\lnot Q \implies \lnot P)\)</span></p>
 </section>
 </div><p>Si <span class="math notranslate nohighlight">\(P\)</span> implique <span class="math notranslate nohighlight">\(Q\)</span>, il suffit de montrer que non <span class="math notranslate nohighlight">\(Q\)</span> implique non <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Ne pas confondre la contraposée d’une proposition <span class="math notranslate nohighlight">\(P \implies Q\)</span> avec la proposition réciproque <span class="math notranslate nohighlight">\(Q \implies P\)</span> ou la réproque de la contraposée <span class="math notranslate nohighlight">\(\lnot P \implies \lnot Q\)</span>.</p>
+</div>
 <div class="proof proposition admonition" id="proposition-16">
 <p class="admonition-title"><span class="caption-number">Proposition 5 </span> (Preuve par l’absurde)</p>
 <section class="proposition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span> deux propositions, alors
 <span class="math notranslate nohighlight">\(\:((\lnot P \implies Q) \land \lnot Q) \implies P\)</span></p>
 </section>
-</div><p>Pour montrer que <span class="math notranslate nohighlight">\(P\)</span> est vraie, nous supposons sa négation <span class="math notranslate nohighlight">\(\lnot P\)</span> et nous montrons que cela conduit à une contradiction avec une proposition <span class="math notranslate nohighlight">\(Q\)</span> dont nous savons qu’elle est vraie.</p>
+</div><p>Pour montrer que <span class="math notranslate nohighlight">\(P\)</span> est vraie, nous supposons sa négation <span class="math notranslate nohighlight">\(\lnot P\)</span> et nous montrons que cela conduit à une contradiction avec une proposition <span class="math notranslate nohighlight">\(Q\)</span>.</p>
 <div class="proof proposition admonition" id="proposition-17">
 <p class="admonition-title"><span class="caption-number">Proposition 6 </span> (Syllogisme)</p>
 <section class="proposition-content" id="proof-content">

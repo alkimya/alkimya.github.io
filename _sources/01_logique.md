@@ -3,10 +3,10 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
+    format_version: 1.0.4
+    jupytext_version: 1.16.2
 kernelspec:
-  display_name: Python 3.9.7 64-bit
+  display_name: Python 3.11.2 64-bit
   name: python3
 ---
 
@@ -214,12 +214,16 @@ $\: (P \implies Q) \iff (\lnot Q \implies \lnot P)$
 
 Si $P$ implique $Q$, il suffit de montrer que non $Q$ implique non $P$.
 
+:::{attention}
+Ne pas confondre la contraposée d'une proposition $P \implies Q$ avec la proposition réciproque $Q \implies P$ ou la réproque de la contraposée $\lnot P \implies \lnot Q$.
+:::
+
 :::{prf:proposition} Preuve par l'absurde
 Soient $P$ et $Q$ deux propositions, alors
 $\:((\lnot P \implies Q) \land \lnot Q) \implies P$
 :::
 
-Pour montrer que $P$ est vraie, nous supposons sa négation $\lnot P$ et nous montrons que cela conduit à une contradiction avec une proposition $Q$ dont nous savons qu'elle est vraie.
+Pour montrer que $P$ est vraie, nous supposons sa négation $\lnot P$ et nous montrons que cela conduit à une contradiction avec une proposition $Q$.
 
 :::{prf:proposition} Syllogisme
 Soientt $P$, $Q$ et $R$ trois propositions, alors

@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -426,22 +426,30 @@ Un ensemble à un élément est appelé un singleton.</p>
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(F\)</span> est un <strong>sous-ensemble ou partie</strong> de <span class="math notranslate nohighlight">\(E\)</span>, si <span class="math notranslate nohighlight">\(x \in F \implies x \in E\)</span><br />
 Le sous-ensemble <span class="math notranslate nohighlight">\(F\)</span> est <strong>inclus</strong> dans <span class="math notranslate nohighlight">\(E\)</span> et se note <span class="math notranslate nohighlight">\(F \subseteq E\)</span>.</p>
 </section>
-</div><div class="cell docutils container">
+</div><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
 
 <span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">)</span> <span class="p">:</span>
-    <span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;F inclus E&#39;</span><span class="p">)</span>
 
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;$F \subseteq E$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sous-ensemble F inclus dans E&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="_images/27983bef1d34a5e7b80a178f38a48e33527b2398f0edc6a88ab55295dcf4b31d.png" src="_images/27983bef1d34a5e7b80a178f38a48e33527b2398f0edc6a88ab55295dcf4b31d.png" />
+<img alt="_images/3971a2af4f2ab5299708c500d027aedaac01fa27fbcd130e79826dcdf99a76f1.png" src="_images/3971a2af4f2ab5299708c500d027aedaac01fa27fbcd130e79826dcdf99a76f1.png" />
 </div>
 </div>
 <p>Nous avons alors une nouvelle caractérisation de l’égalité de deux ensembles.</p>
@@ -456,7 +464,33 @@ Le sous-ensemble <span class="math notranslate nohighlight">\(F\)</span> est <st
 <section class="proposition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles alors  <span class="math notranslate nohighlight">\((F \subseteq G \: \land \: G \subseteq E) \implies F \subseteq E\)</span></p>
 </section>
-</div></section>
+</div><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn3</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn3</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;100&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;010&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;110&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;001&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;101&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;011&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;111&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">))</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;110&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;$G \subseteq E$&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;111&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t\t</span><span class="s1">$F \subseteq G$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Transitivité de l&#39;inclusion&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/7eda4c3b3ff37368ff88e018624b44efee6c96d32f9b4bded30673028a076aa8.png" src="_images/7eda4c3b3ff37368ff88e018624b44efee6c96d32f9b4bded30673028a076aa8.png" />
+</div>
+</div>
+</section>
 <section id="ensemble-des-parties-d-un-ensemble">
 <h3>Ensemble des parties d’un ensemble<a class="headerlink" href="#ensemble-des-parties-d-un-ensemble" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-5">
@@ -490,21 +524,99 @@ L’<strong>ensemble des parties</strong> de <span class="math notranslate nohig
 Le <strong>complémentaire</strong> de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> mais pas à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(\overline{F}\)</span>, parfois <span class="math notranslate nohighlight">\(\complement_E F\)</span> ou <span class="math notranslate nohighlight">\(F^c\)</span><br />
 <span class="math notranslate nohighlight">\(\overline{F} = \{x | x \in E \lor x \notin F\}\)</span></p>
 </section>
-</div><div class="proof definition admonition" id="definition-9">
+</div><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;$\overline</span><span class="si">{F}</span><span class="s1">$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Complémentaire de F dans E&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/eb05e6ec739954198b285880105f44cce0ac115e523909e058859251589c4769.png" src="_images/eb05e6ec739954198b285880105f44cce0ac115e523909e058859251589c4769.png" />
+</div>
+</div>
+<div class="proof definition admonition" id="definition-9">
 <p class="admonition-title"><span class="caption-number">Definition 16 </span> (Union d’ensembles)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
 L’<strong>union</strong> de <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> ou à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(E \cup F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> union <span class="math notranslate nohighlight">\(F\)</span>.<br />
 <span class="math notranslate nohighlight">\(E \cup F = \{x | x \in E \: \lor \: x \in F\}\)</span></p>
 </section>
-</div><div class="proof definition admonition" id="definition-10">
+</div><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;$E \cup F$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Union de E et F</span><span class="se">\n</span><span class="s2">$E \cup F$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/0200f4f34dffa6c6a5980f70dc31622b193881ae2b7ab34ca1bbd649d6ce2beb.png" src="_images/0200f4f34dffa6c6a5980f70dc31622b193881ae2b7ab34ca1bbd649d6ce2beb.png" />
+</div>
+</div>
+<div class="proof definition admonition" id="definition-10">
 <p class="admonition-title"><span class="caption-number">Definition 17 </span> (Intersection d’ensembles)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
 L’<strong>intersection</strong> de <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> et à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(E \cap F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> intersection <span class="math notranslate nohighlight">\(F\)</span> ou <span class="math notranslate nohighlight">\(E\)</span> inter <span class="math notranslate nohighlight">\(F\)</span>.<br />
 <span class="math notranslate nohighlight">\(E \cap F = \{x | x \in E \: \land \: x \in F\}\)</span></p>
 </section>
-</div><div class="proof proposition admonition" id="proposition-11">
+</div><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;$E \cap F$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Intersection de E et F</span><span class="se">\n</span><span class="s2">$E \cap F$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/9cf8672653ade79eb93099f2db28cb663e4773e59ffc251ccd93f2b66d2ff966.png" src="_images/9cf8672653ade79eb93099f2db28cb663e4773e59ffc251ccd93f2b66d2ff966.png" />
+</div>
+</div>
+<div class="proof proposition admonition" id="proposition-11">
 <p class="admonition-title"><span class="caption-number">Proposition 11 </span> (Propriétés de l’union et de l’intersection)</p>
 <section class="proposition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles.</p>
@@ -533,16 +645,68 @@ L’<strong>intersection</strong> de <span class="math notranslate nohighlight">
 <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> sont <strong>disjoints</strong> si <span class="math notranslate nohighlight">\(E \cap F = \varnothing\)</span><br />
 <span class="math notranslate nohighlight">\(E \cup F\)</span> est alors une <strong>union disjointe</strong> de <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> et se note <span class="math notranslate nohighlight">\(E \sqcup F\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-13">
+</div><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;$E$&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;$F$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ensembles disjoints</span><span class="se">\n</span><span class="s2">$E \sqcup F$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/76ed5f5fdeb5794a5cc4a61f8662f00bdfa84cd58898a901a7993096387c7e4e.png" src="_images/76ed5f5fdeb5794a5cc4a61f8662f00bdfa84cd58898a901a7993096387c7e4e.png" />
+</div>
+</div>
+<div class="proof definition admonition" id="definition-13">
 <p class="admonition-title"><span class="caption-number">Definition 19 </span> (Différence d’ensembles)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
-La <strong>différence</strong> de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> mais pas à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(E \backslash F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> moins <span class="math notranslate nohighlight">\(F\)</span>.<br />
-<span class="math notranslate nohighlight">\(E \backslash F = \{x | x \in E \: \land \: x \notin F\}\)</span></p>
+La <strong>différence</strong> de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> est l’ensemble des <span class="math notranslate nohighlight">\(x\)</span> appartenant à <span class="math notranslate nohighlight">\(E\)</span> mais pas à <span class="math notranslate nohighlight">\(F\)</span>, il se note <span class="math notranslate nohighlight">\(E \setminus F\)</span> et se lit <span class="math notranslate nohighlight">\(E\)</span> moins <span class="math notranslate nohighlight">\(F\)</span>.<br />
+<span class="math notranslate nohighlight">\(E \setminus F = \{x | x \in E \: \land \: x \notin F\}\)</span></p>
+</section>
+</div><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;$E \setminus F$&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Différence d&#39;ensembles</span><span class="se">\n</span><span class="s2">$E \setminus F$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/7fad6acde2d5ee8f9aae5a27d7c5bb8ba2d0f5e4be82664df548cd73291ef5e7.png" src="_images/7fad6acde2d5ee8f9aae5a27d7c5bb8ba2d0f5e4be82664df548cd73291ef5e7.png" />
+</div>
+</div>
 <p>Dans le cas où <span class="math notranslate nohighlight">\(F\)</span> est un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>, la différence de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span> est le complémentaire de <span class="math notranslate nohighlight">\(F\)</span> dans <span class="math notranslate nohighlight">\(E\)</span>.<br />
 <span class="math notranslate nohighlight">\(F \subseteq E \: \iff \: E \backslash F = \overline{F}\)</span></p>
-</section>
-</div><div class="proof definition admonition" id="definition-14">
+<div class="docutils">
+<div class="proof definition admonition" id="definition-14">
 <p class="admonition-title"><span class="caption-number">Definition 20 </span> (Différence symétrique d’ensembles)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
@@ -553,7 +717,36 @@ E \Delta F &amp;= (E \cup F) \backslash (E \cap F) \\
 &amp;= \{x | (x \in E \backslash F) \lor (x \in F \backslash E))\}
 \end{split}\)</span></p>
 </section>
-</div></section>
+</div></div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">venn2</span><span class="p">(</span><span class="n">subsets</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;10&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;01&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">set_labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span> <span class="n">set_colors</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">get_patch_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">get_label_by_id</span><span class="p">(</span><span class="s1">&#39;11&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Différence symétrique de E et F</span><span class="se">\n</span><span class="s2">$E \Delta F$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/58fc333b953e7aca1c7043cd6b5263f1f4e953110f864c78f77b340034f9d8d0.png" src="_images/58fc333b953e7aca1c7043cd6b5263f1f4e953110f864c78f77b340034f9d8d0.png" />
+</div>
+</div>
+</section>
 <section id="produit-cartesien">
 <h3>Produit cartésien<a class="headerlink" href="#produit-cartesien" title="Link to this heading">#</a></h3>
 <div class="proof definition admonition" id="definition-15">
@@ -598,7 +791,7 @@ L’intersection de la famille <span class="math notranslate nohighlight">\((E_i
 <section id="relations">
 <h2>Relations<a class="headerlink" href="#relations" title="Link to this heading">#</a></h2>
 <p>Comme avec les propositions et les connecteurs logiques, à partir d’ensembles et des opérateurs ensemblistes, nous créons de nouveaux ensembles.<br />
-Avec le produit cartésien aussi, à partir d’un élément d’un ensemble et d’un élément d’un autre ensemble (parfois le même), nous obtenons un couple d’éléments qui sont liés, en <code class="docutils literal notranslate"><span class="pre">relation</span></code>, pour ne former q’un unique élément, appartenant à un nouvel ensemble appelé graphe de cette relation.<br />
+Avec le produit cartésien aussi, à partir d’un élément d’un ensemble et d’un élément d’un autre ensemble (parfois le même), nous obtenons un couple d’éléments qui sont liés, en <code class="docutils literal notranslate"><span class="pre">relation</span></code>, pour ne former q’un unique élément, appartenant à un nouvel ensemble appelé <code class="docutils literal notranslate"><span class="pre">graphe</span></code> de cette relation.<br />
 Nous allons classer les relations en fonction de leurs propriétés, et enfin étudier un type particulier de relations, les <code class="docutils literal notranslate"><span class="pre">fonctions</span></code>.</p>
 <div class="proof definition admonition" id="definition-19">
 <p class="admonition-title"><span class="caption-number">Definition 24 </span> (Relation binaire)</p>
@@ -625,35 +818,55 @@ Si <span class="math notranslate nohighlight">\(F = E\)</span>, <span class="mat
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.<br />
 <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>relation d’équivalence</strong> si <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est réflexive, symétrique et transitive, <span class="math notranslate nohighlight">\(x \mathcal{R} y\)</span> se note <span class="math notranslate nohighlight">\(x \sim y\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-22">
+</div><div class="proof example admonition" id="example-22">
+<p class="admonition-title"><span class="caption-number">Example 4 </span></p>
+<section class="example-content" id="proof-content">
+<p>L’équivalence entre 2 propositions logiques est une relation d’équivalence</p>
+<ul class="simple">
+<li><p>réflexive : pour toute proposition <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(P \iff P\)</span>.</p></li>
+<li><p>symétrique : pour toutes propositions <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(Q\)</span>, si <span class="math notranslate nohighlight">\(P \iff Q\)</span> alors <span class="math notranslate nohighlight">\(Q \iff P\)</span></p></li>
+<li><p>transitive : pour toutes propositions <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> et <span class="math notranslate nohighlight">\(R\)</span>, si <span class="math notranslate nohighlight">\(P \iff Q\)</span> et <span class="math notranslate nohighlight">\(Q \iff R\)</span>, alors <span class="math notranslate nohighlight">\(P \iff R\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="proof definition admonition" id="definition-23">
 <p class="admonition-title"><span class="caption-number">Definition 27 </span> (Classe d’équivalence)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation d’équivalence <span class="math notranslate nohighlight">\(\sim\)</span>, <span class="math notranslate nohighlight">\(x\)</span> un élément de <span class="math notranslate nohighlight">\(E\)</span>.<br />
 La <strong>classe d’équivalence</strong> de <span class="math notranslate nohighlight">\(x\)</span> est l’ensemble des y dans <span class="math notranslate nohighlight">\(E\)</span> tel que <span class="math notranslate nohighlight">\(x \sim y\)</span>, et se note <span class="math notranslate nohighlight">\([x]\)</span><br />
 <span class="math notranslate nohighlight">\([x] = {y \in E | x \sim y}\)</span>, <span class="math notranslate nohighlight">\(y \in [x] \iff [x] = [y]\)</span></p>
 </section>
-</div><div class="proof definition admonition" id="definition-23">
+</div><div class="proof definition admonition" id="definition-24">
 <p class="admonition-title"><span class="caption-number">Definition 28 </span> (Ensemble quotient)</p>
 <section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation d’équivalence <span class="math notranslate nohighlight">\(\sim\)</span>.<br />
 L’<strong>ensemble quotient</strong> <span class="math notranslate nohighlight">\(E\)</span> par la relation <span class="math notranslate nohighlight">\(\sim\)</span> est le sous-ensemble de <span class="math notranslate nohighlight">\(\mathcal{P}(E) des classes d'équivalence, et se note \)</span>E/\sim<span class="math notranslate nohighlight">\(  
 \)</span>E/\sim = {[x] \in \mathcal{P}(E) | x \in E}</p>
 </section>
-</div><div class="proof definition admonition" id="definition-24">
+</div><div class="proof definition admonition" id="definition-25">
 <p class="admonition-title"><span class="caption-number">Definition 29 </span> (Relation d’ordre - Ensemble ordonné)</p>
 <section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble muni d’une relation <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>.<br />
 <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est une <strong>relation d’ordre</strong> si <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> est réflexive, anti-symétrique et transitive, <span class="math notranslate nohighlight">\(x \mathcal{R} y\)</span> se note <span class="math notranslate nohighlight">\(x \leq y\)</span>.<br />
 <span class="math notranslate nohighlight">\(E\)</span> est alors un <strong>ensemble ordonné</strong>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-25">
+</div><div class="proof example admonition" id="example-26">
+<p class="admonition-title"><span class="caption-number">Example 5 </span></p>
+<section class="example-content" id="proof-content">
+<p>L’inclusion est une relation d’ordre</p>
+<ul class="simple">
+<li><p>réflexive : pour tout ensemble <span class="math notranslate nohighlight">\(E\)</span>, on a <span class="math notranslate nohighlight">\(E \subseteq E\)</span>.</p></li>
+<li><p>antisymétrique : pour tous ensembles <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span>, si <span class="math notranslate nohighlight">\(E \subseteq F\)</span> et <span class="math notranslate nohighlight">\(F \subseteq E\)</span>, alors <span class="math notranslate nohighlight">\(E = F\)</span>.</p></li>
+<li><p>transitive : pour tous ensembles <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span>, si <span class="math notranslate nohighlight">\(E \subseteq F\)</span> et <span class="math notranslate nohighlight">\(F \subseteq G\)</span>, alors <span class="math notranslate nohighlight">\(E \subseteq G\)</span>.</p></li>
+</ul>
+</section>
+</div><div class="proof definition admonition" id="definition-27">
 <p class="admonition-title"><span class="caption-number">Definition 30 </span> (Ordre total)</p>
 <section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble ordonné muni de <span class="math notranslate nohighlight">\(\leq\)</span>
 <span class="math notranslate nohighlight">\(\leq\)</span> est un <strong>ordre total</strong> si <span class="math notranslate nohighlight">\(\forall x, y \in E, x \leq y ou y \leq x\)</span>.
 <span class="math notranslate nohighlight">\(E\)</span> est alors un <strong>ensemble totalement ordonné</strong>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-26">
+</div><div class="proof definition admonition" id="definition-28">
 <p class="admonition-title"><span class="caption-number">Definition 31 </span> (Maximum - Minimum)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> un ensemble ordonné, <span class="math notranslate nohighlight">\(F\)</span> un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>.</p>
@@ -665,7 +878,7 @@ L’<strong>ensemble quotient</strong> <span class="math notranslate nohighlight
 De tels éléments, s’ils existent sont uniques.</p></li>
 </ul>
 </section>
-</div><div class="proof definition admonition" id="definition-27">
+</div><div class="proof definition admonition" id="definition-29">
 <p class="admonition-title"><span class="caption-number">Definition 32 </span> (Majorant - Minorant)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> un ensemble ordonné, <span class="math notranslate nohighlight">\(F\)</span> un sous-ensemble de <span class="math notranslate nohighlight">\(E\)</span>.</p>
@@ -676,7 +889,7 @@ De tels éléments, s’ils existent sont uniques.</p></li>
 <span class="math notranslate nohighlight">\(\forall x \in F, m \leq x\)</span>.</p></li>
 </ul>
 </section>
-</div><div class="proof definition admonition" id="definition-28">
+</div><div class="proof definition admonition" id="definition-30">
 <p class="admonition-title"><span class="caption-number">Definition 33 </span> (Ensemble bien ordonné)</p>
 <section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble.
@@ -686,7 +899,7 @@ De tels éléments, s’ils existent sont uniques.</p></li>
 </div></section>
 <section id="fonctions-et-applications">
 <h2>Fonctions et applications<a class="headerlink" href="#fonctions-et-applications" title="Link to this heading">#</a></h2>
-<div class="proof definition admonition" id="definition-29">
+<div class="proof definition admonition" id="definition-31">
 <p class="admonition-title"><span class="caption-number">Definition 34 </span> (Fonction)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et G des ensembles.<br />
@@ -701,7 +914,7 @@ x &amp;\mapsto y = f(x)
 \end{align*}\)</span><br />
 <span class="math notranslate nohighlight">\(E\)</span> est le <strong>domaine</strong> de <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(F\)</span> est le <strong>codomaine</strong> de <span class="math notranslate nohighlight">\(f\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-30">
+</div><div class="proof definition admonition" id="definition-32">
 <p class="admonition-title"><span class="caption-number">Definition 35 </span> (Domaine de définition, image d’une fonction)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />
@@ -712,7 +925,7 @@ L’<strong>image</strong> de <span class="math notranslate nohighlight">\(f\)</
 <span class="math notranslate nohighlight">\(Im(f) = \{y \in F | y = f(x), x \in E\}\)</span>.<br />
 On a <span class="math notranslate nohighlight">\(Im(f) \subseteq F\)</span>.</p>
 </section>
-</div><div class="proof definition admonition" id="definition-31">
+</div><div class="proof definition admonition" id="definition-33">
 <p class="admonition-title"><span class="caption-number">Definition 36 </span> (Identité)</p>
 <section class="definition-content" id="proof-content">
 <p>Soit <span class="math notranslate nohighlight">\(E\)</span> un ensemble.<br />
@@ -726,7 +939,7 @@ Le graphe de <span class="math notranslate nohighlight">\(Id_E\)</span> est appe
 </section>
 </div><section id="composition-de-fonctions">
 <h3>Composition de fonctions<a class="headerlink" href="#composition-de-fonctions" title="Link to this heading">#</a></h3>
-<div class="proof definition admonition" id="definition-32">
+<div class="proof definition admonition" id="definition-34">
 <p class="admonition-title"><span class="caption-number">Definition 37 </span> (Composition de fonctions)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span>, <span class="math notranslate nohighlight">\(g : F \to G\)</span> des fonctions.<br />
@@ -741,7 +954,7 @@ Si <span class="math notranslate nohighlight">\(g =f\)</span> alors <span class=
 </div></section>
 <section id="injection-surjection-bijection">
 <h3>Injection, surjection, bijection<a class="headerlink" href="#injection-surjection-bijection" title="Link to this heading">#</a></h3>
-<div class="proof definition admonition" id="definition-33">
+<div class="proof definition admonition" id="definition-35">
 <p class="admonition-title"><span class="caption-number">Definition 38 </span> (Injection - Surjection - Bijection)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.</p>
@@ -754,7 +967,7 @@ Si <span class="math notranslate nohighlight">\(g =f\)</span> alors <span class=
 <span class="math notranslate nohighlight">\(f\)</span> bijective <span class="math notranslate nohighlight">\(\iff \forall y \in F, \exists ! x \in E | y =f(x)\)</span>.</p></li>
 </ul>
 </section>
-</div><div class="proof definition admonition" id="definition-34">
+</div><div class="proof definition admonition" id="definition-36">
 <p class="admonition-title"><span class="caption-number">Definition 39 </span> (Subpotence - Surpotence - Equipotence)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles</p>
@@ -764,7 +977,7 @@ Si <span class="math notranslate nohighlight">\(g =f\)</span> alors <span class=
 <li><p><span class="math notranslate nohighlight">\(E\)</span> est <strong>équipotent</strong> à <span class="math notranslate nohighlight">\(F\)</span> s’il existe une bijection de <span class="math notranslate nohighlight">\(E\)</span> dans <span class="math notranslate nohighlight">\(F\)</span>, et se note <span class="math notranslate nohighlight">\(E \approx F\)</span>.</p></li>
 </ul>
 </section>
-</div><div class="proof theorem admonition" id="theorem-35">
+</div><div class="proof theorem admonition" id="theorem-37">
 <p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Théorème de Cantor-Berstein)</p>
 <section class="theorem-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles.<br />
@@ -773,7 +986,7 @@ Si <span class="math notranslate nohighlight">\(E \preceq F\)</span> et <span cl
 </div></section>
 <section id="fonction-reciproque">
 <h3>Fonction réciproque<a class="headerlink" href="#fonction-reciproque" title="Link to this heading">#</a></h3>
-<div class="proof definition admonition" id="definition-36">
+<div class="proof definition admonition" id="definition-38">
 <p class="admonition-title"><span class="caption-number">Definition 40 </span> (Bijection réciproque d’une fonction)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction bijective, alors il existe une fonction <span class="math notranslate nohighlight">\(g : F \to E\)</span> telle que<br />
@@ -782,7 +995,7 @@ Si <span class="math notranslate nohighlight">\(E \preceq F\)</span> et <span cl
 On a <span class="math notranslate nohighlight">\(f^{-1} \circ f = Id_E\)</span>, <span class="math notranslate nohighlight">\(f \circ f^{-1} = Id_F\)</span> et <span class="math notranslate nohighlight">\((f^{-1})^{-1} = f\)</span>.<br />
 <span class="math notranslate nohighlight">\(f\)</span> est une <strong>involution</strong> si <span class="math notranslate nohighlight">\(f^{-1} = f\)</span>.</p>
 </section>
-</div><div class="proof proposition admonition" id="proposition-37">
+</div><div class="proof proposition admonition" id="proposition-39">
 <p class="admonition-title"><span class="caption-number">Proposition 12 </span> (Réciproque d’une composée)</p>
 <section class="proposition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(F\)</span> et <span class="math notranslate nohighlight">\(G\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span>, <span class="math notranslate nohighlight">\(g : F \to G\)</span> des fonctions.<br />
@@ -791,7 +1004,7 @@ Alors <span class="math notranslate nohighlight">\((g \circ f)^{-1} = f^{-1} \ci
 </div></section>
 <section id="application">
 <h3>Application<a class="headerlink" href="#application" title="Link to this heading">#</a></h3>
-<div class="proof definition admonition" id="definition-38">
+<div class="proof definition admonition" id="definition-40">
 <p class="admonition-title"><span class="caption-number">Definition 41 </span> (Application)</p>
 <section class="definition-content" id="proof-content">
 <p>Soient <span class="math notranslate nohighlight">\(E\)</span> et <span class="math notranslate nohighlight">\(F\)</span> des ensembles, <span class="math notranslate nohighlight">\(f : E \to F\)</span> une fonction.<br />

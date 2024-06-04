@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -411,24 +411,27 @@ Alors la propriété <span class="math notranslate nohighlight">\(P\)</span> est
 </div><div class="proof definition admonition" id="definition-1">
 <p class="admonition-title"><span class="caption-number">Definition 55 </span> (Addition, multiplication et puissance)</p>
 <section class="definition-content" id="proof-content">
-<p>On définit par récurrence l’addition, noté +, la multiplication, noté <span class="math notranslate nohighlight">\(\cdot\)</span> ou <span class="math notranslate nohighlight">\(\times\)</span> et la puissance tels que<br />
+<p>Nous définissons par récurrence la fonction <strong>addition</strong>, <span class="math notranslate nohighlight">\(add()\)</span> telle que
 <span class="math notranslate nohighlight">\(\forall m, n \in \mathbb{N}\)</span>,<br />
-<strong>addition :</strong>
 <span class="math notranslate nohighlight">\(\begin{align*}
-m + 0 &amp;= m\\
-m + S(n) &amp;= S(m + n)
-\end{align*}\)</span><br />
-On note <span class="math notranslate nohighlight">\(S(0) = 1\)</span> et <span class="math notranslate nohighlight">\(\forall n \in \mathbb{N}, \: S(n) = n + 1\)</span><br />
-<strong>multiplication :</strong>
-<span class="math notranslate nohighlight">\(\begin{align*}
-m \cdot 0 &amp;= 0\\
-m \cdot S(n) &amp;= m \cdot n + m
-\end{align*}\)</span><br />
-<strong>puissance :</strong>
-<span class="math notranslate nohighlight">\(\begin{align*}
-m^{0} &amp;= 1\\
-m^{S(n)} &amp;= m^{n} \cdot m
+add(m, 0) &amp;= m\\
+add(m, S(n)) &amp;= S\circ add(m, n)
 \end{align*}\)</span></p>
+<p>Avec <span class="math notranslate nohighlight">\(S(0) = 1\)</span>, <span class="math notranslate nohighlight">\(add(m, n)\)</span> se note m + n et S(n) = n + 1</p>
+<p>Nous définissons par récurrence la fonction <strong>multiplication</strong>, <span class="math notranslate nohighlight">\(mul()\)</span> telle que
+<span class="math notranslate nohighlight">\(\forall m, n \in \mathbb{N}\)</span>,
+<span class="math notranslate nohighlight">\(\begin{align*}
+mul(m, 0) &amp;= 0\\
+mul(m, S(n)) &amp;= nul(m, n) + m
+\end{align*}\)</span></p>
+<p><span class="math notranslate nohighlight">\(mul(m, n)\)</span> se note <span class="math notranslate nohighlight">\(m \cdot\)</span> n ou <span class="math notranslate nohighlight">\(m \times n\)</span></p>
+<p>Nous définissons par récurrence la fonction <strong>puissance</strong>, <span class="math notranslate nohighlight">\(puis()\)</span> telle que
+<span class="math notranslate nohighlight">\(\forall m, n \in \mathbb{N}\)</span>,
+<span class="math notranslate nohighlight">\(\begin{align*}
+puis(m, 0) &amp;= 1\\
+puis(m, S(n)) &amp;= puis(m, n) \cdot m
+\end{align*}\)</span></p>
+<p><span class="math notranslate nohighlight">\(puis(m, n)\)</span> se note <span class="math notranslate nohighlight">\(m^n\)</span></p>
 </section>
 </div><div class="proof property admonition" id="property-2">
 <p class="admonition-title"><span class="caption-number">Property 3 </span> (Propriétés de l’addition et de la multiplication)</p>
@@ -458,7 +461,7 @@ Muni de ces deux <strong>lois de composition interne</strong>, + et <span class=
 </div><div class="proof property admonition" id="property-3">
 <p class="admonition-title"><span class="caption-number">Property 4 </span></p>
 <section class="property-content" id="proof-content">
-<p><span class="math notranslate nohighlight">\(\mathcal{N}\)</span> est bien ordonné.</p>
+<p><span class="math notranslate nohighlight">\(\mathbb{N}\)</span> est bien ordonné.</p>
 </section>
 </div></section>
 </section>
