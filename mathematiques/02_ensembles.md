@@ -357,7 +357,7 @@ L'inclusion est une relation d'ordre
 
 :::{prf:definition} Ordre total
 Soit $E$ un ensemble ordonné muni de $\leq$
-$\leq$ est un **ordre total** si $\forall x, y \in E, x \leq y ou y \leq x$.
+$\leq$ est un **ordre total** si $\forall x, y \in E, x \leq y$ ou $y \leq x$.
 $E$ est alors un **ensemble totalement ordonné**.
 :::
 
