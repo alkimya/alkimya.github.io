@@ -3,10 +3,10 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
+    format_version: 1.0.4
+    jupytext_version: 1.16.2
 kernelspec:
-  display_name: Python 3.9.7 64-bit
+  display_name: Python 3.11.2 64-bit
   name: python3
 ---
 
@@ -34,14 +34,17 @@ Le sous-ensemble $F$ est **inclus** dans $E$ et se note $F \subseteq E$.
 :::
 
 ```{code-cell}
+:tags: [hide-input]
 import matplotlib.pyplot as plt
 from matplotlib_venn import venn2
 
 v = venn2(subsets={'10' : 1, '01' : 0, '11' : 1}, set_labels=('E', 'F'), set_colors=('b', 'r'))
-for key in ('10', '01') :
-    v.get_label_by_id(key).set_text('')
-v.get_label_by_id('11').set_text('F inclus E')
 
+v.get_label_by_id('10').set_text('')
+v.get_label_by_id('01').set_text('')
+v.get_label_by_id('11').set_text('$F \subseteq E$')
+
+plt.title("Sous-ensemble F inclus dans E")
 plt.show()
 ```
 
@@ -55,6 +58,21 @@ $E = F \iff (F \subseteq E) \land (E \subseteq F)$ soit $x \in F \iff x \in E$
 :::{prf:proposition} Transitivité de l'inclusion
 Soient $E$, $F$ et $G$ des ensembles alors  $(F \subseteq G \: \land \: G \subseteq E) \implies F \subseteq E$
 :::
+
+```{code-cell}
+:tags: [hide-input]
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn3
+
+v = venn3(subsets={'100': 1, '010': 0, '110': 1, '001': 0, '101': 0, '011': 0, '111': 1}, set_labels=('E', 'G', 'F'), set_colors=('b', 'r', 'g'))
+
+v.get_label_by_id('100').set_text('')
+v.get_label_by_id('110').set_text('$G \subseteq E$')
+v.get_label_by_id('111').set_text('\t\t$F \subseteq G$')
+
+plt.title("Transitivité de l'inclusion")
+plt.show()
+```
 
 ### Ensemble des parties d'un ensemble
 
@@ -84,17 +102,62 @@ Le **complémentaire** de $F$ dans $E$ est l'ensemble des $x$ appartenant à $E$
 $\overline{F} = \{x | x \in E \lor x \notin F\}$
 :::
 
+```{code-cell}
+:tags: [hide-input]
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+
+v = venn2(subsets={'10': 1, '01': 0, '11': 1}, set_labels=('E', 'F'), set_colors=('b', 'r'))
+
+v.get_label_by_id('11').set_text('')
+v.get_label_by_id('01').set_text('')
+v.get_label_by_id('10').set_text('$\overline{F}$')
+
+plt.title("Complémentaire de F dans E")
+plt.show()
+```
+
 :::{prf:definition} Union d'ensembles
 Soient $E$ et $F$ des ensembles.  
 L'**union** de $E$ et $F$ est l'ensemble des $x$ appartenant à $E$ ou à $F$, il se note $E \cup F$ et se lit $E$ union $F$.  
 $E \cup F = \{x | x \in E \: \lor \: x \in F\}$
 :::
 
+```{code-cell}
+:tags: [hide-input]
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+
+v = venn2(subsets={'10': 1, '01': 1, '11': 1}, set_labels=('E', 'F'), set_colors=('b', 'b'))
+
+v.get_label_by_id('10').set_text('')
+v.get_label_by_id('01').set_text('')
+v.get_label_by_id('11').set_text('$E \cup F$')
+
+plt.title("Union de E et F\n$E \cup F$")
+plt.show()
+```
+
 :::{prf:definition} Intersection d'ensembles
 Soient $E$ et $F$ des ensembles.  
 L'**intersection** de $E$ et $F$ est l'ensemble des $x$ appartenant à $E$ et à $F$, il se note $E \cap F$ et se lit $E$ intersection $F$ ou $E$ inter $F$.  
 $E \cap F = \{x | x \in E \: \land \: x \in F\}$
 :::
+
+```{code-cell}
+:tags: [hide-input]
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+
+v = venn2(subsets={'10': 1, '01': 1, '11': 1}, set_labels=('E', 'F'), set_colors=('b', 'r'))
+
+v.get_label_by_id('10').set_text('')
+v.get_label_by_id('01').set_text('')
+v.get_label_by_id('11').set_text('$E \cap F$')
+
+plt.title("Intersection de E et F\n$E \cap F$")
+plt.show()
+```
 
 :::{prf:proposition} Propriétés de l'union et de l'intersection
 Soient $E$, $F$ et $G$ des ensembles.
@@ -128,10 +191,39 @@ $E$ et $F$ sont **disjoints** si $E \cap F = \varnothing$
 $E \cup F$ est alors une **union disjointe** de $E$ et $F$ et se note $E \sqcup F$.
 :::
 
+```{code-cell}
+:tags: [hide-input]
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+
+v = venn2(subsets={'10': 1, '01': 1, '11': 0}, set_labels=('E', 'F'), set_colors=('b', 'r'))
+
+v.get_label_by_id('10').set_text('$E$')
+v.get_label_by_id('01').set_text('$F$')
+
+plt.title("Ensembles disjoints\n$E \sqcup F$")
+plt.show()
+```
+
 :::{prf:definition} Différence d'ensembles
 Soient $E$ et $F$ des ensembles.  
-La **différence** de $F$ dans $E$ est l'ensemble des $x$ appartenant à $E$ mais pas à $F$, il se note $E \backslash F$ et se lit $E$ moins $F$.  
-$E \backslash F = \{x | x \in E \: \land \: x \notin F\}$
+La **différence** de $F$ dans $E$ est l'ensemble des $x$ appartenant à $E$ mais pas à $F$, il se note $E \setminus F$ et se lit $E$ moins $F$.  
+$E \setminus F = \{x | x \in E \: \land \: x \notin F\}$
+
+```{code-cell}
+:tags: [hide-input]
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+
+v = venn2(subsets={'10': 1, '01': 1, '11': 1}, set_labels=('E', 'F'), set_colors=('b', 'r'))
+
+v.get_label_by_id('10').set_text('$E \setminus F$')
+v.get_label_by_id('01').set_text('')
+v.get_label_by_id('11').set_text('')
+
+plt.title("Différence d'ensembles\n$E \setminus F$")
+plt.show()
+```
 
 Dans le cas où $F$ est un sous-ensemble de $E$, la différence de $F$ dans $E$ est le complémentaire de $F$ dans $E$.  
 $F \subseteq E \: \iff \: E \backslash F = \overline{F}$
@@ -146,6 +238,23 @@ E \Delta F &= (E \cup F) \backslash (E \cap F) \\
 &= \{x | (x \in E \backslash F) \lor (x \in F \backslash E))\}
 \end{split}$
 :::
+
+```{code-cell}
+:tags: [hide-input]
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
+
+v = venn2(subsets={'10': 1, '01': 1, '11': 1}, set_labels=('E', 'F'), set_colors=('b', 'b'))
+
+v.get_patch_by_id('11').set_color('w')
+
+v.get_label_by_id('10').set_text('')
+v.get_label_by_id('01').set_text('')
+v.get_label_by_id('11').set_text('')
+
+plt.title("Différence symétrique de E et F\n$E \Delta F$")
+plt.show()
+```
 
 ### Produit cartésien
 
@@ -186,7 +295,7 @@ Le produit cartésien de la famille $(E_i)_{i \in I}$ est noté $\prod_{i \in I}
 ## Relations
 
 Comme avec les propositions et les connecteurs logiques, à partir d'ensembles et des opérateurs ensemblistes, nous créons de nouveaux ensembles.  
-Avec le produit cartésien aussi, à partir d'un élément d'un ensemble et d'un élément d'un autre ensemble (parfois le même), nous obtenons un couple d'éléments qui sont liés, en `relation`, pour ne former q'un unique élément, appartenant à un nouvel ensemble appelé graphe de cette relation.  
+Avec le produit cartésien aussi, à partir d'un élément d'un ensemble et d'un élément d'un autre ensemble (parfois le même), nous obtenons un couple d'éléments qui sont liés, en `relation`, pour ne former q'un unique élément, appartenant à un nouvel ensemble appelé `graphe` de cette relation.  
 Nous allons classer les relations en fonction de leurs propriétés, et enfin étudier un type particulier de relations, les `fonctions`.
 
 :::{prf:definition} Relation binaire
@@ -211,6 +320,14 @@ Soit $E$ un ensemble muni d'une relation $\mathcal{R}$.
 $\mathcal{R}$ est une **relation d'équivalence** si $\mathcal{R}$ est réflexive, symétrique et transitive, $x \mathcal{R} y$ se note $x \sim y$.
 :::
 
+:::{prf:example}
+L'équivalence entre 2 propositions logiques est une relation d'équivalence
+
+- réflexive : pour toute proposition $P$, $P \iff P$.
+- symétrique : pour toutes propositions $P$ et $Q$, si $P \iff Q$ alors $Q \iff P$
+- transitive : pour toutes propositions $P$, $Q$ et $R$, si $P \iff Q$ et $Q \iff R$, alors $P \iff R$.
+:::
+
 :::{prf:definition} Classe d'équivalence
 Soient $E$ un ensemble muni d'une relation d'équivalence $\sim$, $x$ un élément de $E$.  
 La **classe d'équivalence** de $x$ est l'ensemble des y dans $E$ tel que $x \sim y$, et se note $[x]$  
@@ -227,6 +344,14 @@ $E/\sim = {[x] \in \mathcal{P}(E) | x \in E}
 Soit $E$ un ensemble muni d'une relation $\mathcal{R}$.  
 $\mathcal{R}$ est une **relation d'ordre** si $\mathcal{R}$ est réflexive, anti-symétrique et transitive, $x \mathcal{R} y$ se note $x \leq y$.  
 $E$ est alors un **ensemble ordonné**.
+:::
+
+:::{prf:example}
+L'inclusion est une relation d'ordre
+
+- réflexive : pour tout ensemble $E$, on a $E \subseteq E$.
+- antisymétrique : pour tous ensembles $E$ et $F$, si $E \subseteq F$ et $F \subseteq E$, alors $E = F$.
+- transitive : pour tous ensembles $E$, $F$ et $G$, si $E \subseteq F$ et $F \subseteq G$, alors $E \subseteq G$.
 :::
 
 :::{prf:definition} Ordre total
