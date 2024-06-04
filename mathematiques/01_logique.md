@@ -215,7 +215,7 @@ $\: (P \implies Q) \iff (\lnot Q \implies \lnot P)$
 Si $P$ implique $Q$, il suffit de montrer que non $Q$ implique non $P$.
 
 :::{attention}
-Ne pas confondre la contraposée d'une proposition $P \implies Q$ avec la proposition réciproque $Q \implies P$ ou la réproque de la contraposée $\lnot P \implies \lnot Q$.
+Ne pas confondre la contraposée d'une proposition $P \implies Q$ avec la proposition réciproque $Q \implies P$ ou la réciproque de la contraposée $\lnot P \implies \lnot Q$.
 :::
 
 :::{prf:proposition} Preuve par l'absurde
