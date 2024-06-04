@@ -70,8 +70,8 @@ $(M, \star)$ est un **monoïde** si $(M, \star)$ est unitaire et associatif.
 ```{prf:definition} Symétrique
 Soit $(M, \star)$ un monoïde, $e$ le neutre de $(M, \star)$.
  Un élément $x$ de $(M, \star)$ est  
-- **symétrisable à gauche** si $\exists x^{´} \in (M, \star) | x^{´} \star x = e  
-- **symétrisable à droite** si $\exists x^{´} \in (M, \star) | x \star x^{´} = e  
+- **symétrisable à gauche** si $\exists x^{´} \in (M, \star) | x^{´} \star x = e$  
+- **symétrisable à droite** si $\exists x^{´} \in (M, \star) | x \star x^{´} = e$  
 - **symétrisable** s'il est symétrisable à gauche et à droite,  $x^{´}$ est le symétrique de $x$ et est noté $x^{-1}$
 ```
 
@@ -85,7 +85,7 @@ $(G, \star)$ est un **groupe abélien ou groupe commutatif** si $(G, \star)$ est
 
 ```{prf:definition} Distributivité
 Soit $A$ un ensemble, $\star$ et $\star^{´}$ deux lci dans $A$.  
-$A$ muni des deux lci $\star$ et $\star^{´} se note $(A, \star, \star^{´})$  
+$A$ muni des deux lci $\star$ et $\star^{´}$ se note $(A, \star, \star^{´})$  
 $\star^{´}$ est **distributive** par rapport à $\star$ si,  
 $\forall x, y, z \in (A, \star, \star^{´}), x \star^{´} (y \star z) = (x \star^{´} y) \star (x \star^{´} z)$
 ```
