@@ -337,7 +337,7 @@ $[x] = {y \in E | x \sim y}$, $y \in [x] \iff [x] = [y]$
 
 :::{prf:definition} Ensemble quotient
 Soit $E$ un ensemble muni d'une relation d'équivalence $\sim$.  
-L'**ensemble quotient** $E$ par la relation $\sim$ est le sous-ensemble de $\mathcal{P}(E) des classes d'équivalence, et se note $E/\sim$  
+L'**ensemble quotient** $E$ par la relation $\sim$ est le sous-ensemble de $\mathcal{P}(E)$ des classes d'équivalence, et se note $E/\sim$  
 $E/\sim = {[x] \in \mathcal{P}(E) | x \in E}
 :::
 
