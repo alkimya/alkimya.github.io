@@ -218,10 +218,6 @@ Si $P$ implique $Q$, il suffit de montrer que non $Q$ implique non $P$.
 Ne pas confondre la contraposée d'une proposition $P \implies Q$ avec la proposition réciproque $Q \implies P$ ou la réproque de la contraposée $\lnot P \implies \lnot Q$.
 :::
 
-:::{prf:example}
-Soient $P$ la proposition : "Je suis en France" et  $Q$ la proposition : "Je suis en Europe", alors $P \implies Q$ $\iff$ $\lnot Q \implies \lnot P$
-:::
-
 :::{prf:proposition} Preuve par l'absurde
 Soient $P$ et $Q$ deux propositions, alors
 $\:((\lnot P \implies Q) \land \lnot Q) \implies P$
