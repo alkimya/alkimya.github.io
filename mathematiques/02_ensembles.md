@@ -209,6 +209,7 @@ plt.show()
 Soient $E$ et $F$ des ensembles.  
 La **différence** de $F$ dans $E$ est l'ensemble des $x$ appartenant à $E$ mais pas à $F$, il se note $E \setminus F$ et se lit $E$ moins $F$.  
 $E \setminus F = \{x | x \in E \: \land \: x \notin F\}$
+:::
 
 ```{code-cell}
 :tags: [hide-input]
