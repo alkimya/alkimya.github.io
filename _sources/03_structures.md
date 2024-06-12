@@ -107,7 +107,9 @@ Soit $(A, \star, \star^{´})$ un anneaux, $(A, \star, \star^{´})$ est un anneau
 
 ```{prf:definition} Corps
 Soit $(K, \star, \star^{´})$ un anneaux,  
-$(K, \star, \star^{´})$ un corps si $(K, \star)$ est un groupe.  
+$(K, \star, \star^{´})$ un corps si
+- $(K, \star, \star^{´})$ est un anneau commutatif unitaire
+- $(K^*, \star^{´})$ est un groupe, où $K^* = K \setminus \{e_{\star}\}$ avec $e_{\star}$ l'élément neutre de $(K, \star)$
 ```
 
 +++
