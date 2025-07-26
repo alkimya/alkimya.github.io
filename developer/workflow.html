@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GatheRing Development Workflow 🔄 &mdash; GatheRing 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GatheRing
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/guide.html">GatheRing User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/examples.html">Code Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GatheRing</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">GatheRing Development Workflow 🔄</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developer/workflow.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="gathering-development-workflow">
+<h1>GatheRing Development Workflow 🔄<a class="headerlink" href="#gathering-development-workflow" title="Link to this heading"></a></h1>
+<section id="tdd-bdd-development-process">
+<h2>TDD/BDD Development Process<a class="headerlink" href="#tdd-bdd-development-process" title="Link to this heading"></a></h2>
+<section id="write-tests-first-red-phase">
+<h3>1. Write Tests First (Red Phase) 🔴<a class="headerlink" href="#write-tests-first-red-phase" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new test file</span>
+touch<span class="w"> </span>tests/unit/test_new_feature.py
+
+<span class="c1"># Write failing tests</span>
+pytest<span class="w"> </span>tests/unit/test_new_feature.py<span class="w"> </span>-v
+</pre></div>
+</div>
+</section>
+<section id="implement-minimal-code-green-phase">
+<h3>2. Implement Minimal Code (Green Phase) 🟢<a class="headerlink" href="#implement-minimal-code-green-phase" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Implement just enough to pass tests</span>
+<span class="c1"># Run tests continuously</span>
+pytest<span class="w"> </span>tests/unit/test_new_feature.py<span class="w"> </span>-v<span class="w"> </span>--tb<span class="o">=</span>short
+</pre></div>
+</div>
+</section>
+<section id="refactor-refactor-phase">
+<h3>3. Refactor (Refactor Phase) 🔵<a class="headerlink" href="#refactor-refactor-phase" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Improve code while keeping tests green</span>
+<span class="c1"># Run all tests to ensure nothing breaks</span>
+pytest
+
+<span class="c1"># Check code quality</span>
+make<span class="w"> </span>lint
+make<span class="w"> </span>format
+</pre></div>
+</div>
+</section>
+</section>
+<section id="daily-development-workflow">
+<h2>Daily Development Workflow<a class="headerlink" href="#daily-development-workflow" title="Link to this heading"></a></h2>
+<section id="morning-setup">
+<h3>Morning Setup<a class="headerlink" href="#morning-setup" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Activate virtual environment</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># Linux/Mac</span>
+<span class="c1"># or</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">  </span><span class="c1"># Windows</span>
+
+<span class="c1"># Pull latest changes</span>
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Install any new dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c1"># Run all tests to ensure clean state</span>
+pytest
+</pre></div>
+</div>
+</section>
+<section id="during-development">
+<h3>During Development<a class="headerlink" href="#during-development" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run tests in watch mode (requires pytest-watch)</span>
+pip<span class="w"> </span>install<span class="w"> </span>pytest-watch
+ptw<span class="w"> </span>tests/unit/test_current_feature.py
+
+<span class="c1"># Check coverage for specific module</span>
+pytest<span class="w"> </span>tests/unit/test_agents.py<span class="w"> </span>--cov<span class="o">=</span>gathering.agents<span class="w"> </span>--cov-report<span class="o">=</span>term-missing
+
+<span class="c1"># Run only marked tests</span>
+pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;not slow&quot;</span><span class="w">  </span><span class="c1"># Skip slow tests</span>
+pytest<span class="w"> </span>-m<span class="w"> </span>unit<span class="w">        </span><span class="c1"># Only unit tests</span>
+</pre></div>
+</div>
+</section>
+<section id="before-committing">
+<h3>Before Committing<a class="headerlink" href="#before-committing" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Format code</span>
+black<span class="w"> </span>gathering<span class="w"> </span>tests
+
+<span class="c1"># Lint code</span>
+flake8<span class="w"> </span>gathering<span class="w"> </span>tests
+mypy<span class="w"> </span>gathering
+
+<span class="c1"># Run all tests with coverage</span>
+pytest
+
+<span class="c1"># Check coverage report</span>
+open<span class="w"> </span>htmlcov/index.html<span class="w">  </span><span class="c1"># Mac</span>
+<span class="c1"># or</span>
+xdg-open<span class="w"> </span>htmlcov/index.html<span class="w">  </span><span class="c1"># Linux</span>
+<span class="c1"># or</span>
+start<span class="w"> </span>htmlcov/index.html<span class="w">  </span><span class="c1"># Windows</span>
+
+<span class="c1"># Update documentation if needed</span>
+</pre></div>
+</div>
+</section>
+<section id="commit-guidelines">
+<h3>Commit Guidelines<a class="headerlink" href="#commit-guidelines" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stage changes</span>
+git<span class="w"> </span>add<span class="w"> </span>-p<span class="w">  </span><span class="c1"># Review changes piece by piece</span>
+
+<span class="c1"># Commit with descriptive message</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat(agents): Add emotional state tracking</span>
+
+<span class="s2">- Implement EmotionalState class</span>
+<span class="s2">- Add tests for mood transitions</span>
+<span class="s2">- Update agent interface</span>
+<span class="s2">- 100% test coverage maintained&quot;</span>
+
+<span class="c1"># Push to feature branch</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/emotional-states
+</pre></div>
+</div>
+</section>
+</section>
+<section id="bdd-scenario-writing">
+<h2>BDD Scenario Writing<a class="headerlink" href="#bdd-scenario-writing" title="Link to this heading"></a></h2>
+<section id="example-feature-file">
+<h3>Example Feature File<a class="headerlink" href="#example-feature-file" title="Link to this heading"></a></h3>
+<div class="highlight-gherkin notranslate"><div class="highlight"><pre><span></span><span class="c"># features/agent_conversation.feature</span>
+<span class="k">Feature:</span><span class="nf"> Agent Conversation</span>
+<span class="nf">  As a user</span>
+<span class="nf">  I want agents to have natural conversations</span>
+<span class="nf">  So that they can collaborate effectively</span>
+
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Agent remembers user name</span>
+<span class="k">    Given </span><span class="nf">an agent named &quot;</span><span class="s">Assistant</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">When </span><span class="nf">I tell the agent &quot;</span><span class="s">My name is Alice</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">I ask &quot;</span><span class="s">What is my name?</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">the agent should respond with &quot;</span><span class="s">Alice</span><span class="nf">&quot;</span>
+
+<span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> Two agents collaborate</span>
+<span class="k">    Given </span><span class="nf">an agent named &quot;</span><span class="s">Teacher</span><span class="nf">&quot; with competency &quot;</span><span class="s">mathematics</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">an agent named &quot;</span><span class="s">Student</span><span class="nf">&quot; with personality &quot;</span><span class="s">curious</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">When </span><span class="nf">the student asks the teacher about &quot;</span><span class="s">calculus</span><span class="nf">&quot;</span>
+<span class="nf">    </span><span class="k">Then </span><span class="nf">the teacher should provide an explanation</span>
+<span class="nf">    </span><span class="k">And </span><span class="nf">the student should ask follow-up questions</span>
+</pre></div>
+</div>
+</section>
+<section id="implementing-bdd-tests">
+<h3>Implementing BDD Tests<a class="headerlink" href="#implementing-bdd-tests" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># tests/bdd/test_agent_conversation.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pytest_bdd</span><span class="w"> </span><span class="kn">import</span> <span class="n">scenarios</span><span class="p">,</span> <span class="n">given</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span> <span class="n">then</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="n">scenarios</span><span class="p">(</span><span class="s1">&#39;../features/agent_conversation.feature&#39;</span><span class="p">)</span>
+
+<span class="nd">@given</span><span class="p">(</span><span class="s1">&#39;an agent named &quot;&lt;name&gt;&quot;&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">agent_with_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+        <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span>
+    <span class="p">})</span>
+
+<span class="nd">@when</span><span class="p">(</span><span class="s1">&#39;I tell the agent &quot;&lt;message&gt;&quot;&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tell_agent</span><span class="p">(</span><span class="n">agent_with_name</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">agent_with_name</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="nd">@then</span><span class="p">(</span><span class="s1">&#39;the agent should respond with &quot;&lt;expected&gt;&quot;&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_response</span><span class="p">(</span><span class="n">tell_agent</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">expected</span> <span class="ow">in</span> <span class="n">tell_agent</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="testing-best-practices">
+<h2>Testing Best Practices<a class="headerlink" href="#testing-best-practices" title="Link to this heading"></a></h2>
+<section id="test-organization">
+<h3>1. Test Organization<a class="headerlink" href="#test-organization" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tests/
+├──<span class="w"> </span>unit/<span class="w">           </span><span class="c1"># Fast, isolated tests</span>
+├──<span class="w"> </span>integration/<span class="w">    </span><span class="c1"># Component interaction tests</span>
+├──<span class="w"> </span>e2e/<span class="w">           </span><span class="c1"># Full system tests</span>
+├──<span class="w"> </span>fixtures/<span class="w">      </span><span class="c1"># Shared test data</span>
+└──<span class="w"> </span>bdd/<span class="w">           </span><span class="c1"># Behavior-driven tests</span>
+</pre></div>
+</div>
+</section>
+<section id="test-naming-convention">
+<h3>2. Test Naming Convention<a class="headerlink" href="#test-naming-convention" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_should_create_agent_when_config_is_valid</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test names should clearly describe the scenario.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_should_raise_error_when_llm_provider_is_invalid</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Include both action and expected outcome.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+<section id="fixture-usage">
+<h3>3. Fixture Usage<a class="headerlink" href="#fixture-usage" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">configured_agent</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reusable test setup.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span><span class="o">...</span><span class="p">})</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_agent_memory</span><span class="p">(</span><span class="n">configured_agent</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Use fixtures for DRY tests.&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">configured_agent</span><span class="o">.</span><span class="n">memory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</section>
+<section id="mocking-external-services">
+<h3>4. Mocking External Services<a class="headerlink" href="#mocking-external-services" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;gathering.llm.openai_provider.OpenAI&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_agent_without_api_calls</span><span class="p">(</span><span class="n">mock_openai</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mock external services for unit tests.&quot;&quot;&quot;</span>
+    <span class="n">mock_openai</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">complete</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="performance-testing">
+<h2>Performance Testing<a class="headerlink" href="#performance-testing" title="Link to this heading"></a></h2>
+<section id="benchmarking">
+<h3>Benchmarking<a class="headerlink" href="#benchmarking" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install pytest-benchmark</span>
+pip<span class="w"> </span>install<span class="w"> </span>pytest-benchmark
+
+<span class="c1"># Run benchmarks</span>
+pytest<span class="w"> </span>tests/benchmarks/<span class="w"> </span>--benchmark-only
+
+<span class="c1"># Compare results</span>
+pytest-benchmark<span class="w"> </span>compare
+</pre></div>
+</div>
+</section>
+<section id="example-benchmark-test">
+<h3>Example Benchmark Test<a class="headerlink" href="#example-benchmark-test" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_agent_response_time</span><span class="p">(</span><span class="n">benchmark</span><span class="p">,</span> <span class="n">configured_agent</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Benchmark agent response time.&quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">benchmark</span><span class="p">(</span>
+        <span class="n">configured_agent</span><span class="o">.</span><span class="n">process_message</span><span class="p">,</span>
+        <span class="s2">&quot;Hello, how are you?&quot;</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="documentation-during-development">
+<h2>Documentation During Development<a class="headerlink" href="#documentation-during-development" title="Link to this heading"></a></h2>
+<section id="update-docstrings-immediately">
+<h3>1. Update docstrings immediately<a class="headerlink" href="#update-docstrings-immediately" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">process_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Process user message and generate response.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        message: The user&#39;s input message</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        The agent&#39;s response</span>
+<span class="sd">        </span>
+<span class="sd">    Raises:</span>
+<span class="sd">        AgentError: If processing fails</span>
+<span class="sd">        </span>
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; agent = BasicAgent.from_config({...})</span>
+<span class="sd">        &gt;&gt;&gt; response = agent.process_message(&quot;Hello&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; print(response)</span>
+<span class="sd">        &quot;Hello! How can I help you?&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="keep-blueprint-md-updated">
+<h3>2. Keep <a class="reference external" href="http://BLUEPRINT.md">BLUEPRINT.md</a> updated<a class="headerlink" href="#keep-blueprint-md-updated" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Mark completed tasks</p></li>
+<li><p>Add new discoveries</p></li>
+<li><p>Update architecture diagrams</p></li>
+</ul>
+</section>
+<section id="write-user-documentation">
+<h3>3. Write user documentation<a class="headerlink" href="#write-user-documentation" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Add examples for new features</p></li>
+<li><p>Update API documentation</p></li>
+<li><p>Create tutorials</p></li>
+</ul>
+</section>
+</section>
+<section id="continuous-integration">
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading"></a></h2>
+<section id="github-actions-workflow">
+<h3>GitHub Actions Workflow<a class="headerlink" href="#github-actions-workflow" title="Link to this heading"></a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span>
+
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">push</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">pull_request</span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.11&#39;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install -r requirements.txt</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pytest --cov=gathering --cov-report=xml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Upload coverage</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">codecov/codecov-action@v3</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="debugging-tips">
+<h2>Debugging Tips<a class="headerlink" href="#debugging-tips" title="Link to this heading"></a></h2>
+<section id="use-pytest-debugging">
+<h3>1. Use pytest debugging<a class="headerlink" href="#use-pytest-debugging" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop into debugger on failure</span>
+pytest<span class="w"> </span>--pdb
+
+<span class="c1"># Show local variables on failure</span>
+pytest<span class="w"> </span>-l
+
+<span class="c1"># Verbose output</span>
+pytest<span class="w"> </span>-vv
+</pre></div>
+</div>
+</section>
+<section id="print-debugging-in-tests">
+<h3>2. Print debugging in tests<a class="headerlink" href="#print-debugging-in-tests" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_complex_scenario</span><span class="p">(</span><span class="n">capsys</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Use capsys to capture prints.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Debug info&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">some_function</span><span class="p">()</span>
+    
+    <span class="n">captured</span> <span class="o">=</span> <span class="n">capsys</span><span class="o">.</span><span class="n">readouterr</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="s2">&quot;Debug info&quot;</span> <span class="ow">in</span> <span class="n">captured</span><span class="o">.</span><span class="n">out</span>
+</pre></div>
+</div>
+</section>
+<section id="use-logging">
+<h3>3. Use logging<a class="headerlink" href="#use-logging" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">test_with_logging</span><span class="p">(</span><span class="n">caplog</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Capture log output in tests.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">caplog</span><span class="o">.</span><span class="n">at_level</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">function_that_logs</span><span class="p">()</span>
+    
+    <span class="k">assert</span> <span class="s2">&quot;Expected message&quot;</span> <span class="ow">in</span> <span class="n">caplog</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="remember-tdd-cycle">
+<h2>Remember: TDD Cycle 🔄<a class="headerlink" href="#remember-tdd-cycle" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Red</strong>: Write a failing test</p></li>
+<li><p><strong>Green</strong>: Write minimal code to pass</p></li>
+<li><p><strong>Refactor</strong>: Improve code quality</p></li>
+<li><p><strong>Repeat</strong>: For each new feature</p></li>
+</ol>
+<p>Keep tests fast, isolated, and readable!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, GatheRing Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

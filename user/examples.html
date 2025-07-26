@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Examples &mdash; GatheRing 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
+    <link rel="prev" title="GatheRing User Guide" href="guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GatheRing
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">GatheRing User Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#customer-service-bot">Customer Service Bot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#research-assistant-team">Research Assistant Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#educational-tutor">Educational Tutor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creative-writing-assistant">Creative Writing Assistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-documentation-bot">Technical Documentation Bot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#medical-consultation-assistant">Medical Consultation Assistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-review-assistant">Code Review Assistant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#language-learning-partner">Language Learning Partner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/architecture.html">Architecture Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/contributing.html">Contributing Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GatheRing</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Code Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/user/examples.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="code-examples">
+<h1>Code Examples<a class="headerlink" href="#code-examples" title="Link to this heading"></a></h1>
+<p>This section provides practical examples of using GatheRing.</p>
+<section id="customer-service-bot">
+<h2>Customer Service Bot<a class="headerlink" href="#customer-service-bot" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="c1"># Create a customer service agent</span>
+<span class="n">support_agent</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SupportBot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># Ageless AI</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Specialized customer service AI with extensive training &quot;</span>
+               <span class="s2">&quot;in conflict resolution and product knowledge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;empathetic&quot;</span><span class="p">,</span> <span class="s2">&quot;patient&quot;</span><span class="p">,</span> <span class="s2">&quot;helpful&quot;</span><span class="p">,</span> <span class="s2">&quot;professional&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;customer_service&quot;</span><span class="p">,</span> <span class="s2">&quot;problem_solving&quot;</span><span class="p">,</span> <span class="s2">&quot;product_knowledge&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;filesystem&quot;</span><span class="p">]</span>  <span class="c1"># For accessing knowledge base</span>
+<span class="p">})</span>
+
+<span class="c1"># Handle customer inquiry</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">support_agent</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span>
+    <span class="s2">&quot;I ordered a product 2 weeks ago and haven&#39;t received it yet. &quot;</span>
+    <span class="s2">&quot;I&#39;m very frustrated!&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="c1"># Output: &quot;I completely understand your frustration, and I sincerely</span>
+<span class="c1">#          apologize for the delay. Let me help you track your order...&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="research-assistant-team">
+<h2>Research Assistant Team<a class="headerlink" href="#research-assistant-team" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span><span class="p">,</span> <span class="n">BasicConversation</span>
+
+<span class="c1"># Create a research team</span>
+<span class="n">data_analyst</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dr. Data&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;PhD in Statistics, 10 years analyzing research data&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;analytical&quot;</span><span class="p">,</span> <span class="s2">&quot;precise&quot;</span><span class="p">,</span> <span class="s2">&quot;thorough&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;calculator&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">literature_expert</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prof. Scholar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Professor of Literature Review, published 100+ papers&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;anthropic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;knowledgeable&quot;</span><span class="p">,</span> <span class="s2">&quot;methodical&quot;</span><span class="p">,</span> <span class="s2">&quot;critical&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">writer</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dr. Writer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Science writer, expert in making complex topics accessible&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;creative&quot;</span><span class="p">,</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span> <span class="s2">&quot;engaging&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;filesystem&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Create research collaboration</span>
+<span class="n">research_team</span> <span class="o">=</span> <span class="n">BasicConversation</span><span class="o">.</span><span class="n">create</span><span class="p">([</span><span class="n">data_analyst</span><span class="p">,</span> <span class="n">literature_expert</span><span class="p">,</span> <span class="n">writer</span><span class="p">])</span>
+
+<span class="c1"># Start research discussion</span>
+<span class="n">research_team</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span>
+    <span class="n">data_analyst</span><span class="p">,</span>
+    <span class="s2">&quot;I&#39;ve found interesting patterns in climate data showing a 15</span><span class="si">% i</span><span class="s2">ncrease. &quot;</span>
+    <span class="s2">&quot;We need to contextualize this.&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Get responses from team</span>
+<span class="n">responses</span> <span class="o">=</span> <span class="n">research_team</span><span class="o">.</span><span class="n">process_turn</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;agent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="educational-tutor">
+<h2>Educational Tutor<a class="headerlink" href="#educational-tutor" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="c1"># Create a math tutor</span>
+<span class="n">math_tutor</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Prof. Math&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Mathematics professor with 20 years teaching experience, &quot;</span>
+               <span class="s2">&quot;specialized in making math fun and accessible&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;patient&quot;</span><span class="p">,</span> <span class="s2">&quot;encouraging&quot;</span><span class="p">,</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span> <span class="s2">&quot;enthusiastic&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mathematics&quot;</span><span class="p">,</span> <span class="s2">&quot;teaching&quot;</span><span class="p">,</span> <span class="s2">&quot;curriculum_design&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;calculator&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Adaptive teaching based on student level</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">teach_concept</span><span class="p">(</span><span class="n">tutor</span><span class="p">,</span> <span class="n">student_level</span><span class="p">,</span> <span class="n">topic</span><span class="p">):</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;I&#39;m a </span><span class="si">{</span><span class="n">student_level</span><span class="si">}</span><span class="s2"> student. Can you explain </span><span class="si">{</span><span class="n">topic</span><span class="si">}</span><span class="s2">?&quot;</span>
+    <span class="k">return</span> <span class="n">tutor</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+
+<span class="c1"># Elementary level</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">teach_concept</span><span class="p">(</span><span class="n">math_tutor</span><span class="p">,</span> <span class="s2">&quot;5th grade&quot;</span><span class="p">,</span> <span class="s2">&quot;fractions&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elementary explanation:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># High school level</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">teach_concept</span><span class="p">(</span><span class="n">math_tutor</span><span class="p">,</span> <span class="s2">&quot;high school&quot;</span><span class="p">,</span> <span class="s2">&quot;derivatives&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">High school explanation:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># University level</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">teach_concept</span><span class="p">(</span><span class="n">math_tutor</span><span class="p">,</span> <span class="s2">&quot;university&quot;</span><span class="p">,</span> <span class="s2">&quot;Fourier transforms&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">University explanation:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="creative-writing-assistant">
+<h2>Creative Writing Assistant<a class="headerlink" href="#creative-writing-assistant" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="c1"># Create a creative writing assistant</span>
+<span class="n">writing_assistant</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Wordsmith&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Award-winning author and creative writing instructor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;anthropic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;claude-3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;creative&quot;</span><span class="p">,</span> <span class="s2">&quot;imaginative&quot;</span><span class="p">,</span> <span class="s2">&quot;supportive&quot;</span><span class="p">,</span> <span class="s2">&quot;insightful&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;creative_writing&quot;</span><span class="p">,</span> <span class="s2">&quot;storytelling&quot;</span><span class="p">,</span> <span class="s2">&quot;editing&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;filesystem&quot;</span><span class="p">]</span>  <span class="c1"># For saving drafts</span>
+<span class="p">})</span>
+
+<span class="c1"># Story development session</span>
+<span class="n">story_seed</span> <span class="o">=</span> <span class="s2">&quot;A detective who can only solve crimes while sleepwalking&quot;</span>
+
+<span class="c1"># Generate story elements</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">writing_assistant</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;I have this story idea: &#39;</span><span class="si">{</span><span class="n">story_seed</span><span class="si">}</span><span class="s2">&#39;. &quot;</span>
+    <span class="s2">&quot;Can you help me develop the main character?&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character Development:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># Continue with plot</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">writing_assistant</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span>
+    <span class="s2">&quot;That&#39;s great! Now what would be an interesting first case?&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">First Case:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="technical-documentation-bot">
+<h2>Technical Documentation Bot<a class="headerlink" href="#technical-documentation-bot" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="c1"># Create a technical writer</span>
+<span class="n">tech_writer</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;DocBot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Senior technical writer with expertise in API documentation &quot;</span>
+               <span class="s2">&quot;and developer guides&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;precise&quot;</span><span class="p">,</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span> <span class="s2">&quot;structured&quot;</span><span class="p">,</span> <span class="s2">&quot;thorough&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;technical_writing&quot;</span><span class="p">,</span> <span class="s2">&quot;api_documentation&quot;</span><span class="p">,</span> <span class="s2">&quot;markdown&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;filesystem&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Generate API documentation</span>
+<span class="n">api_info</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Function: getUserData</span>
+<span class="s2">Parameters: userId (string), includeMetadata (boolean)</span>
+<span class="s2">Returns: User object with name, email, created_at</span>
+<span class="s2">Errors: 404 if user not found, 401 if unauthorized</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">tech_writer</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Please create proper API documentation for this: </span><span class="si">{</span><span class="n">api_info</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="medical-consultation-assistant">
+<h2>Medical Consultation Assistant<a class="headerlink" href="#medical-consultation-assistant" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is for educational purposes only. Not for actual medical advice.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="c1"># Create a medical information assistant</span>
+<span class="n">medical_assistant</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dr. Info&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Medical information specialist, NOT for diagnosis - &quot;</span>
+               <span class="s2">&quot;provides educational health information only&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;anthropic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;empathetic&quot;</span><span class="p">,</span> <span class="s2">&quot;careful&quot;</span><span class="p">,</span> <span class="s2">&quot;informative&quot;</span><span class="p">,</span> <span class="s2">&quot;responsible&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;health_education&quot;</span><span class="p">,</span> <span class="s2">&quot;medical_terminology&quot;</span><span class="p">,</span> <span class="s2">&quot;communication&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Provide health information</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">medical_assistant</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span>
+    <span class="s2">&quot;What are common symptoms of dehydration?&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="c1"># Always includes disclaimer about seeking real medical advice</span>
+</pre></div>
+</div>
+</section>
+<section id="code-review-assistant">
+<h2>Code Review Assistant<a class="headerlink" href="#code-review-assistant" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="c1"># Create a code reviewer</span>
+<span class="n">code_reviewer</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ReviewBot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Senior software engineer specializing in code quality, &quot;</span>
+               <span class="s2">&quot;security, and best practices&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;analytical&quot;</span><span class="p">,</span> <span class="s2">&quot;constructive&quot;</span><span class="p">,</span> <span class="s2">&quot;thorough&quot;</span><span class="p">,</span> <span class="s2">&quot;helpful&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;code_review&quot;</span><span class="p">,</span> <span class="s2">&quot;security&quot;</span><span class="p">,</span> <span class="s2">&quot;performance&quot;</span><span class="p">,</span> <span class="s2">&quot;best_practices&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;filesystem&quot;</span><span class="p">]</span>  <span class="c1"># For analyzing code files</span>
+<span class="p">})</span>
+
+<span class="c1"># Review code</span>
+<span class="n">code_snippet</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">def calculate_total(items):</span>
+<span class="s1">    total = 0</span>
+<span class="s1">    for i in range(len(items)):</span>
+<span class="s1">        total = total + items[i].price * items[i].quantity</span>
+<span class="s1">    return total</span>
+<span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">code_reviewer</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Please review this Python code:</span><span class="se">\n</span><span class="si">{</span><span class="n">code_snippet</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="c1"># Provides suggestions about using enumerate, sum(), or list comprehension</span>
+</pre></div>
+</div>
+</section>
+<section id="language-learning-partner">
+<h2>Language Learning Partner<a class="headerlink" href="#language-learning-partner" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span><span class="p">,</span> <span class="n">BasicConversation</span>
+
+<span class="c1"># Create language learning partners</span>
+<span class="n">spanish_teacher</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;María&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Native Spanish speaker, certified language instructor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;patient&quot;</span><span class="p">,</span> <span class="s2">&quot;encouraging&quot;</span><span class="p">,</span> <span class="s2">&quot;cultural&quot;</span><span class="p">,</span> <span class="s2">&quot;interactive&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;spanish&quot;</span><span class="p">,</span> <span class="s2">&quot;language_teaching&quot;</span><span class="p">,</span> <span class="s2">&quot;cultural_knowledge&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">student</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Learning Student&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;Beginner Spanish learner, eager to practice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;anthropic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;curious&quot;</span><span class="p">,</span> <span class="s2">&quot;motivated&quot;</span><span class="p">,</span> <span class="s2">&quot;mistake-prone&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;learning&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Create practice session</span>
+<span class="n">practice</span> <span class="o">=</span> <span class="n">BasicConversation</span><span class="o">.</span><span class="n">create</span><span class="p">([</span><span class="n">spanish_teacher</span><span class="p">,</span> <span class="n">student</span><span class="p">])</span>
+
+<span class="c1"># Start conversation</span>
+<span class="n">practice</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="s2">&quot;¿Cómo se dice &#39;I am hungry&#39; en español?&quot;</span><span class="p">)</span>
+
+<span class="n">responses</span> <span class="o">=</span> <span class="n">practice</span><span class="o">.</span><span class="n">process_turn</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">responses</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;agent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">responses</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># María: &quot;Se dice &#39;Tengo hambre&#39;. Literally, it means &#39;I have hunger&#39;...&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="guide.html" class="btn btn-neutral float-left" title="GatheRing User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="Frequently Asked Questions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, GatheRing Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

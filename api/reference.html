@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GatheRing API Reference &mdash; GatheRing 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GatheRing
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/guide.html">GatheRing User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/examples.html">Code Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">Core API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/architecture.html">Architecture Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/contributing.html">Contributing Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GatheRing</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">GatheRing API Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/reference.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="gathering-api-reference">
+<h1>GatheRing API Reference<a class="headerlink" href="#gathering-api-reference" title="Link to this heading"></a></h1>
+<section id="core-interfaces">
+<h2>Core Interfaces<a class="headerlink" href="#core-interfaces" title="Link to this heading"></a></h2>
+<section id="iagent">
+<h3>IAgent<a class="headerlink" href="#iagent" title="Link to this heading"></a></h3>
+<p>The main interface for AI agents in the GatheRing framework.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">IAgent</span>
+
+<span class="n">agent</span> <span class="o">=</span> <span class="n">IAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Assistant&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;10 years of experience&quot;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<section id="methods">
+<h4>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h4>
+<section id="from-config-config-dict-str-any-iagent">
+<h5><code class="docutils literal notranslate"><span class="pre">from_config(config:</span> <span class="pre">Dict[str,</span> <span class="pre">Any])</span> <span class="pre">-&gt;</span> <span class="pre">IAgent</span></code><a class="headerlink" href="#from-config-config-dict-str-any-iagent" title="Link to this heading"></a></h5>
+<p>Create an agent from configuration dictionary.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code> (dict): Agent configuration</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (str, required): Agent name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">llm_provider</span></code> (str, required): LLM provider (“openai”, “anthropic”, “ollama”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model</span></code> (str): Model name (default: “gpt-4”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">age</span></code> (int, optional): Agent age</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">history</span></code> (str, optional): Agent background</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">personality_blocks</span></code> (list, optional): List of personality trait names</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">competencies</span></code> (list, optional): List of competency names</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tools</span></code> (list, optional): List of tool names</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns:</strong> IAgent instance</p>
+<p><strong>Raises:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ConfigurationError</span></code>: If configuration is invalid</p></li>
+</ul>
+</section>
+<section id="process-message-message-str-context-optional-dict-str-any-none-str">
+<h5><code class="docutils literal notranslate"><span class="pre">process_message(message:</span> <span class="pre">str,</span> <span class="pre">context:</span> <span class="pre">Optional[Dict[str,</span> <span class="pre">Any]]</span> <span class="pre">=</span> <span class="pre">None)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code><a class="headerlink" href="#process-message-message-str-context-optional-dict-str-any-none-str" title="Link to this heading"></a></h5>
+<p>Process a message and generate response.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code> (str): Input message</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">context</span></code> (dict, optional): Additional context</p></li>
+</ul>
+<p><strong>Returns:</strong> Response string</p>
+</section>
+<section id="add-tool-tool-itool-none">
+<h5><code class="docutils literal notranslate"><span class="pre">add_tool(tool:</span> <span class="pre">ITool)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#add-tool-tool-itool-none" title="Link to this heading"></a></h5>
+<p>Add a tool to the agent’s toolkit.</p>
+</section>
+<section id="add-personality-block-block-ipersonalityblock-none">
+<h5><code class="docutils literal notranslate"><span class="pre">add_personality_block(block:</span> <span class="pre">IPersonalityBlock)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#add-personality-block-block-ipersonalityblock-none" title="Link to this heading"></a></h5>
+<p>Add a personality trait to the agent.</p>
+</section>
+<section id="get-system-prompt-str">
+<h5><code class="docutils literal notranslate"><span class="pre">get_system_prompt()</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code><a class="headerlink" href="#get-system-prompt-str" title="Link to this heading"></a></h5>
+<p>Get the complete system prompt including personality.</p>
+</section>
+<section id="get-tool-usage-history-list-dict-str-any">
+<h5><code class="docutils literal notranslate"><span class="pre">get_tool_usage_history()</span> <span class="pre">-&gt;</span> <span class="pre">List[Dict[str,</span> <span class="pre">Any]]</span></code><a class="headerlink" href="#get-tool-usage-history-list-dict-str-any" title="Link to this heading"></a></h5>
+<p>Get history of tool usage.</p>
+</section>
+</section>
+</section>
+<section id="illmprovider">
+<h3>ILLMProvider<a class="headerlink" href="#illmprovider" title="Link to this heading"></a></h3>
+<p>Interface for Language Model providers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">ILLMProvider</span>
+
+<span class="n">provider</span> <span class="o">=</span> <span class="n">ILLMProvider</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s2">&quot;api_key&quot;</span><span class="p">:</span> <span class="s2">&quot;your-api-key&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<section id="id1">
+<h4>Methods<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<section id="create-provider-name-str-config-dict-str-any-illmprovider">
+<h5><code class="docutils literal notranslate"><span class="pre">create(provider_name:</span> <span class="pre">str,</span> <span class="pre">config:</span> <span class="pre">Dict[str,</span> <span class="pre">Any])</span> <span class="pre">-&gt;</span> <span class="pre">ILLMProvider</span></code><a class="headerlink" href="#create-provider-name-str-config-dict-str-any-illmprovider" title="Link to this heading"></a></h5>
+<p>Factory method to create provider instances.</p>
+<p><strong>Supported Providers:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">openai</span></code>: OpenAI GPT models</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anthropic</span></code>: Anthropic Claude models</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ollama</span></code>: Local Ollama models</p></li>
+</ul>
+</section>
+<section id="complete-messages-list-dict-str-str-tools-optional-list-dict-str-any-none-dict-str-any">
+<h5><code class="docutils literal notranslate"><span class="pre">complete(messages:</span> <span class="pre">List[Dict[str,</span> <span class="pre">str]],</span> <span class="pre">tools:</span> <span class="pre">Optional[List[Dict[str,</span> <span class="pre">Any]]]</span> <span class="pre">=</span> <span class="pre">None)</span> <span class="pre">-&gt;</span> <span class="pre">Dict[str,</span> <span class="pre">Any]</span></code><a class="headerlink" href="#complete-messages-list-dict-str-str-tools-optional-list-dict-str-any-none-dict-str-any" title="Link to this heading"></a></h5>
+<p>Get completion from the LLM.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">messages</span></code>: List of message dictionaries with “role” and “content”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tools</span></code>: Optional list of tool schemas</p></li>
+</ul>
+<p><strong>Returns:</strong> Response dictionary with “role” and “content”</p>
+</section>
+<section id="stream-messages-list-dict-str-str-tools-optional-list-dict-str-any-none-asyncgenerator-str-none">
+<h5><code class="docutils literal notranslate"><span class="pre">stream(messages:</span> <span class="pre">List[Dict[str,</span> <span class="pre">str]],</span> <span class="pre">tools:</span> <span class="pre">Optional[List[Dict[str,</span> <span class="pre">Any]]]</span> <span class="pre">=</span> <span class="pre">None)</span> <span class="pre">-&gt;</span> <span class="pre">AsyncGenerator[str,</span> <span class="pre">None]</span></code><a class="headerlink" href="#stream-messages-list-dict-str-str-tools-optional-list-dict-str-any-none-asyncgenerator-str-none" title="Link to this heading"></a></h5>
+<p>Stream completion from the LLM.</p>
+</section>
+</section>
+</section>
+<section id="itool">
+<h3>ITool<a class="headerlink" href="#itool" title="Link to this heading"></a></h3>
+<p>Interface for external tools.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">CalculatorTool</span>
+
+<span class="n">calculator</span> <span class="o">=</span> <span class="n">CalculatorTool</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;calculator&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;calculator&quot;</span>
+<span class="p">})</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">calculator</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;15 * 25 + 10&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>  <span class="c1"># 385</span>
+</pre></div>
+</div>
+<section id="available-tools">
+<h4>Available Tools<a class="headerlink" href="#available-tools" title="Link to this heading"></a></h4>
+<section id="calculatortool">
+<h5>CalculatorTool<a class="headerlink" href="#calculatortool" title="Link to this heading"></a></h5>
+<p>Basic mathematical operations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">calculator</span> <span class="o">=</span> <span class="n">CalculatorTool</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;calc&quot;</span><span class="p">})</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">calculator</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;15</span><span class="si">% o</span><span class="s2">f 2500&quot;</span><span class="p">)</span>
+<span class="c1"># result.output = 375.0</span>
+</pre></div>
+</div>
+</section>
+<section id="filesystemtool">
+<h5>FileSystemTool<a class="headerlink" href="#filesystemtool" title="Link to this heading"></a></h5>
+<p>File system operations with permission control.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fs_tool</span> <span class="o">=</span> <span class="n">FileSystemTool</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;filesystem&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;read&quot;</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;base_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/tmp/data&quot;</span>
+<span class="p">})</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">fs_tool</span><span class="o">.</span><span class="n">execute</span><span class="p">({</span>
+    <span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;read&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;file.txt&quot;</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="tool-result">
+<h4>Tool Result<a class="headerlink" href="#tool-result" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ToolResult</span><span class="p">:</span>
+    <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="n">error</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">execution_time</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ipersonalityblock">
+<h3>IPersonalityBlock<a class="headerlink" href="#ipersonalityblock" title="Link to this heading"></a></h3>
+<p>Modular personality components for agents.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicPersonalityBlock</span>
+
+<span class="n">curious</span> <span class="o">=</span> <span class="n">BasicPersonalityBlock</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;trait&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;curious&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;intensity&quot;</span><span class="p">:</span> <span class="mf">0.8</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<section id="available-personality-traits">
+<h4>Available Personality Traits<a class="headerlink" href="#available-personality-traits" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">curious</span></code>: Asks questions to understand better</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">analytical</span></code>: Analyzes information step by step</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">empathetic</span></code>: Shows understanding and empathy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">formal</span></code>: Maintains professional tone</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">creative</span></code>: Thinks creatively</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logical</span></code>: Applies logical reasoning</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cheerful</span></code>: Positive and cheerful</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">patient</span></code>: Patient in explanations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">knowledgeable</span></code>: Demonstrates expertise</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eager</span></code>: Shows enthusiasm</p></li>
+</ul>
+</section>
+</section>
+<section id="iconversation">
+<h3>IConversation<a class="headerlink" href="#iconversation" title="Link to this heading"></a></h3>
+<p>Manages conversations between agents.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicConversation</span>
+
+<span class="n">conversation</span> <span class="o">=</span> <span class="n">BasicConversation</span><span class="o">.</span><span class="n">create</span><span class="p">([</span><span class="n">agent1</span><span class="p">,</span> <span class="n">agent2</span><span class="p">])</span>
+<span class="n">conversation</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">agent1</span><span class="p">,</span> <span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+<span class="n">responses</span> <span class="o">=</span> <span class="n">conversation</span><span class="o">.</span><span class="n">process_turn</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="id2">
+<h4>Methods<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<section id="create-agents-list-iagent-iconversation">
+<h5><code class="docutils literal notranslate"><span class="pre">create(agents:</span> <span class="pre">List[IAgent])</span> <span class="pre">-&gt;</span> <span class="pre">IConversation</span></code><a class="headerlink" href="#create-agents-list-iagent-iconversation" title="Link to this heading"></a></h5>
+<p>Create a new conversation.</p>
+</section>
+<section id="add-message-agent-iagent-content-str-none">
+<h5><code class="docutils literal notranslate"><span class="pre">add_message(agent:</span> <span class="pre">IAgent,</span> <span class="pre">content:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#add-message-agent-iagent-content-str-none" title="Link to this heading"></a></h5>
+<p>Add a message to the conversation.</p>
+</section>
+<section id="process-turn-list-dict-str-any">
+<h5><code class="docutils literal notranslate"><span class="pre">process_turn()</span> <span class="pre">-&gt;</span> <span class="pre">List[Dict[str,</span> <span class="pre">Any]]</span></code><a class="headerlink" href="#process-turn-list-dict-str-any" title="Link to this heading"></a></h5>
+<p>Process one turn, getting responses from other agents.</p>
+</section>
+<section id="get-history-list-dict-str-any">
+<h5><code class="docutils literal notranslate"><span class="pre">get_history()</span> <span class="pre">-&gt;</span> <span class="pre">List[Dict[str,</span> <span class="pre">Any]]</span></code><a class="headerlink" href="#get-history-list-dict-str-any" title="Link to this heading"></a></h5>
+<p>Get complete conversation history.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="data-classes">
+<h2>Data Classes<a class="headerlink" href="#data-classes" title="Link to this heading"></a></h2>
+<section id="message">
+<h3>Message<a class="headerlink" href="#message" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Message</span><span class="p">:</span>
+    <span class="n">role</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># &quot;user&quot;, &quot;assistant&quot;, &quot;system&quot;, &quot;tool&quot;</span>
+    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="toolpermission">
+<h3>ToolPermission<a class="headerlink" href="#toolpermission" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ToolPermission</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">READ</span> <span class="o">=</span> <span class="s2">&quot;read&quot;</span>
+    <span class="n">WRITE</span> <span class="o">=</span> <span class="s2">&quot;write&quot;</span>
+    <span class="n">EXECUTE</span> <span class="o">=</span> <span class="s2">&quot;execute&quot;</span>
+    <span class="n">DELETE</span> <span class="o">=</span> <span class="s2">&quot;delete&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading"></a></h2>
+<section id="configurationerror">
+<h3>ConfigurationError<a class="headerlink" href="#configurationerror" title="Link to this heading"></a></h3>
+<p>Raised when configuration is invalid.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">IAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">})</span>
+<span class="k">except</span> <span class="n">ConfigurationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Config error: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Field: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;field&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="llmprovidererror">
+<h3>LLMProviderError<a class="headerlink" href="#llmprovidererror" title="Link to this heading"></a></h3>
+<p>Raised when LLM provider encounters an error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">LLMProviderError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Provider: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;provider&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;status_code&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="toolexecutionerror">
+<h3>ToolExecutionError<a class="headerlink" href="#toolexecutionerror" title="Link to this heading"></a></h3>
+<p>Raised when tool execution fails.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">invalid_input</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">ToolExecutionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tool: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">details</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tool_name&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="complete-examples">
+<h2>Complete Examples<a class="headerlink" href="#complete-examples" title="Link to this heading"></a></h2>
+<section id="creating-a-research-assistant">
+<h3>Creating a Research Assistant<a class="headerlink" href="#creating-a-research-assistant" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span><span class="p">,</span> <span class="n">CalculatorTool</span><span class="p">,</span> <span class="n">FileSystemTool</span>
+
+<span class="c1"># Create agent with tools and personality</span>
+<span class="n">researcher</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dr. Research&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+    <span class="s2">&quot;history&quot;</span><span class="p">:</span> <span class="s2">&quot;PhD in Data Science, 10 years experience&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;analytical&quot;</span><span class="p">,</span> <span class="s2">&quot;curious&quot;</span><span class="p">,</span> <span class="s2">&quot;patient&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;calculator&quot;</span><span class="p">,</span> <span class="s2">&quot;filesystem&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Process a research request</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">researcher</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span>
+    <span class="s2">&quot;Calculate the statistical significance of a 15</span><span class="si">% i</span><span class="s2">mprovement &quot;</span>
+    <span class="s2">&quot;over a baseline of 2500 data points&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Check tool usage</span>
+<span class="k">for</span> <span class="n">usage</span> <span class="ow">in</span> <span class="n">researcher</span><span class="o">.</span><span class="n">get_tool_usage_history</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Used </span><span class="si">{</span><span class="n">usage</span><span class="p">[</span><span class="s1">&#39;tool&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">usage</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="multi-agent-collaboration">
+<h3>Multi-Agent Collaboration<a class="headerlink" href="#multi-agent-collaboration" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span><span class="p">,</span> <span class="n">BasicConversation</span>
+
+<span class="c1"># Create teacher and student agents</span>
+<span class="n">teacher</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Professor Smith&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;patient&quot;</span><span class="p">,</span> <span class="s2">&quot;knowledgeable&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;teaching&quot;</span><span class="p">,</span> <span class="s2">&quot;mathematics&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">student</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;anthropic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;personality_blocks&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;curious&quot;</span><span class="p">,</span> <span class="s2">&quot;eager&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;competencies&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;learning&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Create conversation</span>
+<span class="n">lesson</span> <span class="o">=</span> <span class="n">BasicConversation</span><span class="o">.</span><span class="n">create</span><span class="p">([</span><span class="n">teacher</span><span class="p">,</span> <span class="n">student</span><span class="p">])</span>
+
+<span class="c1"># Student asks question</span>
+<span class="n">lesson</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="s2">&quot;Can you explain derivatives?&quot;</span><span class="p">)</span>
+
+<span class="c1"># Teacher responds</span>
+<span class="n">responses</span> <span class="o">=</span> <span class="n">lesson</span><span class="o">.</span><span class="n">process_turn</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">resp</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">resp</span><span class="p">[</span><span class="s1">&#39;agent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">resp</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Continue conversation</span>
+<span class="n">lesson</span><span class="o">.</span><span class="n">add_message</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="s2">&quot;Can you give an example?&quot;</span><span class="p">)</span>
+<span class="n">responses</span> <span class="o">=</span> <span class="n">lesson</span><span class="o">.</span><span class="n">process_turn</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-tool-integration">
+<h3>Custom Tool Integration<a class="headerlink" href="#custom-tool-integration" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">ITool</span><span class="p">,</span> <span class="n">ToolResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">WeatherTool</span><span class="p">(</span><span class="n">ITool</span><span class="p">):</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s2">&quot;WeatherTool&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="s2">&quot;weather&quot;</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ToolResult</span><span class="p">:</span>
+        <span class="c1"># Mock weather data</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="s2">&quot;location&quot;</span> <span class="ow">in</span> <span class="n">input_data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ToolResult</span><span class="p">(</span>
+                <span class="n">success</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">output</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Weather in </span><span class="si">{</span><span class="n">input_data</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: Sunny, 22°C&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">ToolResult</span><span class="p">(</span>
+            <span class="n">success</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">error</span><span class="o">=</span><span class="s2">&quot;Location required&quot;</span>
+        <span class="p">)</span>
+    
+    <span class="c1"># ... implement other required methods</span>
+
+<span class="c1"># Use with agent</span>
+<span class="n">weather_agent</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;WeatherBot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span>
+<span class="p">})</span>
+<span class="n">weather_agent</span><span class="o">.</span><span class="n">add_tool</span><span class="p">(</span><span class="n">WeatherTool</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;weather&quot;</span><span class="p">}))</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, GatheRing Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

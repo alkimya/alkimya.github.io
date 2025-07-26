@@ -1,0 +1,702 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributing Guide &mdash; GatheRing 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Architecture Overview" href="architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GatheRing
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/guide.html">GatheRing User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/examples.html">Code Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-of-conduct">Code of Conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-workflow">Development Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#test-driven-development-tdd">Test-Driven Development (TDD)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#code-style">Code Style</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python-style-guide">Python Style Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-organization">Import Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#naming-conventions">Naming Conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-guidelines">Testing Guidelines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#test-structure">Test Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-organization">Test Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-fixtures">Use Fixtures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mock-external-services">Mock External Services</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docstring-format">Docstring Format</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#commit-messages">Commit Messages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#types">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pull-request-process">Pull Request Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pr-template">PR Template</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#review-process">Review Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-review-checklist">Code Review Checklist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#providing-feedback">Providing Feedback</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#release-process">Release Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#version-numbering">Version Numbering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#release-checklist">Release Checklist</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-help">Getting Help</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GatheRing</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contributing Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developer/contributing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contributing-guide">
+<h1>Contributing Guide<a class="headerlink" href="#contributing-guide" title="Link to this heading"></a></h1>
+<p>Thank you for your interest in contributing to GatheRing! This guide will help you get started.</p>
+<nav class="contents local" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#code-of-conduct" id="id2">Code of Conduct</a></p></li>
+<li><p><a class="reference internal" href="#getting-started" id="id3">Getting Started</a></p></li>
+<li><p><a class="reference internal" href="#development-workflow" id="id4">Development Workflow</a></p>
+<ul>
+<li><p><a class="reference internal" href="#test-driven-development-tdd" id="id5">Test-Driven Development (TDD)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#code-style" id="id6">Code Style</a></p>
+<ul>
+<li><p><a class="reference internal" href="#python-style-guide" id="id7">Python Style Guide</a></p></li>
+<li><p><a class="reference internal" href="#import-organization" id="id8">Import Organization</a></p></li>
+<li><p><a class="reference internal" href="#naming-conventions" id="id9">Naming Conventions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#testing-guidelines" id="id10">Testing Guidelines</a></p>
+<ul>
+<li><p><a class="reference internal" href="#test-structure" id="id11">Test Structure</a></p></li>
+<li><p><a class="reference internal" href="#test-organization" id="id12">Test Organization</a></p></li>
+<li><p><a class="reference internal" href="#use-fixtures" id="id13">Use Fixtures</a></p></li>
+<li><p><a class="reference internal" href="#mock-external-services" id="id14">Mock External Services</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#documentation" id="id15">Documentation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#docstring-format" id="id16">Docstring Format</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#commit-messages" id="id17">Commit Messages</a></p>
+<ul>
+<li><p><a class="reference internal" href="#types" id="id18">Types</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id19">Examples</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#pull-request-process" id="id20">Pull Request Process</a></p>
+<ul>
+<li><p><a class="reference internal" href="#pr-template" id="id21">PR Template</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#review-process" id="id22">Review Process</a></p>
+<ul>
+<li><p><a class="reference internal" href="#code-review-checklist" id="id23">Code Review Checklist</a></p></li>
+<li><p><a class="reference internal" href="#providing-feedback" id="id24">Providing Feedback</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#release-process" id="id25">Release Process</a></p>
+<ul>
+<li><p><a class="reference internal" href="#version-numbering" id="id26">Version Numbering</a></p></li>
+<li><p><a class="reference internal" href="#release-checklist" id="id27">Release Checklist</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#getting-help" id="id28">Getting Help</a></p></li>
+</ul>
+</nav>
+<section id="code-of-conduct">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Code of Conduct</a><a class="headerlink" href="#code-of-conduct" title="Link to this heading"></a></h2>
+<p>Please read and follow our Code of Conduct to ensure a welcoming environment for all contributors.</p>
+</section>
+<section id="getting-started">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Getting Started</a><a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>Fork the repository</strong> on GitHub</p></li>
+<li><p><strong>Clone your fork</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/yourusername/gathering.git
+<span class="nb">cd</span><span class="w"> </span>gathering
+</pre></div>
+</div>
+</li>
+<li><p><strong>Add upstream remote</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/original/gathering.git
+</pre></div>
+</div>
+</li>
+<li><p><strong>Create a branch</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>develop
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="development-workflow">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Development Workflow</a><a class="headerlink" href="#development-workflow" title="Link to this heading"></a></h2>
+<section id="test-driven-development-tdd">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Test-Driven Development (TDD)</a><a class="headerlink" href="#test-driven-development-tdd" title="Link to this heading"></a></h3>
+<p>We follow TDD principles. Always write tests first:</p>
+<ol class="arabic">
+<li><p><strong>Write a failing test</strong> (Red)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># tests/unit/test_new_feature.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_new_feature_does_something</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">new_feature</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="s2">&quot;expected output&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Run the test</strong> - it should fail:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>tests/unit/test_new_feature.py<span class="w"> </span>-v
+</pre></div>
+</div>
+</li>
+<li><p><strong>Write minimal code</strong> to make it pass (Green)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># gathering/module/new_feature.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">new_feature</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;expected output&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Refactor</strong> while keeping tests green (Refactor)</p></li>
+<li><p><strong>Run all tests</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="code-style">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Code Style</a><a class="headerlink" href="#code-style" title="Link to this heading"></a></h2>
+<section id="python-style-guide">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Python Style Guide</a><a class="headerlink" href="#python-style-guide" title="Link to this heading"></a></h3>
+<p>We follow PEP 8 with these additions:</p>
+<ul class="simple">
+<li><p>Line length: 100 characters</p></li>
+<li><p>Use type hints for all public functions</p></li>
+<li><p>Write docstrings for all public classes and methods</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ExampleClass</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Brief description of the class.</span>
+
+<span class="sd">    Longer description explaining purpose and usage.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        name: The name of the example</span>
+<span class="sd">        value: The current value</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; example = ExampleClass(&quot;test&quot;, 42)</span>
+<span class="sd">        &gt;&gt;&gt; example.process()</span>
+<span class="sd">        &quot;Processed: test with value 42&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize ExampleClass.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name: The name to use</span>
+<span class="sd">            value: Initial value (default: 0)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modifier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Process the example with optional modifier.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            modifier: Optional multiplier for value</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Processed string representation</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If modifier is negative</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">modifier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">modifier</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Modifier must be non-negative&quot;</span><span class="p">)</span>
+
+        <span class="n">final_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="p">(</span><span class="n">modifier</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Processed: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> with value </span><span class="si">{</span><span class="n">final_value</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="import-organization">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">Import Organization</a><a class="headerlink" href="#import-organization" title="Link to this heading"></a></h3>
+<p>Organize imports in this order:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard library imports</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="c1"># Third-party imports</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLMChain</span>
+
+<span class="c1"># Local imports</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">IAgent</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gathering.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">CalculatorTool</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gathering.utils.helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">format_output</span>
+</pre></div>
+</div>
+</section>
+<section id="naming-conventions">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Naming Conventions</a><a class="headerlink" href="#naming-conventions" title="Link to this heading"></a></h3>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Naming Conventions</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Convention</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Classes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PascalCase</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">AgentManager</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Functions/Variables</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">snake_case</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">process_message</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>Constants</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">UPPER_SNAKE_CASE</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">MAX_RETRIES</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Private methods</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_leading_underscore</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">_internal_method</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>Module files</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">snake_case.py</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">llm_provider.py</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="testing-guidelines">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Testing Guidelines</a><a class="headerlink" href="#testing-guidelines" title="Link to this heading"></a></h2>
+<section id="test-structure">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Test Structure</a><a class="headerlink" href="#test-structure" title="Link to this heading"></a></h3>
+<p>Follow the Arrange-Act-Assert pattern:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">test_agent_remembers_conversation</span><span class="p">():</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TestBot&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span>
+    <span class="p">})</span>
+    <span class="n">first_message</span> <span class="o">=</span> <span class="s2">&quot;My name is Alice&quot;</span>
+    <span class="n">second_message</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s my name?&quot;</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">agent</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span><span class="n">first_message</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span><span class="n">second_message</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="s2">&quot;Alice&quot;</span> <span class="ow">in</span> <span class="n">response</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">get_conversation_history</span><span class="p">())</span> <span class="o">==</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</section>
+<section id="test-organization">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">Test Organization</a><a class="headerlink" href="#test-organization" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tests/unit/</span></code>: Fast, isolated unit tests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tests/integration/</span></code>: Component interaction tests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tests/e2e/</span></code>: End-to-end scenario tests</p></li>
+</ul>
+</section>
+<section id="use-fixtures">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Use Fixtures</a><a class="headerlink" href="#use-fixtures" title="Link to this heading"></a></h3>
+<p>Create reusable test components:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># tests/conftest.py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">basic_agent</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide a basic agent for testing.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;TestAgent&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span>
+    <span class="p">})</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">agent_with_tools</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Provide an agent with tools configured.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ToolAgent&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;llm_provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tools&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;calculator&quot;</span><span class="p">,</span> <span class="s2">&quot;filesystem&quot;</span><span class="p">]</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="mock-external-services">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Mock External Services</a><a class="headerlink" href="#mock-external-services" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">patch</span><span class="p">,</span> <span class="n">Mock</span>
+
+<span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;gathering.llm.openai_provider.openai.Completion.create&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_agent_without_api_calls</span><span class="p">(</span><span class="n">mock_openai</span><span class="p">):</span>
+    <span class="c1"># Setup mock</span>
+    <span class="n">mock_openai</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">(</span>
+        <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="n">Mock</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Mocked response&quot;</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Test agent</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">({</span><span class="o">...</span><span class="p">})</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">process_message</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Verify</span>
+    <span class="k">assert</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;Mocked response&quot;</span>
+    <span class="n">mock_openai</span><span class="o">.</span><span class="n">assert_called_once</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="documentation">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Documentation</a><a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<section id="docstring-format">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Docstring Format</a><a class="headerlink" href="#docstring-format" title="Link to this heading"></a></h3>
+<p>Use Google-style docstrings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">complex_function</span><span class="p">(</span>
+    <span class="n">param1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">param2</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Brief description of what the function does.</span>
+
+<span class="sd">    Longer description providing more context, explaining the</span>
+<span class="sd">    algorithm or approach used, and any important details.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        param1: Description of param1</span>
+<span class="sd">        param2: Description of param2 (default: None)</span>
+<span class="sd">        **kwargs: Additional keyword arguments:</span>
+<span class="sd">            - option1 (bool): Description of option1</span>
+<span class="sd">            - option2 (str): Description of option2</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Dictionary containing:</span>
+<span class="sd">            - &#39;result&#39;: The main result</span>
+<span class="sd">            - &#39;metadata&#39;: Additional information</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If param1 is empty</span>
+<span class="sd">        TypeError: If param2 is not an integer</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; result = complex_function(&quot;test&quot;, param2=42)</span>
+<span class="sd">        &gt;&gt;&gt; print(result[&#39;result&#39;])</span>
+<span class="sd">        &#39;Processed: test with 42&#39;</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This function has side effects on the global state.</span>
+
+<span class="sd">    See Also:</span>
+<span class="sd">        simple_function: A simpler version</span>
+<span class="sd">        related_function: Related functionality</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="commit-messages">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Commit Messages</a><a class="headerlink" href="#commit-messages" title="Link to this heading"></a></h2>
+<p>Follow Conventional Commits format:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+
+&lt;body&gt;
+
+&lt;footer&gt;
+</pre></div>
+</div>
+<section id="types">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Types</a><a class="headerlink" href="#types" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">feat</span></code>: New feature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fix</span></code>: Bug fix</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs</span></code>: Documentation only</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code>: Code style changes (formatting, etc)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">refactor</span></code>: Code refactoring</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test</span></code>: Adding or updating tests</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chore</span></code>: Maintenance tasks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">perf</span></code>: Performance improvements</p></li>
+</ul>
+</section>
+<section id="examples">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Link to this heading"></a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>feat(agents): add emotion tracking to personality system
+
+- Implement EmotionalState class
+- Add emotion transitions based on conversation
+- Update agent interface to expose emotional state
+- Add comprehensive tests
+
+Closes #123
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>fix(tools): handle permission errors in filesystem tool
+
+The filesystem tool was crashing when accessing protected
+directories. Now it properly catches permission errors
+and returns a helpful error message.
+
+Fixes #456
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pull-request-process">
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Pull Request Process</a><a class="headerlink" href="#pull-request-process" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>Update your branch</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>develop
+git<span class="w"> </span>pull<span class="w"> </span>upstream<span class="w"> </span>develop
+git<span class="w"> </span>checkout<span class="w"> </span>feature/your-feature
+git<span class="w"> </span>rebase<span class="w"> </span>develop
+</pre></div>
+</div>
+</li>
+<li><p><strong>Run quality checks</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Format code</span>
+black<span class="w"> </span>gathering<span class="w"> </span>tests
+
+<span class="c1"># Lint</span>
+flake8<span class="w"> </span>gathering<span class="w"> </span>tests
+
+<span class="c1"># Type check</span>
+mypy<span class="w"> </span>gathering
+
+<span class="c1"># Run tests</span>
+pytest
+
+<span class="c1"># Check coverage</span>
+pytest<span class="w"> </span>--cov<span class="o">=</span>gathering<span class="w"> </span>--cov-report<span class="o">=</span>term-missing
+</pre></div>
+</div>
+</li>
+<li><p><strong>Create Pull Request</strong>:</p>
+<ul class="simple">
+<li><p>Title: Use conventional commit format</p></li>
+<li><p>Description: Use the PR template</p></li>
+<li><p>Target branch: <code class="docutils literal notranslate"><span class="pre">develop</span></code> (not <code class="docutils literal notranslate"><span class="pre">main</span></code>)</p></li>
+</ul>
+</li>
+</ol>
+<section id="pr-template">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">PR Template</a><a class="headerlink" href="#pr-template" title="Link to this heading"></a></h3>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Description</span>
+Brief description of what this PR does.
+
+<span class="gu">## Type of Change</span>
+<span class="k">- [ ]</span> Bug fix (non-breaking change that fixes an issue)
+<span class="k">- [ ]</span> New feature (non-breaking change that adds functionality)
+<span class="k">- [ ]</span> Breaking change (fix or feature that breaks existing functionality)
+<span class="k">- [ ]</span> Documentation update
+
+<span class="gu">## Testing</span>
+<span class="k">- [ ]</span> Unit tests pass
+<span class="k">- [ ]</span> Integration tests pass
+<span class="k">- [ ]</span> Manual testing completed
+
+<span class="gu">## Checklist</span>
+<span class="k">- [ ]</span> My code follows the project style guidelines
+<span class="k">- [ ]</span> I have performed a self-review
+<span class="k">- [ ]</span> I have added tests that prove my fix/feature works
+<span class="k">- [ ]</span> New and existing unit tests pass locally
+<span class="k">- [ ]</span> I have added necessary documentation
+<span class="k">- [ ]</span> My changes generate no new warnings
+
+<span class="gu">## Related Issues</span>
+Closes #(issue number)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="review-process">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Review Process</a><a class="headerlink" href="#review-process" title="Link to this heading"></a></h2>
+<section id="code-review-checklist">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Code Review Checklist</a><a class="headerlink" href="#code-review-checklist" title="Link to this heading"></a></h3>
+<p>When reviewing PRs, check for:</p>
+<ul class="simple">
+<li><p><strong>Correctness</strong>: Does the code do what it claims?</p></li>
+<li><p><strong>Tests</strong>: Are there adequate tests?</p></li>
+<li><p><strong>Documentation</strong>: Is it well documented?</p></li>
+<li><p><strong>Style</strong>: Does it follow our conventions?</p></li>
+<li><p><strong>Performance</strong>: Are there any performance concerns?</p></li>
+<li><p><strong>Security</strong>: Are there any security issues?</p></li>
+</ul>
+</section>
+<section id="providing-feedback">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Providing Feedback</a><a class="headerlink" href="#providing-feedback" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Be constructive and specific</p></li>
+<li><p>Suggest improvements, don’t just criticize</p></li>
+<li><p>Acknowledge good work</p></li>
+<li><p>Ask questions if something is unclear</p></li>
+</ul>
+</section>
+</section>
+<section id="release-process">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Release Process</a><a class="headerlink" href="#release-process" title="Link to this heading"></a></h2>
+<section id="version-numbering">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Version Numbering</a><a class="headerlink" href="#version-numbering" title="Link to this heading"></a></h3>
+<p>We follow Semantic Versioning (SemVer):</p>
+<ul class="simple">
+<li><p><strong>MAJOR.MINOR.PATCH</strong> (e.g., 1.2.3)</p></li>
+<li><p><strong>MAJOR</strong>: Breaking API changes</p></li>
+<li><p><strong>MINOR</strong>: New functionality, backwards compatible</p></li>
+<li><p><strong>PATCH</strong>: Bug fixes, backwards compatible</p></li>
+</ul>
+</section>
+<section id="release-checklist">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">Release Checklist</a><a class="headerlink" href="#release-checklist" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Update version in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code></p></li>
+<li><p>Run full test suite</p></li>
+<li><p>Create release PR to <code class="docutils literal notranslate"><span class="pre">main</span></code></p></li>
+<li><p>Tag release: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">-a</span> <span class="pre">v1.2.3</span> <span class="pre">-m</span> <span class="pre">&quot;Release</span> <span class="pre">version</span> <span class="pre">1.2.3&quot;</span></code></p></li>
+<li><p>Push tag: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">v1.2.3</span></code></p></li>
+<li><p>Create GitHub release</p></li>
+</ol>
+</section>
+</section>
+<section id="getting-help">
+<h2><a class="toc-backref" href="#id28" role="doc-backlink">Getting Help</a><a class="headerlink" href="#getting-help" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Discord</strong>: Join our community server</p></li>
+<li><p><strong>GitHub Issues</strong>: Report bugs or request features</p></li>
+<li><p><strong>Email</strong>: <a class="reference external" href="mailto:core-team&#37;&#52;&#48;gathering&#46;ai">core-team<span>&#64;</span>gathering<span>&#46;</span>ai</a></p></li>
+</ul>
+<p>Thank you for contributing to GatheRing! 🎉</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="architecture.html" class="btn btn-neutral float-left" title="Architecture Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, GatheRing Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

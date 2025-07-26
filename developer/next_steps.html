@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GatheRing Project - Next Steps 🚀 &mdash; GatheRing 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GatheRing
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/guide.html">GatheRing User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/examples.html">Code Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/faq.html">Frequently Asked Questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">GatheRing</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">GatheRing Project - Next Steps 🚀</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developer/next_steps.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="gathering-project-next-steps">
+<h1>GatheRing Project - Next Steps 🚀<a class="headerlink" href="#gathering-project-next-steps" title="Link to this heading"></a></h1>
+<section id="current-status">
+<h2>Current Status ✅<a class="headerlink" href="#current-status" title="Link to this heading"></a></h2>
+<p>We’ve successfully set up the foundation of the GatheRing framework with:</p>
+<ol class="arabic simple">
+<li><p><strong>Project Structure</strong>: Complete directory hierarchy with proper Python packaging</p></li>
+<li><p><strong>Core Interfaces</strong>: Well-defined abstractions for all major components</p></li>
+<li><p><strong>TDD Framework</strong>: Comprehensive test suite with ~40 test cases ready</p></li>
+<li><p><strong>Basic Implementations</strong>: Working prototypes to make tests pass</p></li>
+<li><p><strong>Development Workflow</strong>: Scripts, configurations, and documentation</p></li>
+</ol>
+</section>
+<section id="immediate-next-steps-week-1">
+<h2>Immediate Next Steps (Week 1)<a class="headerlink" href="#immediate-next-steps-week-1" title="Link to this heading"></a></h2>
+<section id="set-up-development-environment">
+<h3>1. Set Up Development Environment<a class="headerlink" href="#set-up-development-environment" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>GatheRing
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># or venv\Scripts\activate on Windows</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w">  </span><span class="c1"># Install package in development mode</span>
+</pre></div>
+</div>
+</section>
+<section id="run-initial-tests">
+<h3>2. Run Initial Tests<a class="headerlink" href="#run-initial-tests" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will fail initially - that&#39;s expected (TDD)</span>
+pytest<span class="w"> </span>-v
+
+<span class="c1"># Run the quick start to see basic functionality</span>
+python<span class="w"> </span>quickstart.py
+</pre></div>
+</div>
+</section>
+<section id="implement-missing-core-components">
+<h3>3. Implement Missing Core Components<a class="headerlink" href="#implement-missing-core-components" title="Link to this heading"></a></h3>
+<p>Following TDD, implement these in order:</p>
+<section id="a-fix-import-errors">
+<h4>a. Fix Import Errors<a class="headerlink" href="#a-fix-import-errors" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">gathering/core/implementations.py</span></code> (copy from artifact)</p></li>
+<li><p>Ensure all imports resolve correctly</p></li>
+</ul>
+</section>
+<section id="b-make-basic-tests-pass">
+<h4>b. Make Basic Tests Pass<a class="headerlink" href="#b-make-basic-tests-pass" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Start with the simplest tests</p></li>
+<li><p>Implement minimum code needed</p></li>
+<li><p>Run tests frequently: <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">-k</span> <span class="pre">test_agent_creation</span> <span class="pre">-v</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="implement-real-llm-providers">
+<h3>4. Implement Real LLM Providers<a class="headerlink" href="#implement-real-llm-providers" title="Link to this heading"></a></h3>
+<section id="openai-provider-gathering-llm-openai-provider-py">
+<h4>OpenAI Provider (<code class="docutils literal notranslate"><span class="pre">gathering/llm/openai_provider.py</span></code>)<a class="headerlink" href="#openai-provider-gathering-llm-openai-provider-py" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOpenAI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core.interfaces</span><span class="w"> </span><span class="kn">import</span> <span class="n">ILLMProvider</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">OpenAIProvider</span><span class="p">(</span><span class="n">ILLMProvider</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span>
+            <span class="n">model</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">],</span>
+            <span class="n">api_key</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;api_key&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="c1"># ... implement interface methods</span>
+</pre></div>
+</div>
+</section>
+<section id="anthropic-provider-gathering-llm-anthropic-provider-py">
+<h4>Anthropic Provider (<code class="docutils literal notranslate"><span class="pre">gathering/llm/anthropic_provider.py</span></code>)<a class="headerlink" href="#anthropic-provider-gathering-llm-anthropic-provider-py" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_anthropic</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatAnthropic</span>
+<span class="c1"># Similar implementation...</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="week-2-3-core-features">
+<h2>Week 2-3: Core Features<a class="headerlink" href="#week-2-3-core-features" title="Link to this heading"></a></h2>
+<section id="enhanced-memory-system">
+<h3>1. Enhanced Memory System<a class="headerlink" href="#enhanced-memory-system" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Implement vector storage for semantic search</p></li>
+<li><p>Add conversation summarization</p></li>
+<li><p>Create memory persistence (PostgreSQL)</p></li>
+</ul>
+</section>
+<section id="advanced-tool-system">
+<h3>2. Advanced Tool System<a class="headerlink" href="#advanced-tool-system" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Implement real filesystem operations (with sandboxing)</p></li>
+<li><p>Add Git integration tool</p></li>
+<li><p>Create PostgreSQL database tool</p></li>
+<li><p>Implement API calling tool</p></li>
+</ul>
+</section>
+<section id="personality-framework">
+<h3>3. Personality Framework<a class="headerlink" href="#personality-framework" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Create personality block library</p></li>
+<li><p>Implement emotional state tracking</p></li>
+<li><p>Add personality influence on responses</p></li>
+</ul>
+</section>
+</section>
+<section id="week-4-5-web-interface">
+<h2>Week 4-5: Web Interface<a class="headerlink" href="#week-4-5-web-interface" title="Link to this heading"></a></h2>
+<section id="flask-prototype">
+<h3>1. Flask Prototype<a class="headerlink" href="#flask-prototype" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># gathering/web/app.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">jsonify</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gathering.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicAgent</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/api/agents&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_agent</span><span class="p">():</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">BasicAgent</span><span class="o">.</span><span class="n">from_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="c1"># Store agent in registry</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="frontend-prototype">
+<h3>2. Frontend Prototype<a class="headerlink" href="#frontend-prototype" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Agent configuration UI</p></li>
+<li><p>Conversation interface</p></li>
+<li><p>Tool management panel</p></li>
+<li><p>Real-time updates with WebSocket</p></li>
+</ul>
+</section>
+</section>
+<section id="testing-strategy-reminders">
+<h2>Testing Strategy Reminders<a class="headerlink" href="#testing-strategy-reminders" title="Link to this heading"></a></h2>
+<section id="maintain-tdd-discipline">
+<h3>1. Maintain TDD Discipline<a class="headerlink" href="#maintain-tdd-discipline" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Write test first</p></li>
+<li><p>See it fail</p></li>
+<li><p>Write minimal code to pass</p></li>
+<li><p>Refactor</p></li>
+<li><p>Repeat</p></li>
+</ul>
+</section>
+<section id="test-categories">
+<h3>2. Test Categories<a class="headerlink" href="#test-categories" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Unit Tests</strong>: Each component in isolation</p></li>
+<li><p><strong>Integration Tests</strong>: Component interactions</p></li>
+<li><p><strong>E2E Tests</strong>: Complete user scenarios</p></li>
+</ul>
+</section>
+<section id="coverage-goals">
+<h3>3. Coverage Goals<a class="headerlink" href="#coverage-goals" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Aim for 100% coverage initially</p></li>
+<li><p>Acceptable minimum: 90%</p></li>
+<li><p>Check regularly: <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--cov=gathering</span> <span class="pre">--cov-report=html</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="architecture-decisions-to-make">
+<h2>Architecture Decisions to Make<a class="headerlink" href="#architecture-decisions-to-make" title="Link to this heading"></a></h2>
+<section id="state-management">
+<h3>1. State Management<a class="headerlink" href="#state-management" title="Link to this heading"></a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> In-memory for prototype</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Redis for distributed state</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> PostgreSQL for persistence</p></li>
+</ul>
+</section>
+<section id="agent-communication">
+<h3>2. Agent Communication<a class="headerlink" href="#agent-communication" title="Link to this heading"></a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Direct method calls</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Message queue (Celery)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Event-driven architecture</p></li>
+</ul>
+</section>
+<section id="security-model">
+<h3>3. Security Model<a class="headerlink" href="#security-model" title="Link to this heading"></a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Tool permissions system</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Agent sandboxing</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> API authentication</p></li>
+</ul>
+</section>
+</section>
+<section id="performance-considerations">
+<h2>Performance Considerations<a class="headerlink" href="#performance-considerations" title="Link to this heading"></a></h2>
+<section id="benchmarks-to-implement">
+<h3>1. Benchmarks to Implement<a class="headerlink" href="#benchmarks-to-implement" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Agent response time</p></li>
+<li><p>Memory usage per agent</p></li>
+<li><p>Concurrent agent limit</p></li>
+<li><p>Tool execution overhead</p></li>
+</ul>
+</section>
+<section id="optimization-areas">
+<h3>2. Optimization Areas<a class="headerlink" href="#optimization-areas" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>LLM call batching</p></li>
+<li><p>Response caching</p></li>
+<li><p>Parallel tool execution</p></li>
+<li><p>Memory pruning strategies</p></li>
+</ul>
+</section>
+</section>
+<section id="documentation-tasks">
+<h2>Documentation Tasks<a class="headerlink" href="#documentation-tasks" title="Link to this heading"></a></h2>
+<section id="api-documentation">
+<h3>1. API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Use Sphinx for auto-generation</p></li>
+<li><p>Write comprehensive docstrings</p></li>
+<li><p>Create API examples</p></li>
+</ul>
+</section>
+<section id="user-guide">
+<h3>2. User Guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Installation instructions</p></li>
+<li><p>Quick start tutorial</p></li>
+<li><p>Advanced configuration</p></li>
+<li><p>Best practices</p></li>
+</ul>
+</section>
+<section id="developer-guide">
+<h3>3. Developer Guide<a class="headerlink" href="#developer-guide" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Architecture overview</p></li>
+<li><p>Extension points</p></li>
+<li><p>Contributing guidelines</p></li>
+<li><p>Plugin development</p></li>
+</ul>
+</section>
+</section>
+<section id="git-workflow">
+<h2>Git Workflow<a class="headerlink" href="#git-workflow" title="Link to this heading"></a></h2>
+<section id="branch-strategy">
+<h3>1. Branch Strategy<a class="headerlink" href="#branch-strategy" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>main<span class="w">          </span><span class="c1"># Stable releases</span>
+develop<span class="w">       </span><span class="c1"># Integration branch</span>
+feature/*<span class="w">     </span><span class="c1"># New features</span>
+bugfix/*<span class="w">      </span><span class="c1"># Bug fixes</span>
+release/*<span class="w">     </span><span class="c1"># Release preparation</span>
+</pre></div>
+</div>
+</section>
+<section id="commit-messages">
+<h3>2. Commit Messages<a class="headerlink" href="#commit-messages" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>feat<span class="o">(</span>agents<span class="o">)</span>:<span class="w"> </span>Add<span class="w"> </span>personality<span class="w"> </span>blocks
+fix<span class="o">(</span>memory<span class="o">)</span>:<span class="w"> </span>Resolve<span class="w"> </span>context<span class="w"> </span>overflow<span class="w">  </span>
+docs<span class="o">(</span>api<span class="o">)</span>:<span class="w"> </span>Update<span class="w"> </span>agent<span class="w"> </span>creation<span class="w"> </span>docs
+test<span class="o">(</span>tools<span class="o">)</span>:<span class="w"> </span>Add<span class="w"> </span>filesystem<span class="w"> </span>tests
+refactor<span class="o">(</span>llm<span class="o">)</span>:<span class="w"> </span>Simplify<span class="w"> </span>provider<span class="w"> </span>interface
+</pre></div>
+</div>
+</section>
+</section>
+<section id="community-building">
+<h2>Community Building<a class="headerlink" href="#community-building" title="Link to this heading"></a></h2>
+<section id="open-source-preparation">
+<h3>1. Open Source Preparation<a class="headerlink" href="#open-source-preparation" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Choose license (MIT, Apache 2.0, etc.)</p></li>
+<li><p>Create <a class="reference external" href="http://CONTRIBUTING.md">CONTRIBUTING.md</a></p></li>
+<li><p>Set up issue templates</p></li>
+<li><p>Configure CI/CD</p></li>
+</ul>
+</section>
+<section id="documentation-site">
+<h3>2. Documentation Site<a class="headerlink" href="#documentation-site" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Set up MkDocs or Sphinx</p></li>
+<li><p>Deploy to GitHub Pages</p></li>
+<li><p>Create examples repository</p></li>
+</ul>
+</section>
+</section>
+<section id="remember">
+<h2>Remember<a class="headerlink" href="#remember" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Keep It Simple</strong> (KISS) - Don’t over-engineer early</p></li>
+<li><p><strong>Stay DRY</strong> - Extract common patterns</p></li>
+<li><p><strong>Test Everything</strong> - If it’s not tested, it’s broken</p></li>
+<li><p><strong>Document as You Go</strong> - Future you will thank present you</p></li>
+<li><p><strong>Iterate Quickly</strong> - Small, frequent improvements</p></li>
+</ol>
+</section>
+<section id="questions-to-consider">
+<h2>Questions to Consider<a class="headerlink" href="#questions-to-consider" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Should agents have persistent identity across restarts?</p></li>
+<li><p>How to handle agent “death” or lifecycle?</p></li>
+<li><p>What’s the maximum context size for conversations?</p></li>
+<li><p>How to implement agent learning/adaptation?</p></li>
+<li><p>What metrics to track for agent performance?</p></li>
+</ol>
+<hr class="docutils" />
+<p><strong>You’re all set to begin!</strong> Start with setting up the environment and running the tests. The red tests will guide you on what to implement next. Happy coding! 🎉</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, GatheRing Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
